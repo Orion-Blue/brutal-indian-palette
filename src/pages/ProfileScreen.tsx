@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Settings, ChevronRight, Shield, CreditCard, Bell, Moon, Globe, HelpCircle, FileText, LogOut, User, Home, Send, Zap, CheckCircle } from 'lucide-react';
+import { Settings, ChevronRight, Shield, CreditCard, Bell, Moon, Globe, HelpCircle, FileText, LogOut, User, CheckCircle } from 'lucide-react';
+import BottomNav from '@/components/BottomNav';
 
 export default function PaytmProfile() {
   const [darkMode, setDarkMode] = useState(true);
@@ -207,16 +208,8 @@ export default function PaytmProfile() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '10px',
-                boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.3)',
+                boxShadow: '6px 6px 0px #2D3561',
                 transition: 'all 0.2s'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translate(-2px, -2px)';
-                e.currentTarget.style.boxShadow = '6px 6px 0px #2D3561';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translate(0, 0)';
-                e.currentTarget.style.boxShadow = '4px 4px 0px rgba(45, 53, 97, 0.3)';
               }}
             >
               <div style={{
@@ -379,17 +372,9 @@ export default function PaytmProfile() {
           gap: '12px',
           cursor: 'pointer',
           transition: 'all 0.2s',
-          boxShadow: '4px 4px 0px rgba(255, 107, 53, 0.3)'
+          boxShadow: '6px 6px 0px #FF6B35'
         }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'translate(-2px, -2px)';
-          e.currentTarget.style.boxShadow = '6px 6px 0px #FF6B35';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = 'translate(0, 0)';
-          e.currentTarget.style.boxShadow = '4px 4px 0px rgba(255, 107, 53, 0.3)';
-        }}
-        >
+      >
           <LogOut size={22} color="#FF6B35" strokeWidth={2.5} />
           <span style={{ 
             fontSize: '16px', 
@@ -415,121 +400,7 @@ export default function PaytmProfile() {
         }}>Version 4.0.1 • Build 2025.01</p>
       </div>
 
-      {/* Bottom Navigation */}
-      <div style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        maxWidth: '428px',
-        margin: '0 auto',
-        background: '#FFF5E0',
-        borderTop: '3px solid #2D3561',
-        padding: '12px 20px 20px',
-        boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.1)'
-      }}>
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <button style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px'
-          }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              background: '#FFFFFF',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #2D3561'
-            }}>
-              <Home size={22} color="#808080" strokeWidth={2} />
-            </div>
-            <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '0.5px', color: '#808080', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Home</span>
-          </button>
-          <button style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px'
-          }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              background: '#FFFFFF',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #2D3561'
-            }}>
-              <Send size={22} color="#808080" strokeWidth={2} />
-            </div>
-            <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '0.5px', color: '#808080', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Transfer</span>
-          </button>
-          <button style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px'
-          }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              background: '#FFFFFF',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #2D3561'
-            }}>
-              <Zap size={22} color="#808080" strokeWidth={2} />
-            </div>
-            <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '0.5px', color: '#808080', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Services</span>
-          </button>
-          <button style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px',
-            borderRadius: '12px',
-            transition: 'all 0.2s'
-          }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              background: '#FF6B9D',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #2D3561',
-              boxShadow: '3px 3px 0px #2D3561'
-            }}>
-              <User size={22} color="#FFFFFF" strokeWidth={2.5} />
-            </div>
-            <span style={{ fontSize: '11px', fontWeight: '800', letterSpacing: '0.5px', color: '#FF6B9D', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Profile</span>
-          </button>
-        </div>
-      </div>
+      <BottomNav />
     </div>
   );
 }

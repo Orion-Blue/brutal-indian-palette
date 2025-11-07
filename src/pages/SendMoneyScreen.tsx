@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Search, ChevronRight, User, Building2, CreditCard, Smartphone, Home, Send, Zap } from 'lucide-react';
+import { ArrowLeft, Search, ChevronRight, User, Building2, CreditCard, Smartphone } from 'lucide-react';
+import BottomNav from '@/components/BottomNav';
 
 export default function PaytmSendMoney() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -195,15 +196,7 @@ export default function PaytmSendMoney() {
                   cursor: 'pointer',
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   transition: 'all 0.2s',
-                  boxShadow: '3px 3px 0px #2D3561'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translate(-2px, -2px)';
-                  e.currentTarget.style.boxShadow = '5px 5px 0px #2D3561';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translate(0, 0)';
-                  e.currentTarget.style.boxShadow = '3px 3px 0px #2D3561';
+                  boxShadow: '5px 5px 0px #2D3561'
                 }}
               >
                 ₹{amt}
@@ -240,15 +233,7 @@ export default function PaytmSendMoney() {
                   cursor: 'pointer',
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   transition: 'all 0.2s',
-                  boxShadow: '3px 3px 0px #2D3561'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translate(-1px, -1px)';
-                  e.currentTarget.style.boxShadow = '4px 4px 0px #2D3561';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translate(0, 0)';
-                  e.currentTarget.style.boxShadow = '3px 3px 0px #2D3561';
+                  boxShadow: '4px 4px 0px #2D3561'
                 }}
               >
                 {num}
@@ -416,19 +401,11 @@ export default function PaytmSendMoney() {
                 fontWeight: '800',
                 color: '#FFFFFF',
                 border: '3px solid #2D3561',
-                boxShadow: '4px 4px 0px #2D3561',
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
-                transition: 'all 0.2s'
+                transition: 'all 0.2s',
+                boxShadow: '6px 6px 0px #2D3561'
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translate(-2px, -2px)';
-                e.currentTarget.style.boxShadow = '6px 6px 0px #2D3561';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translate(0, 0)';
-                e.currentTarget.style.boxShadow = '4px 4px 0px #2D3561';
-              }}
-              >
+            >
                 {contact.initial}
               </div>
               <span style={{ 
@@ -469,15 +446,7 @@ export default function PaytmSendMoney() {
                 cursor: 'pointer',
                 transition: 'all 0.2s',
                 textAlign: 'left',
-                boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.3)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translate(-2px, -2px)';
-                e.currentTarget.style.boxShadow = '6px 6px 0px #2D3561';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translate(0, 0)';
-                e.currentTarget.style.boxShadow = '4px 4px 0px rgba(45, 53, 97, 0.3)';
+                boxShadow: '6px 6px 0px #2D3561'
               }}
             >
               <div style={{
@@ -531,121 +500,7 @@ export default function PaytmSendMoney() {
         </div>
       </div>
 
-      {/* Bottom Navigation */}
-      <div style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        maxWidth: '428px',
-        margin: '0 auto',
-        background: '#FFF5E0',
-        borderTop: '3px solid #2D3561',
-        padding: '12px 20px 20px',
-        boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.1)'
-      }}>
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <button style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px'
-          }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              background: '#FFFFFF',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #2D3561'
-            }}>
-              <Home size={22} color="#808080" strokeWidth={2} />
-            </div>
-            <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '0.5px', color: '#808080', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Home</span>
-          </button>
-          <button style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px',
-            borderRadius: '12px',
-            transition: 'all 0.2s'
-          }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              background: '#6C63FF',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #2D3561',
-              boxShadow: '3px 3px 0px #2D3561'
-            }}>
-              <Send size={22} color="#FFFFFF" strokeWidth={2.5} />
-            </div>
-            <span style={{ fontSize: '11px', fontWeight: '800', letterSpacing: '0.5px', color: '#6C63FF', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Transfer</span>
-          </button>
-          <button style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px'
-          }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              background: '#FFFFFF',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #2D3561'
-            }}>
-              <Zap size={22} color="#808080" strokeWidth={2} />
-            </div>
-            <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '0.5px', color: '#808080', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Services</span>
-          </button>
-          <button style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px'
-          }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              background: '#FFFFFF',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #2D3561'
-            }}>
-              <User size={22} color="#808080" strokeWidth={2} />
-            </div>
-            <span style={{ fontSize: '11px', fontWeight: '700', letterSpacing: '0.5px', color: '#808080', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Profile</span>
-          </button>
-        </div>
-      </div>
+      <BottomNav />
     </div>
   );
 }

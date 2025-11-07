@@ -1,7 +1,14 @@
-import HomeScreen from './HomeScreen';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
-  return <HomeScreen />;
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    navigate('/home');
+  }, [navigate]);
+
+  return null;
 };
 
 export default Index;
