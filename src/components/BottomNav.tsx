@@ -7,7 +7,7 @@ const navItems = [
   { icon: Home, label: 'Home', path: '/home' },
   { icon: BarChart3, label: 'Analytics', path: '/analytics' },
   { icon: Wallet, label: 'Wallet', path: '/wallet' },
-  { icon: MessageSquare, label: 'Messages', path: '/messages' },
+  { icon: MessageSquare, label: 'Send Money', path: '/send-money' },
   { icon: User, label: 'Profile', path: '/profile' },
 ];
 
@@ -16,7 +16,7 @@ export const BottomNav = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed bottom-4 left-4 right-4 mx-auto max-w-md bg-card/80 backdrop-blur-nav border border-border/50 rounded-2xl z-50 shadow-xl">
+    <nav className="fixed bottom-4 left-4 right-4 mx-auto max-w-md bg-card/70 backdrop-blur-nav border border-border/30 rounded-2xl z-50 shadow-xl">
       <div className="flex items-center justify-around px-2 py-3">
         {navItems.map(({ icon: Icon, label, path }) => {
           const isActive = location.pathname === path;
@@ -26,15 +26,15 @@ export const BottomNav = () => {
               onClick={() => navigate(path)}
               className={cn(
                 'flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all active:scale-95',
-                isActive ? 'bg-primary/10' : 'hover:bg-muted/50'
+                isActive ? 'bg-primary/15' : 'hover:bg-muted/70'
               )}
             >
               <Icon
                 size={22}
-                strokeWidth={2}
+                strokeWidth={2.5}
                 className={cn(
                   'transition-colors',
-                  isActive ? 'text-primary' : 'text-muted-foreground'
+                  isActive ? 'text-foreground' : 'text-muted-foreground'
                 )}
               />
               <Text
@@ -42,7 +42,7 @@ export const BottomNav = () => {
                 weight="medium"
                 className={cn(
                   'transition-colors',
-                  isActive ? 'text-primary' : 'text-muted-foreground'
+                  isActive ? 'text-foreground' : 'text-muted-foreground'
                 )}
               >
                 {label}

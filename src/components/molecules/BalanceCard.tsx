@@ -24,7 +24,7 @@ export const BalanceCard = ({
   validThru,
   status,
   backgroundColor,
-  textColor = '#FFFFFF',
+  textColor = '#141414',
   className,
 }: BalanceCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,8 +39,8 @@ export const BalanceCard = ({
         className
       )}
     >
-      {/* Subtle blur overlay for depth */}
-      <div className="absolute inset-0 bg-white/5 backdrop-blur-sm pointer-events-none" />
+      {/* Subtle transparency overlay for depth */}
+      <div className="absolute inset-0 bg-white/10 pointer-events-none" />
       
       <div className="relative z-10">
         <div className="mb-8 flex items-start justify-between">
@@ -54,13 +54,13 @@ export const BalanceCard = ({
           </div>
           <button
             onClick={() => setIsVisible(!isVisible)}
-            className="p-2 rounded-full hover:bg-white/10 transition-colors active:scale-95"
+            className="p-2 rounded-full hover:bg-black/10 transition-colors active:scale-95"
             aria-label={isVisible ? "Hide balance" : "Show balance"}
           >
             {isVisible ? (
-              <EyeOff size={20} color={textColor} strokeWidth={2} />
+              <EyeOff size={20} color={textColor} strokeWidth={2.5} />
             ) : (
-              <Eye size={20} color={textColor} strokeWidth={2} />
+              <Eye size={20} color={textColor} strokeWidth={2.5} />
             )}
           </button>
         </div>
@@ -87,7 +87,7 @@ export const BalanceCard = ({
             <Text variant="body-small" weight="semibold" className="font-mono" style={{ color: textColor }}>
               {validThru}
             </Text>
-            <div className="mt-2 flex items-center gap-1.5 bg-white/20 px-2 py-1 rounded-lg justify-end">
+            <div className="mt-2 flex items-center gap-1.5 bg-black/15 px-2 py-1 rounded-lg justify-end">
               <StatusIndicator status="active" size="sm" />
               <Text variant="micro" weight="semibold" style={{ color: textColor }}>
                 {status}

@@ -60,17 +60,32 @@ export default function HomeScreen() {
         <IconButton icon={Bell} variant="default" size="md" />
       </div>
 
-      {/* Balance Card */}
+      {/* Balance Cards - Swipeable Stack */}
       <div className="px-5 py-4">
-        <BalanceCard
-          balance={balance}
-          label="Total Balance"
-          accountNumber="XXXX - 5689"
-          type="VIRTUAL"
-          validThru="07/29"
-          status="ACTIVE"
-          backgroundColor="hsl(48, 100%, 50%)"
-        />
+        <div className="relative">
+          {/* Background cards to show stack effect */}
+          <div className="absolute top-2 left-2 right-2 h-full bg-accent-purple/90 rounded-3xl shadow-md opacity-40 -z-10" />
+          <div className="absolute top-4 left-4 right-4 h-full bg-accent-blue/90 rounded-3xl shadow-md opacity-60 -z-10" />
+          
+          {/* Main card */}
+          <BalanceCard
+            balance={balance}
+            label="Total Balance"
+            accountNumber="XXXX - 5689"
+            type="VIRTUAL"
+            validThru="07/29"
+            status="ACTIVE"
+            backgroundColor="hsl(48, 100%, 50%)"
+            textColor="#141414"
+          />
+          
+          {/* Swipe indicator dots */}
+          <div className="flex justify-center gap-1.5 mt-4">
+            <div className="w-2 h-2 rounded-full bg-primary" />
+            <div className="w-2 h-2 rounded-full bg-muted-foreground/30" />
+            <div className="w-2 h-2 rounded-full bg-muted-foreground/30" />
+          </div>
+        </div>
       </div>
 
       {/* Quick Actions */}

@@ -55,7 +55,7 @@ export default function ProfileScreen() {
 
       {/* Profile Card */}
       <div className="px-5 pb-7">
-        <div className="bg-card border border-border rounded-3xl p-10 flex flex-col items-center gap-4 shadow-card">
+        <div className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-3xl p-10 flex flex-col items-center gap-4 shadow-card">
           {/* Avatar */}
           <Avatar
             initial="RK"
@@ -86,7 +86,7 @@ export default function ProfileScreen() {
           {statsData.map((stat, index) => (
             <div
               key={index}
-              className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-3 shadow-sm hover:shadow-md transition-all active:scale-98 cursor-pointer min-h-[140px] justify-between"
+              className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl p-6 flex flex-col gap-3 shadow-sm hover:shadow-md hover:bg-muted/70 transition-all active:scale-98 cursor-pointer min-h-[140px] justify-between"
             >
               <div className="text-3xl leading-none">{stat.icon}</div>
               <div>
@@ -115,7 +115,7 @@ export default function ProfileScreen() {
               {section.section}
             </Text>
             
-            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm">
+            <div className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl overflow-hidden shadow-sm">
               {section.items.map((item, itemIndex) => (
                 <button
                   key={itemIndex}
@@ -125,8 +125,8 @@ export default function ProfileScreen() {
                     }
                   }}
                   className={cn(
-                    "w-full bg-transparent border-none p-5 flex items-center gap-4 cursor-pointer transition-all text-left hover:bg-muted/30",
-                    itemIndex < section.items.length - 1 && "border-b border-border"
+                    "w-full bg-transparent border-none p-5 flex items-center gap-4 cursor-pointer transition-all text-left hover:bg-muted/70",
+                    itemIndex < section.items.length - 1 && "border-b border-border/30"
                   )}
                 >
                   <div
@@ -184,7 +184,7 @@ export default function ProfileScreen() {
 
       {/* Logout Button */}
       <div className="px-5 pb-7">
-        <button className="w-full bg-card border-2 border-destructive rounded-2xl p-5 flex items-center justify-center gap-3 cursor-pointer transition-all active:scale-98 shadow-sm hover:shadow-md hover:bg-destructive/5">
+        <button className="w-full bg-card/80 backdrop-blur-nav border-2 border-destructive rounded-2xl p-5 flex items-center justify-center gap-3 cursor-pointer transition-all active:scale-98 shadow-sm hover:shadow-md hover:bg-destructive/10">
           <LogOut size={24} className="text-destructive" strokeWidth={2} />
           <Text variant="body-large" weight="bold" className="text-destructive tracking-wide">
             LOGOUT

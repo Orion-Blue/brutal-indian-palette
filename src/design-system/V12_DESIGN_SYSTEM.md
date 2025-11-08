@@ -1,19 +1,21 @@
-# V10 Design System - Modern Clean Style
+# V12 Design System - Modern Clean Style with Transparency
 
 ## Overview
-Version 10 represents a complete design overhaul from neo-brutalism to a modern, clean aesthetic inspired by contemporary fintech applications. The design emphasizes soft shadows, subtle borders, generous spacing, and smooth interactions.
+Version 12 refines the modern clean aesthetic with enhanced transparency effects, improved visual hierarchy, and refined interaction states. The design emphasizes glassmorphism, subtle transparency layers, soft shadows, and smooth interactions.
 
 ---
 
 ## Design Philosophy
 
-**Modern Minimalism + Fintech Elegance**
+**Modern Minimalism + Fintech Elegance + Glassmorphism**
 
 - **Clean & Sophisticated**: Soft shadows and subtle borders create depth
-- **Smooth Interactions**: Gentle hover states and scale animations
-- **Color-Forward**: Yellow accent with complementary color palette
+- **Transparency & Layers**: Glassmorphic effects with backdrop blur for visual hierarchy
+- **Smooth Interactions**: Enhanced hover states with darker greys and scale animations
+- **Color-Forward**: Golden yellow (#FFCC00) accent with black text on light surfaces
 - **Generous Spacing**: Breathing room for better readability
 - **Mobile-First**: Optimized for touch interactions
+- **Consistent Transparency**: 70-80% opacity cards with backdrop blur throughout
 
 ---
 
@@ -22,8 +24,8 @@ Version 10 represents a complete design overhaul from neo-brutalism to a modern,
 ### Background & Surfaces
 ```css
 --background: 0 0% 98%        /* #FAFAFA - Light gray background */
---card: 0 0% 100%             /* #FFFFFF - Pure white cards */
---muted: 0 0% 96%             /* #F5F5F5 - Muted backgrounds */
+--card: 0 0% 100%             /* #FFFFFF - Pure white cards (use with 70-80% opacity) */
+--muted: 0 0% 93%             /* #EDEDED - Darker muted for hover states */
 ```
 
 ### Brand Colors
@@ -156,9 +158,11 @@ full: 9999px (circles)
 #### BalanceCard
 - **Style**: Rounded-3xl (24px), solid color with transparency overlay, soft shadow-card
 - **Padding**: 28px (1.75rem)
-- **Content**: Balance label, large amount (with toggle visibility), account details, status indicator
-- **Colors**: Single solid colors (yellow) with white text and subtle backdrop blur
-- **Interaction**: Eye icon to toggle balance visibility
+- **Content**: Balance label, large amount (hidden by default - toggle with eye icon), account details, status indicator
+- **Colors**: Single solid colors (yellow #FFCC00) with BLACK text (#141414) for maximum contrast
+- **Interaction**: Eye icon to toggle balance visibility (hidden by default showing ••••••)
+- **Card Stack**: Multiple cards stacked behind main card with decreasing opacity (40%, 60%, 100%)
+- **Swipe Indicator**: Pagination dots below cards (active: primary color, inactive: muted-foreground/30)
 
 #### TransactionItem
 - **Style**: Rounded-xl (16px), transparent background, hover state
@@ -188,9 +192,11 @@ full: 9999px (circles)
 #### BottomNav
 - **Height**: Auto (~64px)
 - **Style**: Floating with 16px bottom margin, rounded-2xl, transparent backdrop blur
-- **Background**: card/80 opacity with backdrop-blur-nav
+- **Background**: card/70 opacity with backdrop-blur-nav, border-border/30
 - **Items**: Icon + label, rounded-xl active state
-- **Active State**: Yellow/primary color, subtle background
+- **Active State**: BLACK text and icon (not yellow), primary/15 background, strokeWidth 2.5
+- **Hover State**: muted/70 background (darker grey)
+- **Content**: Home, Analytics, Wallet, Send Money, Profile
 
 #### QuickActionsGrid
 - **Layout**: 3-column grid, 12px gap
@@ -223,13 +229,20 @@ full: 9999px (circles)
 - **Easing**: ease / cubic-bezier(0.4, 0, 0.2, 1)
 
 ### Hover States
-- **Buttons**: Background color change
-- **Cards**: Slight shadow increase
-- **Lists**: Subtle background tint
+- **Buttons**: Background color change to muted/70 (darker grey)
+- **Cards**: Slight shadow increase + muted/70 background
+- **Lists**: Subtle background tint (muted/70)
+- **All Surfaces**: Use darker grey (--muted: 0 0% 93%) for better visibility
 
 ### Active/Press States
-- **Transform**: scale(0.95)
+- **Transform**: scale(0.95) or scale(0.98) for larger elements
 - **Transition**: All 200ms
+
+### Transparency Guidelines
+- **Cards**: 70-80% opacity (card/70 or card/80) with backdrop-blur-nav
+- **Borders**: 30% opacity (border/30) for subtle separation
+- **Overlays**: Use bg-white/10 or bg-black/15 for subtle layering
+- **Consistency**: Apply transparency uniformly across all screens
 
 ---
 

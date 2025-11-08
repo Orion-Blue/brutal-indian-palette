@@ -66,7 +66,7 @@ export default function SendMoneyScreen() {
 
         {/* Recipient Card */}
         <div className="px-5 pb-8">
-          <div className="bg-card rounded-3xl p-8 flex flex-col items-center gap-4 shadow-card border border-border">
+          <div className="bg-card/80 backdrop-blur-nav rounded-3xl p-8 flex flex-col items-center gap-4 shadow-card border border-border/30">
             <Avatar
               initial={selectedContact.initial}
               color={selectedContact.color}
@@ -102,7 +102,7 @@ export default function SendMoneyScreen() {
               <button
                 key={quickAmount}
                 onClick={() => setAmount(quickAmount)}
-                className="bg-card border border-border rounded-2xl py-4 font-semibold text-sm cursor-pointer transition-all active:scale-95 shadow-sm hover:shadow-md hover:border-primary/20"
+                className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl py-4 font-semibold text-sm cursor-pointer transition-all active:scale-95 shadow-sm hover:shadow-md hover:bg-muted/70"
               >
                 ₹{quickAmount}
               </button>
@@ -115,7 +115,7 @@ export default function SendMoneyScreen() {
               <button
                 key={key}
                 onClick={() => handleNumberPad(key)}
-                className="bg-card border border-border rounded-2xl h-16 flex items-center justify-center text-xl font-semibold cursor-pointer transition-all active:scale-95 shadow-sm hover:shadow-md hover:border-primary/20"
+                className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl h-16 flex items-center justify-center text-xl font-semibold cursor-pointer transition-all active:scale-95 shadow-sm hover:shadow-md hover:bg-muted/70"
               >
                 {key === 'clear' ? 'C' : key === 'backspace' ? '←' : key}
               </button>
@@ -147,14 +147,14 @@ export default function SendMoneyScreen() {
         <Text variant="h2" weight="bold" className="text-foreground">
           Send Money
         </Text>
-        <button className="bg-card border border-border rounded-xl px-5 h-12 flex items-center justify-center cursor-pointer shadow-sm transition-all active:scale-95 hover:shadow-md hover:border-primary/20 text-sm font-semibold">
+        <button className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-xl px-5 h-12 flex items-center justify-center cursor-pointer shadow-sm transition-all active:scale-95 hover:shadow-md hover:bg-muted/70 text-sm font-semibold">
           UPI ID
         </button>
       </div>
 
       {/* Search Bar */}
       <div className="px-5 pb-7">
-        <div className="bg-card border border-border rounded-2xl px-5 flex items-center gap-3 shadow-sm min-h-[56px]">
+        <div className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl px-5 flex items-center gap-3 shadow-sm min-h-[56px]">
           <Search size={20} className="text-muted-foreground" strokeWidth={2} />
           <input
             type="text"
@@ -199,7 +199,7 @@ export default function SendMoneyScreen() {
             <button
               key={recipient.id}
               onClick={() => handleContactSelect(recipient)}
-              className="bg-card border border-border rounded-2xl p-5 flex items-center gap-4 cursor-pointer transition-all active:scale-98 shadow-sm hover:shadow-md hover:border-primary/20"
+              className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl p-5 flex items-center gap-4 cursor-pointer transition-all active:scale-98 shadow-sm hover:shadow-md hover:bg-muted/70"
             >
               <Avatar
                 initial={recipient.initial}
