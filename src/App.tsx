@@ -11,6 +11,7 @@ import AnalyticsScreen from "./pages/AnalyticsScreen";
 import WalletScreen from "./pages/WalletScreen";
 import MessagesScreen from "./pages/MessagesScreen";
 import NotFound from "./pages/NotFound";
+import DesignSystemDocs from "./pages/DesignSystemDocs";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/analytics" element={<AnalyticsScreen />} />
           <Route path="/wallet" element={<WalletScreen />} />
           <Route path="/messages" element={<MessagesScreen />} />
+          <Route path="/design-system" element={<DesignSystemDocs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
