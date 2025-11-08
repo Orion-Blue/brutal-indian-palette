@@ -65,7 +65,7 @@ export default function PaytmProfile() {
       <div className="px-4 sm:px-5 pb-7">
         <div className="bg-white border-[3px] border-[#2D3561] rounded-3xl p-8 sm:p-10 flex flex-col items-center gap-4 shadow-[6px_6px_0px_rgba(45,53,97,0.4)]">
           {/* Avatar */}
-            <div className="w-24 sm:w-28 h-24 sm:h-28 rounded-full bg-gradient-to-br from-[#B8860B] to-[#DAA520] flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561] mb-2">
+            <div className="w-24 sm:w-28 h-24 sm:h-28 rounded-full bg-[#B8860B] flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561] mb-2">
             RK
           </div>
 

@@ -8,17 +8,17 @@ export default function PaytmSendMoney() {
   const [showAmountScreen, setShowAmountScreen] = useState(false);
 
   const frequentContacts = [
-    { id: 1, name: 'Priya', initial: 'P', color: 'linear-gradient(135deg, #B8860B, #DAA520)', lastAmount: '₹1,200' },
-    { id: 2, name: 'Amit', initial: 'A', color: 'linear-gradient(135deg, #A9A9A9, #C0C0C0)', lastAmount: '₹850' },
-    { id: 3, name: 'Neha', initial: 'N', color: 'linear-gradient(135deg, #DAA520, #B8860B)', lastAmount: '₹2,500' },
-    { id: 4, name: 'Rahul', initial: 'R', color: 'linear-gradient(135deg, #C0C0C0, #A9A9A9)', lastAmount: '₹675' }
+    { id: 1, name: 'Priya', initial: 'P', color: '#B8860B', lastAmount: '₹1,200' },
+    { id: 2, name: 'Amit', initial: 'A', color: '#DAA520', lastAmount: '₹850' },
+    { id: 3, name: 'Neha', initial: 'N', color: '#B8860B', lastAmount: '₹2,500' },
+    { id: 4, name: 'Rahul', initial: 'R', color: '#DAA520', lastAmount: '₹675' }
   ];
 
   const recentRecipients = [
-    { id: 5, name: 'Swiggy', initial: 'S', color: '#FC8019', lastAmount: '₹340', time: 'Yesterday' },
-    { id: 6, name: 'Amazon Pay', initial: 'A', color: '#FF9F40', lastAmount: '₹1,245', time: '2 days ago' },
-    { id: 7, name: 'Deepak Kumar', initial: 'D', color: 'linear-gradient(135deg, #B8860B, #DAA520)', lastAmount: '₹5,000', time: '3 days ago' },
-    { id: 8, name: 'PhonePe', initial: 'P', color: '#A9A9A9', lastAmount: '₹599', time: '1 week ago' }
+    { id: 5, name: 'Swiggy', initial: 'S', color: '#B8860B', lastAmount: '₹340', time: 'Yesterday' },
+    { id: 6, name: 'Amazon Pay', initial: 'A', color: '#DAA520', lastAmount: '₹1,245', time: '2 days ago' },
+    { id: 7, name: 'Deepak Kumar', initial: 'D', color: '#B8860B', lastAmount: '₹5,000', time: '3 days ago' },
+    { id: 8, name: 'PhonePe', initial: 'P', color: '#DAA520', lastAmount: '₹599', time: '1 week ago' }
   ];
 
   const handleContactSelect = (contact: any) => {
@@ -72,7 +72,7 @@ export default function PaytmSendMoney() {
         <div className="px-4 sm:px-5 pb-8">
           <div className="bg-white border-[3px] border-[#2D3561] rounded-3xl p-6 sm:p-8 flex flex-col items-center gap-4 shadow-[6px_6px_0px_rgba(45,53,97,0.4)]">
             <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-full flex items-center justify-center text-3xl sm:text-4xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561]"
-              style={{ background: selectedContact.color }}
+              style={{ backgroundColor: selectedContact.color }}
             >
               {selectedContact.initial}
             </div>
@@ -127,7 +127,7 @@ export default function PaytmSendMoney() {
           {/* Send Button */}
           <button
             disabled={!amount || amount === '0'}
-            className="w-full bg-gradient-to-r from-[#B8860B] to-[#DAA520] border-[3px] border-[#2D3561] rounded-[20px] p-5 text-xl font-extrabold text-white tracking-wide cursor-pointer transition-all shadow-[6px_6px_0px_#2D3561] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className="w-full bg-[#B8860B] border-[3px] border-[#2D3561] rounded-[20px] p-5 text-xl font-extrabold text-white tracking-wide cursor-pointer transition-all shadow-[6px_6px_0px_#2D3561] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
           >
             SEND ₹{amount || '0'}
           </button>
@@ -185,7 +185,7 @@ export default function PaytmSendMoney() {
               className="flex flex-col items-center gap-2 cursor-pointer transition-transform active:scale-95"
             >
               <div className="w-14 sm:w-16 h-14 sm:h-16 rounded-full flex items-center justify-center text-xl sm:text-2xl font-extrabold text-white border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561]"
-                style={{ background: contact.color }}
+                style={{ backgroundColor: contact.color }}
               >
                 {contact.initial}
               </div>
@@ -210,7 +210,7 @@ export default function PaytmSendMoney() {
               className="bg-white border-[3px] border-[#2D3561] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 cursor-pointer transition-transform active:scale-95 shadow-[6px_6px_0px_#2D3561] min-h-[76px] sm:min-h-[84px]"
             >
               <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full flex items-center justify-center text-xl sm:text-2xl font-extrabold text-white border-[3px] border-[#2D3561] shadow-[3px_3px_0px_rgba(45,53,97,0.4)] flex-shrink-0"
-                style={{ background: recipient.color }}
+                style={{ backgroundColor: recipient.color }}
               >
                 {recipient.initial}
               </div>

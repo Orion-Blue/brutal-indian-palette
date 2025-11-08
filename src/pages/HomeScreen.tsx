@@ -86,7 +86,7 @@ export default function PaytmHomeDark() {
 
       {/* Header */}
       <div className="px-4 sm:px-5 pt-4 pb-6 flex justify-between items-center h-[92px] gap-3">
-        <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-gradient-to-br from-[#B8860B] to-[#DAA520] border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561] flex-shrink-0 flex items-center justify-center text-lg sm:text-xl font-extrabold text-white">
+        <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-[#B8860B] border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561] flex-shrink-0 flex items-center justify-center text-lg sm:text-xl font-extrabold text-white">
           RK
         </div>
         
@@ -102,7 +102,7 @@ export default function PaytmHomeDark() {
 
       {/* Balance Card */}
       <div className="px-4 sm:px-5 pb-7">
-        <div className="bg-gradient-to-br from-[#B8860B] to-[#DAA520] rounded-[20px] p-6 sm:p-7 border-[3px] border-[#2D3561] min-h-[200px] flex flex-col justify-between shadow-[8px_8px_0px_#2D3561] text-white">
+        <div className="bg-[#B8860B] rounded-[20px] p-6 sm:p-7 border-[3px] border-[#2D3561] min-h-[200px] flex flex-col justify-between shadow-[8px_8px_0px_#2D3561] text-white">
           <div>
             <p className="text-xs font-extrabold tracking-[1.5px] opacity-90 m-0 mb-4">
               BALANCE
