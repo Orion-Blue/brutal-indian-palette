@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Search, ChevronRight } from 'lucide-react';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import BottomNav from '@/components/BottomNav';
 
 export default function PaytmSendMoney() {
@@ -96,7 +98,13 @@ export default function PaytmSendMoney() {
             onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
-            <ArrowLeft size={24} color="#1A1A1A" strokeWidth={2.5} />
+            <ArrowBackRoundedIcon 
+              sx={{ 
+                fontSize: 28, 
+                color: '#1A1A1A',
+                fontWeight: 700
+              }} 
+            />
           </button>
           <h1 style={{ 
             fontSize: '26px', 
@@ -382,7 +390,13 @@ export default function PaytmSendMoney() {
           boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.4)',
           minHeight: '60px'
         }}>
-          <Search size={24} color="#808080" strokeWidth={2.5} />
+          <SearchRoundedIcon 
+            sx={{ 
+              fontSize: 28, 
+              color: '#808080',
+              fontWeight: 700
+            }} 
+          />
           <input
             type="text"
             placeholder="Search by name, number or UPI ID"
@@ -545,7 +559,13 @@ export default function PaytmSendMoney() {
                   color: '#1A1A1A',
                   fontFamily: "'Plus Jakarta Sans', sans-serif"
                 }}>{recipient.lastAmount}</div>
-                <ChevronRight size={20} color="#808080" strokeWidth={2.5} />
+                <ChevronRightRoundedIcon 
+                  sx={{ 
+                    fontSize: 24, 
+                    color: '#808080',
+                    fontWeight: 700
+                  }} 
+                />
               </div>
             </button>
           ))}

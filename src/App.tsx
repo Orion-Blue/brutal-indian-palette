@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import HomeScreen from "./pages/HomeScreen";
 import SendMoneyScreen from "./pages/SendMoneyScreen";
 import ProfileScreen from "./pages/ProfileScreen";
+import AnalyticsScreen from "./pages/AnalyticsScreen";
+import WalletScreen from "./pages/WalletScreen";
+import MessagesScreen from "./pages/MessagesScreen";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/send" element={<SendMoneyScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
+          <Route path="/analytics" element={<AnalyticsScreen />} />
+          <Route path="/wallet" element={<WalletScreen />} />
+          <Route path="/messages" element={<MessagesScreen />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

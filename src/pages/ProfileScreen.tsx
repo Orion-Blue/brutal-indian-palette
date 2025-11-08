@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { Settings, ChevronRight, Shield, CreditCard, Bell, Moon, Globe, HelpCircle, FileText, LogOut, User, CheckCircle } from 'lucide-react';
+import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import SecurityRoundedIcon from '@mui/icons-material/SecurityRounded';
+import CreditCardRoundedIcon from '@mui/icons-material/CreditCardRounded';
+import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
+import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
+import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
+import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+import DescriptionRoundedIcon from '@mui/icons-material/DescriptionRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import BottomNav from '@/components/BottomNav';
 
 export default function PaytmProfile() {
@@ -16,24 +26,24 @@ export default function PaytmProfile() {
     {
       section: 'Account',
       items: [
-        { icon: User, label: 'Personal Information', color: '#FF6B35', hasChevron: true },
-        { icon: Shield, label: 'Security & Privacy', color: '#6C63FF', hasChevron: true },
-        { icon: CreditCard, label: 'Payment Methods', color: '#00D9C0', badge: '3', hasChevron: true }
+        { icon: PersonRoundedIcon, label: 'Personal Information', color: '#FF6B35', hasChevron: true },
+        { icon: SecurityRoundedIcon, label: 'Security & Privacy', color: '#6C63FF', hasChevron: true },
+        { icon: CreditCardRoundedIcon, label: 'Payment Methods', color: '#00D9C0', badge: '3', hasChevron: true }
       ]
     },
     {
       section: 'Preferences',
       items: [
-        { icon: Bell, label: 'Notifications', color: '#FF6B9D', hasChevron: true },
-        { icon: Moon, label: 'Dark Mode', color: '#FFD93D', hasToggle: true, toggleValue: darkMode },
-        { icon: Globe, label: 'Language', color: '#00C896', value: 'English', hasChevron: true }
+        { icon: NotificationsRoundedIcon, label: 'Notifications', color: '#FF6B9D', hasChevron: true },
+        { icon: DarkModeRoundedIcon, label: 'Dark Mode', color: '#FFD93D', hasToggle: true, toggleValue: darkMode },
+        { icon: LanguageRoundedIcon, label: 'Language', color: '#00C896', value: 'English', hasChevron: true }
       ]
     },
     {
       section: 'Support',
       items: [
-        { icon: HelpCircle, label: 'Help & Support', color: '#FF9F40', hasChevron: true },
-        { icon: FileText, label: 'Terms & Privacy', color: '#808080', hasChevron: true }
+        { icon: HelpRoundedIcon, label: 'Help & Support', color: '#FF9F40', hasChevron: true },
+        { icon: DescriptionRoundedIcon, label: 'Terms & Privacy', color: '#808080', hasChevron: true }
       ]
     }
   ];
@@ -96,64 +106,53 @@ export default function PaytmProfile() {
         onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
-          <Settings size={24} color="#1A1A1A" strokeWidth={2.5} />
+          <SettingsRoundedIcon 
+            sx={{ 
+              fontSize: 28, 
+              color: '#1A1A1A',
+              fontWeight: 700
+            }} 
+          />
         </button>
       </div>
 
       {/* Profile Card */}
       <div style={{ padding: '0 20px 28px' }}>
         <div style={{
-          background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF5E0 100%)',
+          background: '#FFFFFF',
           border: '3px solid #2D3561',
           borderRadius: '24px',
           padding: '40px 24px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '24px',
+          gap: '16px',
           boxShadow: '6px 6px 0px rgba(45, 53, 97, 0.4)'
         }}>
           {/* Avatar */}
-          <div style={{ position: 'relative' }}>
-            <div style={{
-              width: '112px',
-              height: '112px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #FF6B35, #6C63FF)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '48px',
-              fontWeight: '800',
-              color: '#FFFFFF',
-              border: '4px solid #2D3561',
-              boxShadow: '6px 6px 0px #2D3561',
-              fontFamily: "'Plus Jakarta Sans', sans-serif"
-            }}>
-              RK
-            </div>
-            <div style={{
-              position: 'absolute',
-              bottom: '0',
-              right: '0',
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              background: '#00D9C0',
-              border: '3px solid #FFF5E0',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '3px 3px 0px #2D3561'
-            }}>
-              <CheckCircle size={20} color="#FFFFFF" strokeWidth={3} />
-            </div>
+          <div style={{
+            width: '112px',
+            height: '112px',
+            borderRadius: '50%',
+            background: 'linear-gradient(135deg, #FF6B35, #6C63FF)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '48px',
+            fontWeight: '800',
+            color: '#FFFFFF',
+            border: '4px solid #2D3561',
+            boxShadow: '6px 6px 0px #2D3561',
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            marginBottom: '8px'
+          }}>
+            RK
           </div>
 
-          {/* Name & Details */}
+          {/* Name & Email */}
           <div style={{ textAlign: 'center' }}>
             <h2 style={{ 
-              fontSize: '28px', 
+              fontSize: '26px', 
               fontWeight: '800',
               margin: '0 0 8px 0',
               fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -161,31 +160,12 @@ export default function PaytmProfile() {
               letterSpacing: '-0.5px'
             }}>Rajesh Kumar</h2>
             <p style={{ 
-              fontSize: '16px', 
+              fontSize: '15px', 
               color: '#808080',
-              margin: '0 0 16px 0',
-              fontFamily: "'Courier New', monospace",
-              fontWeight: '700'
-            }}>+91 98765 43210</p>
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '10px',
-              background: '#00D9C0',
-              border: '3px solid #2D3561',
-              borderRadius: '12px',
-              padding: '10px 20px',
-              boxShadow: '3px 3px 0px #2D3561'
-            }}>
-              <CheckCircle size={18} color="#FFFFFF" strokeWidth={3} />
-              <span style={{ 
-                fontSize: '14px', 
-                fontWeight: '800',
-                color: '#FFFFFF',
-                letterSpacing: '1px',
-                fontFamily: "'Plus Jakarta Sans', sans-serif"
-              }}>KYC VERIFIED</span>
-            </div>
+              margin: 0,
+              fontWeight: '600',
+              letterSpacing: '0.2px'
+            }}>Rajesh172@gmail.com</p>
           </div>
         </div>
       </div>
@@ -309,7 +289,13 @@ export default function PaytmProfile() {
                     border: '3px solid #2D3561',
                     boxShadow: '3px 3px 0px rgba(45, 53, 97, 0.4)'
                   }}>
-                    <item.icon size={24} color="#FFFFFF" strokeWidth={2.5} />
+                    <item.icon 
+                      sx={{ 
+                        fontSize: 28, 
+                        color: '#FFFFFF',
+                        fontWeight: 700
+                      }} 
+                    />
                   </div>
                   
                   <span style={{ 
@@ -371,7 +357,13 @@ export default function PaytmProfile() {
                   )}
                   
                   {item.hasChevron && (
-                    <ChevronRight size={24} color="#808080" strokeWidth={2.5} />
+                    <ChevronRightRoundedIcon 
+                      sx={{ 
+                        fontSize: 28, 
+                        color: '#808080',
+                        fontWeight: 700
+                      }} 
+                    />
                   )}
                 </button>
               ))}
@@ -401,7 +393,13 @@ export default function PaytmProfile() {
         onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
-          <LogOut size={24} color="#FF6B35" strokeWidth={2.5} />
+          <LogoutRoundedIcon 
+            sx={{ 
+              fontSize: 28, 
+              color: '#FF6B35',
+              fontWeight: 700
+            }} 
+          />
           <span style={{ 
             fontSize: '18px', 
             fontWeight: '800',
