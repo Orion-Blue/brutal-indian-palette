@@ -1,4 +1,4 @@
-import { Home, BarChart3, Wallet, MessageCircle, User } from 'lucide-react';
+import { Home, BarChart3, Wallet, Send, User } from 'lucide-react';
 import { NavLink } from "./NavLink";
 
 const BottomNav = () => {
@@ -6,7 +6,7 @@ const BottomNav = () => {
     { to: "/home", icon: Home, label: "Home" },
     { to: "/analytics", icon: BarChart3, label: "Stats" },
     { to: "/wallet", icon: Wallet, label: "Wallet" },
-    { to: "/messages", icon: MessageCircle, label: "Chat" },
+    { to: "/send", icon: Send, label: "Send" },
     { to: "/profile", icon: User, label: "Profile" },
   ];
 

@@ -72,29 +72,12 @@ export default function PaytmHomeDark() {
   ];
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: '#FFF5E0',
-      color: '#1A1A1A',
-      fontFamily: "'Inter', sans-serif",
-      maxWidth: '428px',
-      margin: '0 auto',
-      paddingBottom: '100px'
-    }}>
+    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] font-['Inter'] w-full max-w-[428px] mx-auto pb-[100px]">
       
       {/* Status Bar */}
-      <div style={{ 
-        padding: '14px 20px 10px', 
-        display: 'flex', 
-        justifyContent: 'space-between',
-        fontSize: '15px',
-        fontWeight: '600',
-        color: '#1A1A1A',
-        height: '44px',
-        alignItems: 'center'
-      }}>
+      <div className="px-4 sm:px-5 pt-3.5 pb-2.5 flex justify-between text-[15px] font-semibold h-11 items-center">
         <span>9:41</span>
-        <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+        <div className="flex gap-1.5 items-center">
           <span>📶</span>
           <span>📡</span>
           <span>🔋</span>
@@ -102,169 +85,52 @@ export default function PaytmHomeDark() {
       </div>
 
       {/* Header */}
-      <div style={{ 
-        padding: '16px 20px 24px', 
-        display: 'flex', 
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        height: '92px',
-        gap: '12px'
-      }}>
-        <div style={{
-          width: '56px',
-          height: '56px',
-          borderRadius: '50%',
-          background: 'linear-gradient(135deg, #FF6B35, #6C63FF)',
-          border: '3px solid #2D3561',
-          boxShadow: '4px 4px 0px #2D3561',
-          flexShrink: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '20px',
-          fontWeight: '800',
-          color: '#FFFFFF',
-          fontFamily: "'Plus Jakarta Sans', sans-serif"
-        }}>
+      <div className="px-4 sm:px-5 pt-4 pb-6 flex justify-between items-center h-[92px] gap-3">
+        <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#6C63FF] border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561] flex-shrink-0 flex items-center justify-center text-lg sm:text-xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
           RK
         </div>
         
-        <h1 style={{ 
-          fontSize: '18px', 
-          fontWeight: '800', 
-          margin: 0,
-          letterSpacing: '0.3px',
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
-          color: '#1A1A1A',
-          flex: 1,
-          textAlign: 'center'
-        }}>Rajesh Kumar</h1>
+        <h1 className="text-base sm:text-lg font-extrabold m-0 tracking-tight font-['Plus_Jakarta_Sans'] flex-1 text-center">
+          Rajesh Kumar
+        </h1>
         
-        <button style={{
-          background: '#FFFFFF',
-          border: '3px solid #2D3561',
-          borderRadius: '14px',
-          width: '56px',
-          height: '56px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          position: 'relative',
-          boxShadow: '4px 4px 0px #2D3561',
-          transition: 'transform 0.2s',
-          flexShrink: 0
-        }}
-        onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
-        onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
-        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-        >
+        <button className="bg-white border-[3px] border-[#2D3561] rounded-[14px] w-12 sm:w-14 h-12 sm:h-14 flex items-center justify-center cursor-pointer relative shadow-[4px_4px_0px_#2D3561] transition-transform active:scale-95 flex-shrink-0">
           <Bell size={28} color="#1A1A1A" strokeWidth={2.5} />
-          <span style={{
-            position: 'absolute',
-            top: '8px',
-            right: '8px',
-            width: '14px',
-            height: '14px',
-            background: '#FF6B35',
-            borderRadius: '50%',
-            border: '2px solid #FFFFFF',
-            boxShadow: '0 0 0 2px #2D3561'
-          }}></span>
+          <span className="absolute top-2 right-2 w-3.5 h-3.5 bg-[#FF6B35] rounded-full border-2 border-white shadow-[0_0_0_2px_#2D3561]"></span>
         </button>
       </div>
 
       {/* Balance Cards - Horizontal Scroll */}
-      <div style={{ 
-        padding: '0 20px 28px',
-        overflowX: 'auto',
-        display: 'flex',
-        gap: '16px',
-        scrollbarWidth: 'none',
-        msOverflowStyle: 'none'
-      }}>
+      <div className="px-4 sm:px-5 pb-7 overflow-x-auto flex gap-4 scrollbar-none">
         {balanceCards.map((card, index) => (
           <div
             key={index}
+            className="bg-gradient-to-br rounded-[20px] p-6 sm:p-7 min-w-[280px] sm:min-w-[300px] flex-shrink-0 border-[3px] border-[#2D3561] cursor-pointer min-h-[200px] flex flex-col justify-between transition-all"
             style={{
               background: card.gradient,
-              borderRadius: '20px',
-              padding: '28px',
-              minWidth: '300px',
               color: card.textColor,
-              flexShrink: 0,
-              border: '3px solid #2D3561',
               boxShadow: index === activeCard ? '8px 8px 0px #2D3561' : '6px 6px 0px rgba(45, 53, 97, 0.5)',
               transform: index === activeCard ? 'scale(1.02) translateY(-4px)' : 'scale(0.96)',
-              transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              cursor: 'pointer',
-              minHeight: '200px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
             }}
             onClick={() => setActiveCard(index)}
           >
             <div>
-              <p style={{ 
-                fontSize: '12px', 
-                fontWeight: '800',
-                letterSpacing: '1.5px',
-                opacity: 0.9,
-                margin: '0 0 16px 0',
-                fontFamily: "'Plus Jakarta Sans', sans-serif"
-              }}>{card.label}</p>
-              <h2 style={{ 
-                fontSize: '48px', 
-                fontWeight: '800',
-                margin: 0,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                letterSpacing: '-2.5px',
-                lineHeight: '1'
-              }}>
+              <p className="text-xs font-extrabold tracking-[1.5px] opacity-90 m-0 mb-4 font-['Plus_Jakarta_Sans']">
+                {card.label}
+              </p>
+              <h2 className="text-[42px] sm:text-5xl font-extrabold m-0 font-['Plus_Jakarta_Sans'] tracking-[-2.5px] leading-none">
                 ₹{index === 0 ? balance.toLocaleString('en-IN') : card.balance.toLocaleString('en-IN')}
-                <span style={{ fontSize: '28px', opacity: 0.85 }}>.00</span>
+                <span className="text-2xl sm:text-[28px] opacity-85">.00</span>
               </h2>
             </div>
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between',
-              fontSize: '12px',
-              fontFamily: "'Courier New', monospace",
-              fontWeight: '700',
-              opacity: 0.9,
-              marginBottom: '12px',
-              gap: '8px'
-            }}>
+            <div className="flex justify-between text-xs font-['Courier_New'] font-bold opacity-90 mb-3 gap-2">
               <span>{card.accountNumber}</span>
               <span>{card.type}</span>
             </div>
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between',
-              fontSize: '11px',
-              fontFamily: "'Courier New', monospace",
-              fontWeight: '700',
-              opacity: 0.9,
-              alignItems: 'flex-end'
-            }}>
+            <div className="flex justify-between text-[11px] font-['Courier_New'] font-bold opacity-90 items-end">
               <span>VALID THRU<br/>{card.validThru}</span>
-              <span style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '6px',
-                background: 'rgba(255,255,255,0.25)',
-                padding: '6px 10px',
-                borderRadius: '8px',
-                border: '2px solid rgba(255,255,255,0.3)'
-              }}>
-                <span style={{ 
-                  width: '8px', 
-                  height: '8px', 
-                  background: '#00FF00', 
-                  borderRadius: '50%',
-                  boxShadow: '0 0 8px #00FF00'
-                }}></span>
+              <span className="flex items-center gap-1.5 bg-white/25 px-2.5 py-1.5 rounded-lg border-2 border-white/30">
+                <span className="w-2 h-2 bg-[#00FF00] rounded-full shadow-[0_0_8px_#00FF00]"></span>
                 {card.status}
               </span>
             </div>
@@ -273,148 +139,67 @@ export default function PaytmHomeDark() {
       </div>
 
       {/* Quick Actions */}
-      <div style={{ padding: '0 20px 28px' }}>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(3, 1fr)', 
-          gap: '12px'
-        }}>
+      <div className="px-4 sm:px-5 pb-7">
+        <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
           {quickActions.map((action, index) => (
             <button
               key={index}
-              style={{
-                background: '#FFFFFF',
-                border: '3px solid #2D3561',
-                borderRadius: '16px',
-                padding: '24px 16px',
-                cursor: 'pointer',
-                transition: 'transform 0.2s',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '12px',
-                boxShadow: '6px 6px 0px #2D3561',
-                minHeight: '120px',
-                justifyContent: 'center'
-              }}
-              onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
-              onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              className="bg-white border-[3px] border-[#2D3561] rounded-2xl p-4 sm:p-6 cursor-pointer transition-transform active:scale-95 flex flex-col items-center gap-2.5 sm:gap-3 shadow-[6px_6px_0px_#2D3561] min-h-[110px] sm:min-h-[120px] justify-center"
             >
-              <div style={{
-                width: '56px',
-                height: '56px',
-                background: action.color,
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: '3px solid #2D3561',
-                boxShadow: '3px 3px 0px rgba(45, 53, 97, 0.5)'
-              }}>
-                <action.icon size={32} color="#FFFFFF" strokeWidth={2.5} />
+              <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full flex items-center justify-center border-[3px] border-[#2D3561] shadow-[3px_3px_0px_rgba(45,53,97,0.5)]"
+                style={{ background: action.color }}
+              >
+                <action.icon size={28} color="#FFFFFF" strokeWidth={2.5} />
               </div>
-              <span style={{ 
-                color: '#1A1A1A', 
-                fontSize: '12px', 
-                fontWeight: '800',
-                letterSpacing: '1px',
-                fontFamily: "'Plus Jakarta Sans', sans-serif"
-              }}>{action.label}</span>
+              <span className="text-[11px] sm:text-xs font-extrabold tracking-wide font-['Plus_Jakarta_Sans']">
+                {action.label}
+              </span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Recent Payments */}
-      <div style={{ padding: '0 20px' }}>
-        <h2 style={{ 
-          fontSize: '22px', 
-          fontWeight: '800',
-          margin: '0 0 24px 0',
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
-          color: '#1A1A1A',
-          letterSpacing: '-0.5px'
-        }}>Recent Payments</h2>
+      <div className="px-4 sm:px-5">
+        <h2 className="text-xl sm:text-[22px] font-extrabold m-0 mb-5 sm:mb-6 font-['Plus_Jakarta_Sans'] tracking-tight">
+          Recent Payments
+        </h2>
 
         {transactionsByDate.map((dateGroup, groupIndex) => (
-          <div key={groupIndex} style={{ marginBottom: '28px' }}>
-            <div style={{ 
-              fontSize: '13px', 
-              color: '#808080',
-              fontWeight: '800',
-              marginBottom: '16px',
-              letterSpacing: '1.2px',
-              fontFamily: "'Plus Jakarta Sans', sans-serif"
-            }}>{dateGroup.date}</div>
+          <div key={groupIndex} className="mb-7">
+            <div className="text-xs sm:text-[13px] text-[#808080] font-extrabold mb-4 tracking-[1.2px] font-['Plus_Jakarta_Sans']">
+              {dateGroup.date}
+            </div>
             
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div className="flex flex-col gap-3">
               {dateGroup.transactions.map((txn) => (
                 <div
                   key={txn.id}
-                  style={{
-                    background: '#FFFFFF',
-                    border: '3px solid #2D3561',
-                    borderRadius: '16px',
-                    padding: '20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '16px',
-                    cursor: 'pointer',
-                    transition: 'transform 0.2s',
-                    boxShadow: '6px 6px 0px #2D3561',
-                    minHeight: '92px'
-                  }}
-                  onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
-                  onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  className="bg-white border-[3px] border-[#2D3561] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 cursor-pointer transition-transform active:scale-95 shadow-[6px_6px_0px_#2D3561] min-h-[88px] sm:min-h-[92px]"
                 >
-                  <div style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: txn.isUser ? '50%' : '14px',
-                    background: txn.isUser ? 'linear-gradient(135deg, #FF6B9D, #6C63FF)' : `${txn.bgColor}`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    border: '3px solid #2D3561',
-                    boxShadow: '3px 3px 0px rgba(45, 53, 97, 0.4)'
-                  }}>
-                    <txn.icon size={28} color="#FFFFFF" strokeWidth={2.5} />
+                  <div className="w-12 sm:w-14 h-12 sm:h-14 flex-shrink-0 border-[3px] border-[#2D3561] shadow-[3px_3px_0px_rgba(45,53,97,0.4)] flex items-center justify-center"
+                    style={{
+                      borderRadius: txn.isUser ? '50%' : '14px',
+                      background: txn.isUser ? 'linear-gradient(135deg, #FF6B9D, #6C63FF)' : txn.bgColor,
+                    }}
+                  >
+                    <txn.icon size={24} color="#FFFFFF" strokeWidth={2.5} />
                   </div>
                   
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <h3 style={{ 
-                      fontSize: '16px', 
-                      fontWeight: '800',
-                      margin: '0 0 6px 0',
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      letterSpacing: '0.3px',
-                      color: '#1A1A1A'
-                    }}>{txn.name}</h3>
-                    <p style={{ 
-                      fontSize: '13px', 
-                      color: '#808080',
-                      margin: 0,
-                      fontFamily: "'Courier New', monospace",
-                      fontWeight: '600'
-                    }}>
-                      {txn.time} • <span style={{
-                        color: txn.status === 'PENDING' ? '#FFD93D' : '#00C896',
-                        fontWeight: '700'
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm sm:text-base font-extrabold m-0 mb-1.5 font-['Plus_Jakarta_Sans'] tracking-tight truncate">
+                      {txn.name}
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-[#808080] m-0 font-['Courier_New'] font-semibold">
+                      {txn.time} • <span className="font-bold" style={{
+                        color: txn.status === 'PENDING' ? '#FFD93D' : '#00C896'
                       }}>{txn.status}</span>
                     </p>
                   </div>
                   
-                  <div style={{ 
-                    fontSize: '18px', 
-                    fontWeight: '800',
-                    color: txn.type === 'credit' ? '#00D9C0' : '#FF6B35',
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    letterSpacing: '-0.5px',
-                    whiteSpace: 'nowrap'
-                  }}>
+                  <div className="text-base sm:text-lg font-extrabold font-['Plus_Jakarta_Sans'] tracking-tight whitespace-nowrap"
+                    style={{ color: txn.type === 'credit' ? '#00D9C0' : '#FF6B35' }}
+                  >
                     {txn.type === 'credit' ? '+' : '-'}₹{txn.amount.toLocaleString('en-IN')}
                   </div>
                 </div>

@@ -39,29 +39,12 @@ export default function PaytmProfile() {
   ];
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: '#FFF5E0',
-      color: '#1A1A1A',
-      fontFamily: "'Inter', sans-serif",
-      maxWidth: '428px',
-      margin: '0 auto',
-      paddingBottom: '100px'
-    }}>
+    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] font-['Inter'] w-full max-w-[428px] mx-auto pb-[100px]">
       
       {/* Status Bar */}
-      <div style={{ 
-        padding: '14px 20px 10px', 
-        display: 'flex', 
-        justifyContent: 'space-between',
-        fontSize: '15px',
-        fontWeight: '600',
-        color: '#1A1A1A',
-        height: '44px',
-        alignItems: 'center'
-      }}>
+      <div className="px-4 sm:px-5 pt-3.5 pb-2.5 flex justify-between text-[15px] font-semibold h-11 items-center">
         <span>9:41</span>
-        <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+        <div className="flex gap-1.5 items-center">
           <span>📶</span>
           <span>📡</span>
           <span>🔋</span>
@@ -69,149 +52,57 @@ export default function PaytmProfile() {
       </div>
 
       {/* Header */}
-      <div style={{ padding: '16px 20px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '92px' }}>
-        <h1 style={{ 
-          fontSize: '26px', 
-          fontWeight: '800',
-          margin: 0,
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
-          color: '#1A1A1A',
-          letterSpacing: '-0.5px'
-        }}>Profile</h1>
-        <button style={{
-          background: '#FFFFFF',
-          border: '3px solid #2D3561',
-          borderRadius: '12px',
-          width: '52px',
-          height: '52px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-          boxShadow: '4px 4px 0px #2D3561',
-          transition: 'transform 0.2s',
-          flexShrink: 0
-        }}
-        onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
-        onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
-        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-        >
+      <div className="px-4 sm:px-5 pt-4 pb-6 flex justify-between items-center h-[92px]">
+        <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 font-['Plus_Jakarta_Sans'] tracking-tight">
+          Profile
+        </h1>
+        <button className="bg-white border-[3px] border-[#2D3561] rounded-xl w-12 sm:w-[52px] h-12 sm:h-[52px] flex items-center justify-center cursor-pointer shadow-[4px_4px_0px_#2D3561] transition-transform active:scale-95 flex-shrink-0">
           <Settings size={28} color="#1A1A1A" strokeWidth={2.5} />
         </button>
       </div>
 
       {/* Profile Card */}
-      <div style={{ padding: '0 20px 28px' }}>
-        <div style={{
-          background: '#FFFFFF',
-          border: '3px solid #2D3561',
-          borderRadius: '24px',
-          padding: '40px 24px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '16px',
-          boxShadow: '6px 6px 0px rgba(45, 53, 97, 0.4)'
-        }}>
+      <div className="px-4 sm:px-5 pb-7">
+        <div className="bg-white border-[3px] border-[#2D3561] rounded-3xl p-8 sm:p-10 flex flex-col items-center gap-4 shadow-[6px_6px_0px_rgba(45,53,97,0.4)]">
           {/* Avatar */}
-          <div style={{
-            width: '112px',
-            height: '112px',
-            borderRadius: '50%',
-            background: 'linear-gradient(135deg, #FF6B35, #6C63FF)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '48px',
-            fontWeight: '800',
-            color: '#FFFFFF',
-            border: '4px solid #2D3561',
-            boxShadow: '6px 6px 0px #2D3561',
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            marginBottom: '8px'
-          }}>
+          <div className="w-24 sm:w-28 h-24 sm:h-28 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#6C63FF] flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561] font-['Plus_Jakarta_Sans'] mb-2">
             RK
           </div>
 
           {/* Name & Email */}
-          <div style={{ textAlign: 'center' }}>
-            <h2 style={{ 
-              fontSize: '26px', 
-              fontWeight: '800',
-              margin: '0 0 8px 0',
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              color: '#1A1A1A',
-              letterSpacing: '-0.5px'
-            }}>Rajesh Kumar</h2>
-            <p style={{ 
-              fontSize: '15px', 
-              color: '#808080',
-              margin: 0,
-              fontWeight: '600',
-              letterSpacing: '0.2px'
-            }}>Rajesh172@gmail.com</p>
+          <div className="text-center">
+            <h2 className="text-2xl sm:text-[26px] font-extrabold m-0 mb-2 font-['Plus_Jakarta_Sans'] tracking-tight">
+              Rajesh Kumar
+            </h2>
+            <p className="text-sm sm:text-[15px] text-[#808080] m-0 font-semibold tracking-wide">
+              Rajesh172@gmail.com
+            </p>
           </div>
         </div>
       </div>
 
       {/* Quick Stats */}
-      <div style={{ padding: '0 20px 32px' }}>
-        <h2 style={{ 
-          fontSize: '14px', 
-          fontWeight: '800',
-          margin: '0 0 20px 0',
-          color: '#808080',
-          letterSpacing: '1.2px',
-          fontFamily: "'Plus Jakarta Sans', sans-serif"
-        }}>QUICK STATS</h2>
+      <div className="px-4 sm:px-5 pb-8">
+        <h2 className="text-sm font-extrabold m-0 mb-5 text-[#808080] tracking-[1.2px] font-['Plus_Jakarta_Sans']">
+          QUICK STATS
+        </h2>
         
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(2, 1fr)', 
-          gap: '12px'
-        }}>
+        <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
           {statsData.map((stat, index) => (
             <div
               key={index}
-              style={{
-                background: '#FFFFFF',
-                border: '3px solid #2D3561',
-                borderRadius: '20px',
-                padding: '24px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px',
-                boxShadow: '6px 6px 0px #2D3561',
-                transition: 'transform 0.2s',
-                cursor: 'pointer',
-                minHeight: '140px',
-                justifyContent: 'space-between'
-              }}
-              onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
-              onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              className="bg-white border-[3px] border-[#2D3561] rounded-[20px] p-5 sm:p-6 flex flex-col gap-3 shadow-[6px_6px_0px_#2D3561] transition-transform active:scale-95 cursor-pointer min-h-[130px] sm:min-h-[140px] justify-between"
             >
-              <div style={{
-                fontSize: '32px',
-                lineHeight: '1'
-              }}>{stat.icon}</div>
+              <div className="text-2xl sm:text-[32px] leading-none">{stat.icon}</div>
               <div>
-                <div style={{ 
-                  fontSize: '24px', 
-                  fontWeight: '800',
-                  color: stat.color,
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  letterSpacing: '-0.5px',
-                  marginBottom: '8px'
-                }}>{stat.value}</div>
-                <div style={{ 
-                  fontSize: '12px', 
-                  color: '#808080',
-                  fontWeight: '700',
-                  letterSpacing: '0.5px',
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  textTransform: 'uppercase'
-                }}>{stat.label}</div>
+                <div className="text-xl sm:text-2xl font-extrabold font-['Plus_Jakarta_Sans'] tracking-tight mb-2"
+                  style={{ color: stat.color }}
+                >
+                  {stat.value}
+                </div>
+                <div className="text-[11px] sm:text-xs text-[#808080] font-bold tracking-wide font-['Plus_Jakarta_Sans'] uppercase">
+                  {stat.label}
+                </div>
               </div>
             </div>
           ))}
@@ -219,25 +110,14 @@ export default function PaytmProfile() {
       </div>
 
       {/* Menu Sections */}
-      <div style={{ padding: '0 20px' }}>
+      <div className="px-4 sm:px-5">
         {menuItems.map((section, sectionIndex) => (
-          <div key={sectionIndex} style={{ marginBottom: '32px' }}>
-            <h2 style={{ 
-              fontSize: '14px', 
-              fontWeight: '800',
-              margin: '0 0 20px 0',
-              color: '#808080',
-              letterSpacing: '1.2px',
-              fontFamily: "'Plus Jakarta Sans', sans-serif"
-            }}>{section.section.toUpperCase()}</h2>
+          <div key={sectionIndex} className="mb-8">
+            <h2 className="text-sm font-extrabold m-0 mb-5 text-[#808080] tracking-[1.2px] font-['Plus_Jakarta_Sans']">
+              {section.section.toUpperCase()}
+            </h2>
             
-            <div style={{ 
-              background: '#FFFFFF',
-              border: '3px solid #2D3561',
-              borderRadius: '20px',
-              overflow: 'hidden',
-              boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.4)'
-            }}>
+            <div className="bg-white border-[3px] border-[#2D3561] rounded-[20px] overflow-hidden shadow-[4px_4px_0px_rgba(45,53,97,0.4)]">
               {section.items.map((item, itemIndex) => (
                 <button
                   key={itemIndex}
@@ -246,96 +126,47 @@ export default function PaytmProfile() {
                       setDarkMode(!darkMode);
                     }
                   }}
+                  className="w-full bg-transparent border-none p-4 sm:p-5 flex items-center gap-3 sm:gap-4 cursor-pointer transition-all text-left min-h-[76px] sm:min-h-[84px]"
                   style={{
-                    width: '100%',
-                    background: 'transparent',
-                    border: 'none',
-                    borderBottom: itemIndex < section.items.length - 1 ? '3px solid #2D3561' : 'none',
-                    padding: '20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '16px',
-                    cursor: 'pointer',
-                    transition: 'background 0.2s',
-                    textAlign: 'left',
-                    minHeight: '84px'
+                    borderBottom: itemIndex < section.items.length - 1 ? '3px solid #2D3561' : 'none'
                   }}
                 >
-                  <div style={{
-                    width: '52px',
-                    height: '52px',
-                    borderRadius: '50%',
-                    background: item.color,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    border: '3px solid #2D3561',
-                    boxShadow: '3px 3px 0px rgba(45, 53, 97, 0.4)'
-                  }}>
-                    <item.icon size={28} color="#FFFFFF" strokeWidth={2.5} />
+                  <div className="w-11 sm:w-[52px] h-11 sm:h-[52px] rounded-full flex items-center justify-center flex-shrink-0 border-[3px] border-[#2D3561] shadow-[3px_3px_0px_rgba(45,53,97,0.4)]"
+                    style={{ background: item.color }}
+                  >
+                    <item.icon size={24} color="#FFFFFF" strokeWidth={2.5} />
                   </div>
                   
-                  <span style={{ 
-                    flex: 1,
-                    fontSize: '16px', 
-                    fontWeight: '700',
-                    color: '#1A1A1A',
-                    fontFamily: "'Plus Jakarta Sans', sans-serif"
-                  }}>{item.label}</span>
+                  <span className="flex-1 text-sm sm:text-base font-bold font-['Plus_Jakarta_Sans'] truncate">
+                    {item.label}
+                  </span>
                   
                   {item.badge && (
-                    <span style={{
-                      background: item.color,
-                      color: '#FFFFFF',
-                      fontSize: '13px',
-                      fontWeight: '800',
-                      padding: '8px 14px',
-                      borderRadius: '10px',
-                      border: '2px solid #2D3561',
-                      boxShadow: '2px 2px 0px #2D3561',
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      minWidth: '40px',
-                      textAlign: 'center'
-                    }}>{item.badge}</span>
+                    <span className="text-xs sm:text-[13px] font-extrabold px-3 py-2 rounded-[10px] border-2 border-[#2D3561] shadow-[2px_2px_0px_#2D3561] font-['Plus_Jakarta_Sans'] min-w-[36px] text-center text-white"
+                      style={{ background: item.color }}
+                    >
+                      {item.badge}
+                    </span>
                   )}
                   
                   {item.value && (
-                    <span style={{ 
-                      fontSize: '15px', 
-                      color: '#808080',
-                      fontFamily: "'Courier New', monospace",
-                      fontWeight: '700'
-                    }}>{item.value}</span>
+                    <span className="text-sm sm:text-[15px] text-[#808080] font-['Courier_New'] font-bold">
+                      {item.value}
+                    </span>
                   )}
                   
                   {item.hasToggle && (
-                    <div style={{
-                      width: '60px',
-                      height: '34px',
-                      borderRadius: '17px',
-                      background: item.toggleValue ? item.color : '#E0E0E0',
-                      position: 'relative',
-                      transition: 'all 0.3s',
-                      border: '3px solid #2D3561',
-                      boxShadow: '2px 2px 0px #2D3561'
-                    }}>
-                      <div style={{
-                        width: '26px',
-                        height: '26px',
-                        borderRadius: '50%',
-                        background: '#FFFFFF',
-                        position: 'absolute',
-                        top: '1px',
-                        left: item.toggleValue ? '30px' : '2px',
-                        transition: 'all 0.3s',
-                        border: '2px solid #2D3561'
-                      }}></div>
+                    <div className="w-[54px] sm:w-[60px] h-8 sm:h-[34px] rounded-[17px] relative transition-all border-[3px] border-[#2D3561] shadow-[2px_2px_0px_#2D3561]"
+                      style={{ background: item.toggleValue ? item.color : '#E0E0E0' }}
+                    >
+                      <div className="w-6 h-6 rounded-full bg-white absolute top-0 border-2 border-[#2D3561] transition-all"
+                        style={{ left: item.toggleValue ? '26px' : '2px' }}
+                      ></div>
                     </div>
                   )}
                   
                   {item.hasChevron && (
-                    <ChevronRight size={28} color="#808080" strokeWidth={2.5} />
+                    <ChevronRight size={24} color="#808080" strokeWidth={2.5} />
                   )}
                 </button>
               ))}
@@ -345,49 +176,20 @@ export default function PaytmProfile() {
       </div>
 
       {/* Logout Button */}
-      <div style={{ padding: '0 20px 28px' }}>
-        <button style={{
-          width: '100%',
-          background: '#FFFFFF',
-          border: '3px solid #FF6B35',
-          borderRadius: '20px',
-          padding: '20px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '12px',
-          cursor: 'pointer',
-          transition: 'transform 0.2s',
-          boxShadow: '6px 6px 0px #FF6B35',
-          minHeight: '68px'
-        }}
-        onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
-        onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
-        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-        >
+      <div className="px-4 sm:px-5 pb-7">
+        <button className="w-full bg-white border-[3px] border-[#FF6B35] rounded-[20px] p-4 sm:p-5 flex items-center justify-center gap-3 cursor-pointer transition-transform active:scale-95 shadow-[6px_6px_0px_#FF6B35] min-h-[64px] sm:min-h-[68px]">
           <LogOut size={28} color="#FF6B35" strokeWidth={2.5} />
-          <span style={{
-            fontSize: '18px', 
-            fontWeight: '800',
-            color: '#FF6B35',
-            letterSpacing: '1px',
-            fontFamily: "'Plus Jakarta Sans', sans-serif"
-          }}>LOGOUT</span>
+          <span className="text-base sm:text-lg font-extrabold text-[#FF6B35] tracking-wide font-['Plus_Jakarta_Sans']">
+            LOGOUT
+          </span>
         </button>
       </div>
 
       {/* Version Info */}
-      <div style={{ 
-        padding: '0 20px 28px',
-        textAlign: 'center'
-      }}>
-        <p style={{ 
-          fontSize: '13px', 
-          color: '#808080',
-          margin: 0,
-          fontFamily: "'Courier New', monospace",
-          fontWeight: '600'
-        }}>Version 4.0.1 • Build 2025.01</p>
+      <div className="px-4 sm:px-5 pb-7 text-center">
+        <p className="text-xs sm:text-[13px] text-[#808080] m-0 font-['Courier_New'] font-semibold">
+          Version 4.0.1 • Build 2025.01
+        </p>
       </div>
 
       <BottomNav />
