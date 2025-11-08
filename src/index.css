@@ -11,10 +11,20 @@ All colors MUST be HSL.
     --background: 0 0% 100%;
     --foreground: 0 0% 25%;
     
-    /* Brand Colors - Gold */
+    /* Brand Colors - Gold Based Palette (Gumroad-inspired) */
     --brand-gold: 43 74% 49%;
     --brand-gold-light: 43 74% 65%;
     --brand-dark: 0 0% 25%;
+    
+    /* Vibrant Complementary Colors */
+    --coral: 6 93% 71%;
+    --coral-light: 6 93% 85%;
+    --purple: 258 90% 66%;
+    --purple-light: 258 90% 80%;
+    --teal: 173 80% 40%;
+    --teal-light: 173 80% 60%;
+    --pink: 340 82% 70%;
+    --pink-light: 340 82% 85%;
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 25%;
@@ -36,6 +46,9 @@ All colors MUST be HSL.
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
+    
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
 
     --border: 0 0% 25%;
     --input: 214 32% 91%;
@@ -56,6 +69,16 @@ All colors MUST be HSL.
   .dark {
     --background: 0 0% 10%;
     --foreground: 0 0% 98%;
+    
+    /* Vibrant Complementary Colors - Dark Mode */
+    --coral: 6 93% 65%;
+    --coral-light: 6 93% 75%;
+    --purple: 258 90% 70%;
+    --purple-light: 258 90% 85%;
+    --teal: 173 80% 45%;
+    --teal-light: 173 80% 65%;
+    --pink: 340 82% 65%;
+    --pink-light: 340 82% 80%;
 
     --card: 0 0% 15%;
     --card-foreground: 0 0% 98%;
@@ -77,6 +100,9 @@ All colors MUST be HSL.
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 100%;
+    
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
 
     --border: 0 0% 25%;
     --input: 0 0% 25%;

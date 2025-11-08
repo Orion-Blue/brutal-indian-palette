@@ -47,8 +47,8 @@ export default function PaytmHomeDark() {
 
   const quickActions = [
     { icon: Scan, label: 'SCAN', color: '#B8860B' },
-    { icon: Send, label: 'PAY', color: '#A9A9A9' },
-    { icon: Download, label: 'RECEIVE', color: '#DAA520' }
+    { icon: Send, label: 'PAY', color: '#DAA520' },
+    { icon: Download, label: 'RECEIVE', color: '#B8860B' }
   ];
 
 
@@ -168,7 +168,7 @@ export default function PaytmHomeDark() {
                   <div className="w-12 sm:w-14 h-12 sm:h-14 flex-shrink-0 border-[3px] border-[#2D3561] shadow-[3px_3px_0px_rgba(45,53,97,0.4)] flex items-center justify-center"
                     style={{
                       borderRadius: txn.isUser ? '50%' : '14px',
-                      background: txn.isUser ? 'linear-gradient(135deg, #FF6B9D, #6C63FF)' : txn.bgColor,
+                      background: txn.bgColor,
                     }}
                   >
                     <txn.icon size={24} color="#FFFFFF" strokeWidth={2.5} />
