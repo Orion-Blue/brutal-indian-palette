@@ -1,66 +1,49 @@
-import { LucideIcon } from 'lucide-react';
 import { ButtonHTMLAttributes } from 'react';
+import { LucideIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: LucideIcon;
-  variant?: 'default' | 'colored' | 'ghost';
+  variant?: 'default' | 'ghost' | 'primary';
   size?: 'sm' | 'md' | 'lg';
-  color?: string;
-  iconSize?: number;
-  iconStrokeWidth?: number;
 }
 
 export const IconButton = ({
   icon: Icon,
   variant = 'default',
   size = 'md',
-  color,
-  iconSize = 22,
-  iconStrokeWidth = 2.5,
-  className = '',
+  className,
   ...props
 }: IconButtonProps) => {
-  const sizeStyles = {
-    sm: { width: '36px', height: '36px' },
-    md: { width: '44px', height: '44px' },
-    lg: { width: '52px', height: '52px' },
+  const sizes = {
+    sm: 'w-8 h-8',
+    md: 'w-10 h-10',
+    lg: 'w-12 h-12',
   };
 
-  const variantStyles = {
-    default: {
-      background: '#FFFFFF',
-      border: '2px solid #2D3561',
-    },
-    colored: {
-      background: color || '#FF6B35',
-      border: '2px solid #2D3561',
-      boxShadow: '3px 3px 0px #2D3561',
-    },
-    ghost: {
-      background: 'transparent',
-      border: 'none',
-    },
+  const iconSizes = {
+    sm: 18,
+    md: 20,
+    lg: 24,
   };
 
-  const iconColor = variant === 'colored' ? '#FFFFFF' : '#808080';
+  const variants = {
+    default: 'bg-card hover:bg-muted border border-border shadow-sm',
+    ghost: 'hover:bg-muted',
+    primary: 'bg-primary text-primary-foreground hover:bg-primary/90',
+  };
 
   return (
     <button
-      style={{
-        ...sizeStyles[size],
-        ...variantStyles[variant],
-        borderRadius: '12px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        cursor: 'pointer',
-        transition: 'all 0.2s',
-        ...props.style,
-      }}
-      className={className}
+      className={cn(
+        'rounded-full flex items-center justify-center transition-all active:scale-95',
+        sizes[size],
+        variants[variant],
+        className
+      )}
       {...props}
     >
-      <Icon size={iconSize} color={iconColor} strokeWidth={iconStrokeWidth} />
+      <Icon size={iconSizes[size]} strokeWidth={2} />
     </button>
   );
 };

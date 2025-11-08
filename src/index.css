@@ -2,119 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* V10 Design System - Modern Clean Style
 All colors MUST be HSL.
+Soft shadows, subtle borders, generous spacing
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 25%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
     
-    /* Brand Colors - Gold Based Palette (Gumroad-inspired) */
-    --brand-gold: 43 74% 49%;
-    --brand-gold-light: 43 74% 65%;
-    --brand-dark: 0 0% 25%;
+    /* Brand Colors - Yellow Accent */
+    --brand-yellow: 45 100% 51%;
+    --brand-yellow-light: 45 100% 70%;
+    --brand-dark: 0 0% 10%;
     
-    /* Vibrant Complementary Colors */
-    --coral: 6 93% 71%;
-    --coral-light: 6 93% 85%;
-    --purple: 258 90% 66%;
-    --purple-light: 258 90% 80%;
-    --teal: 173 80% 40%;
-    --teal-light: 173 80% 60%;
-    --pink: 340 82% 70%;
-    --pink-light: 340 82% 85%;
+    /* Complementary Colors */
+    --accent-blue: 217 91% 60%;
+    --accent-green: 142 71% 45%;
+    --accent-red: 0 84% 60%;
+    --accent-purple: 258 90% 66%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 25%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 25%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 43 74% 49%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 0 0% 10%;
 
     --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 25%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --success: 160 84% 39%;
+    --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
-    --border: 0 0% 25%;
-    --input: 214 32% 91%;
-    --ring: 43 74% 49%;
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 45 100% 51%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Modern Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 25%;
-    --sidebar-primary: 43 74% 49%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 5% 96%;
-    --sidebar-accent-foreground: 0 0% 25%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 43 74% 49%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 45 100% 51%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 45 100% 51%;
   }
 
   .dark {
     --background: 0 0% 10%;
     --foreground: 0 0% 98%;
     
-    /* Vibrant Complementary Colors - Dark Mode */
-    --coral: 6 93% 65%;
-    --coral-light: 6 93% 75%;
-    --purple: 258 90% 70%;
-    --purple-light: 258 90% 85%;
-    --teal: 173 80% 45%;
-    --teal-light: 173 80% 65%;
-    --pink: 340 82% 65%;
-    --pink-light: 340 82% 80%;
+    /* Brand Colors - Dark Mode */
+    --brand-yellow: 45 100% 51%;
+    --brand-yellow-light: 45 100% 70%;
+    
+    /* Complementary Colors - Dark Mode */
+    --accent-blue: 217 91% 60%;
+    --accent-green: 142 71% 45%;
+    --accent-red: 0 84% 60%;
+    --accent-purple: 258 90% 66%;
 
-    --card: 0 0% 15%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 15%;
+    --popover: 0 0% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 43 74% 49%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 0 0% 20%;
+    --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 20%;
+    --muted: 0 0% 18%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 43 74% 49%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 63% 31%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --success: 160 84% 39%;
+    --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
-    --border: 0 0% 25%;
-    --input: 0 0% 25%;
-    --ring: 43 74% 49%;
-    --sidebar-background: 228 35% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 243 100% 69%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 228 25% 18%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 228 25% 18%;
-    --sidebar-ring: 243 100% 69%;
+    --border: 0 0% 20%;
+    --input: 0 0% 18%;
+    --ring: 45 100% 51%;
+
+    /* Modern Shadows - Dark Mode */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 45 100% 51%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 45 100% 51%;
   }
 }
 

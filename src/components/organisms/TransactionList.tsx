@@ -1,62 +1,51 @@
 import { TransactionItem } from '../molecules/TransactionItem';
 import { Text } from '../atoms/Text';
-import { LucideIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface Transaction {
-  id: number;
+  id: string;
   name: string;
-  time: string;
-  status: 'COMPLETED' | 'PENDING' | 'FAILED';
-  amount: number;
-  type: 'credit' | 'debit';
-  icon: LucideIcon;
-  bgColor: string;
-  isUser?: boolean;
-}
-
-interface TransactionGroup {
+  type: string;
+  amount: string;
   date: string;
-  transactions: Transaction[];
+  initial: string;
+  color: string;
+  isPositive?: boolean;
 }
 
 interface TransactionListProps {
-  groups: TransactionGroup[];
-  onTransactionClick?: (transaction: Transaction) => void;
+  title?: string;
+  transactions: Transaction[];
+  onTransactionClick?: (id: string) => void;
+  className?: string;
 }
 
-export const TransactionList = ({ groups, onTransactionClick }: TransactionListProps) => {
+export const TransactionList = ({
+  title,
+  transactions,
+  onTransactionClick,
+  className,
+}: TransactionListProps) => {
   return (
-    <div style={{ padding: '0 20px 24px' }}>
-      <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Text variant="h3" weight="extrabold" font="jakarta" uppercase>
-          Transactions
+    <div className={cn('space-y-1', className)}>
+      {title && (
+        <Text variant="body" weight="semibold" className="text-foreground px-5 py-2 block">
+          {title}
         </Text>
-      </div>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        {groups.map((group, groupIndex) => (
-          <div key={groupIndex}>
-            <Text
-              variant="caption"
-              weight="extrabold"
-              color="#808080"
-              font="jakarta"
-              uppercase
-              style={{ marginBottom: '12px', display: 'block' }}
-            >
-              {group.date}
-            </Text>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {group.transactions.map((transaction) => (
-                <TransactionItem
-                  key={transaction.id}
-                  {...transaction}
-                  initial={transaction.isUser ? transaction.name.charAt(0) : undefined}
-                  onClick={() => onTransactionClick?.(transaction)}
-                />
-              ))}
-            </div>
-          </div>
+      )}
+      <div className="space-y-1">
+        {transactions.map((transaction) => (
+          <TransactionItem
+            key={transaction.id}
+            name={transaction.name}
+            type={transaction.type}
+            amount={transaction.amount}
+            date={transaction.date}
+            initial={transaction.initial}
+            color={transaction.color}
+            isPositive={transaction.isPositive}
+            onClick={() => onTransactionClick?.(transaction.id)}
+          />
         ))}
       </div>
     </div>

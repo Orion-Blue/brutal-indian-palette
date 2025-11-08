@@ -1,44 +1,23 @@
 import { Search } from 'lucide-react';
 import { InputHTMLAttributes } from 'react';
+import { cn } from '@/lib/utils';
 
 interface SearchBarProps extends InputHTMLAttributes<HTMLInputElement> {
   onSearchChange?: (value: string) => void;
 }
 
-export const SearchBar = ({ onSearchChange, ...props }: SearchBarProps) => {
+export const SearchBar = ({ onSearchChange, className, ...props }: SearchBarProps) => {
   return (
-    <div
-      style={{
-        position: 'relative',
-        width: '100%',
-      }}
-    >
+    <div className={cn('relative w-full', className)}>
       <Search
         size={20}
-        color="#808080"
-        strokeWidth={2.5}
-        style={{
-          position: 'absolute',
-          left: '16px',
-          top: '50%',
-          transform: 'translateY(-50%)',
-        }}
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground"
+        strokeWidth={2}
       />
       <input
         type="text"
-        placeholder="Search contacts..."
-        style={{
-          width: '100%',
-          padding: '14px 16px 14px 48px',
-          borderRadius: '16px',
-          border: '2px solid #2D3561',
-          background: '#FFFFFF',
-          fontSize: '14px',
-          fontWeight: '600',
-          color: '#1A1A1A',
-          fontFamily: "'Inter', sans-serif",
-          boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.3)',
-        }}
+        placeholder="Search..."
+        className="w-full pl-12 pr-4 py-3 rounded-xl border border-border bg-card text-sm font-medium text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
         onChange={(e) => onSearchChange?.(e.target.value)}
         {...props}
       />

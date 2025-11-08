@@ -1,6 +1,7 @@
 import { LucideIcon } from 'lucide-react';
 import { ButtonHTMLAttributes } from 'react';
 import { Text } from '../atoms/Text';
+import { cn } from '@/lib/utils';
 
 interface QuickActionProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: LucideIcon;
@@ -8,39 +9,22 @@ interface QuickActionProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color: string;
 }
 
-export const QuickAction = ({ icon: Icon, label, color, ...props }: QuickActionProps) => {
+export const QuickAction = ({ icon: Icon, label, color, className, ...props }: QuickActionProps) => {
   return (
     <button
-      style={{
-        background: '#FFF5E0',
-        border: '2px solid #2D3561',
-        borderRadius: '16px',
-        padding: '20px 12px',
-        cursor: 'pointer',
-        transition: 'all 0.2s',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '12px',
-        boxShadow: '5px 5px 0px #2D3561',
-      }}
+      className={cn(
+        'flex flex-col items-center gap-3 p-4 rounded-2xl bg-card hover:bg-muted transition-all active:scale-95',
+        className
+      )}
       {...props}
     >
       <div
-        style={{
-          width: '48px',
-          height: '48px',
-          background: color,
-          borderRadius: '12px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          border: '2px solid #2D3561',
-        }}
+        style={{ backgroundColor: color }}
+        className="w-12 h-12 rounded-xl flex items-center justify-center shadow-sm"
       >
-        <Icon size={24} color="#FFFFFF" strokeWidth={2.5} />
+        <Icon size={24} color="#FFFFFF" strokeWidth={2} />
       </div>
-      <Text variant="micro" weight="extrabold" font="jakarta" uppercase>
+      <Text variant="caption" weight="medium" className="text-foreground">
         {label}
       </Text>
     </button>

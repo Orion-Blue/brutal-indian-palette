@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react';
+import { cn } from '@/lib/utils';
 
 interface AvatarProps {
   initial: string;
@@ -16,29 +17,23 @@ export const Avatar = ({
   className = '',
 }: AvatarProps) => {
   const sizes = {
-    sm: { width: '36px', height: '36px', fontSize: '16px' },
-    md: { width: '44px', height: '44px', fontSize: '20px' },
-    lg: { width: '54px', height: '54px', fontSize: '24px' },
-    xl: { width: '72px', height: '72px', fontSize: '32px' },
+    sm: 'w-9 h-9 text-sm',
+    md: 'w-11 h-11 text-base',
+    lg: 'w-14 h-14 text-lg',
+    xl: 'w-20 h-20 text-2xl',
   };
 
   return (
     <div
       style={{
-        ...sizes[size],
-        borderRadius: '50%',
-        background: color,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontWeight: '800',
-        color: '#FFFFFF',
-        border: '3px solid #2D3561',
-        boxShadow: '4px 4px 0px #2D3561',
-        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        backgroundColor: color,
         ...style,
       }}
-      className={className}
+      className={cn(
+        'rounded-full flex items-center justify-center font-bold text-white',
+        sizes[size],
+        className
+      )}
     >
       {initial}
     </div>

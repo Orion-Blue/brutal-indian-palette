@@ -1,9 +1,9 @@
 import { CSSProperties } from 'react';
+import { cn } from '@/lib/utils';
 
 interface StatusIndicatorProps {
   status: 'active' | 'inactive' | 'pending';
-  size?: 'sm' | 'md';
-  withGlow?: boolean;
+  size?: 'sm' | 'md' | 'lg';
   style?: CSSProperties;
   className?: string;
 }
@@ -11,34 +11,30 @@ interface StatusIndicatorProps {
 export const StatusIndicator = ({
   status,
   size = 'md',
-  withGlow = true,
   style,
   className = '',
 }: StatusIndicatorProps) => {
-  const colors = {
-    active: '#00FF00',
-    inactive: '#808080',
-    pending: '#FFD93D',
-  };
-
   const sizes = {
-    sm: { width: '4px', height: '4px' },
-    md: { width: '6px', height: '6px' },
+    sm: 'w-2 h-2',
+    md: 'w-3 h-3',
+    lg: 'w-4 h-4',
   };
 
-  const color = colors[status];
+  const colors = {
+    active: 'bg-success',
+    inactive: 'bg-muted-foreground',
+    pending: 'bg-brand-yellow',
+  };
 
   return (
     <span
-      style={{
-        ...sizes[size],
-        background: color,
-        borderRadius: '50%',
-        display: 'inline-block',
-        boxShadow: withGlow ? `0 0 6px ${color}` : 'none',
-        ...style,
-      }}
-      className={className}
+      style={style}
+      className={cn(
+        'rounded-full inline-block',
+        sizes[size],
+        colors[status],
+        className
+      )}
     />
   );
 };

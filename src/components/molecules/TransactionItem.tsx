@@ -1,95 +1,56 @@
-import { LucideIcon } from 'lucide-react';
 import { Avatar } from '../atoms/Avatar';
-import { Badge } from '../atoms/Badge';
 import { Text } from '../atoms/Text';
-import { ChevronRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface TransactionItemProps {
   name: string;
-  time: string;
-  status: 'COMPLETED' | 'PENDING' | 'FAILED';
-  amount: number;
-  type: 'credit' | 'debit';
-  icon: LucideIcon;
-  bgColor: string;
-  initial?: string;
+  type: string;
+  amount: string;
+  date: string;
+  initial: string;
+  color: string;
+  isPositive?: boolean;
   onClick?: () => void;
+  className?: string;
 }
 
 export const TransactionItem = ({
   name,
-  time,
-  status,
-  amount,
   type,
-  icon: Icon,
-  bgColor,
+  amount,
+  date,
   initial,
+  color,
+  isPositive = false,
   onClick,
+  className,
 }: TransactionItemProps) => {
-  const statusVariant = status === 'COMPLETED' ? 'success' : status === 'PENDING' ? 'warning' : 'error';
-
   return (
     <button
       onClick={onClick}
-      style={{
-        width: '100%',
-        background: '#FFFFFF',
-        border: '2px solid #2D3561',
-        borderRadius: '16px',
-        padding: '16px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '12px',
-        cursor: 'pointer',
-        transition: 'all 0.2s',
-        boxShadow: '6px 6px 0px #2D3561',
-      }}
-    >
-      {initial ? (
-        <Avatar initial={initial} color={bgColor} size="md" />
-      ) : (
-        <div
-          style={{
-            width: '44px',
-            height: '44px',
-            background: bgColor,
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            border: '2px solid #2D3561',
-          }}
-        >
-          <Icon size={20} color="#FFFFFF" strokeWidth={2.5} />
-        </div>
+      className={cn(
+        'w-full flex items-center justify-between p-4 hover:bg-muted/50 transition-all active:scale-[0.98] rounded-xl',
+        className
       )}
-
-      <div style={{ flex: 1, textAlign: 'left' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-          <Text variant="body" weight="extrabold" font="jakarta" uppercase>
+    >
+      <div className="flex items-center gap-3">
+        <Avatar initial={initial} color={color} size="md" />
+        <div className="text-left">
+          <Text variant="body" weight="semibold" className="text-foreground block">
             {name}
           </Text>
-          <Badge variant={statusVariant} size="sm">
-            {status}
-          </Badge>
+          <Text variant="caption" className="text-muted-foreground block">
+            {type} • {date}
+          </Text>
         </div>
-        <Text variant="caption" color="#808080">
-          {time}
-        </Text>
       </div>
-
-      <div style={{ textAlign: 'right', display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <Text
-          variant="body"
-          weight="extrabold"
-          font="jakarta"
-          color={type === 'credit' ? '#00C896' : '#FF6B35'}
-        >
-          {type === 'credit' ? '+' : '-'}₹{amount.toLocaleString()}
-        </Text>
-        <ChevronRight size={20} color="#808080" strokeWidth={2} />
-      </div>
+      <Text
+        variant="body"
+        weight="semibold"
+        className={cn(isPositive ? 'text-success' : 'text-foreground')}
+      >
+        {isPositive ? '+' : '-'}{amount}
+      </Text>
     </button>
   );
 };

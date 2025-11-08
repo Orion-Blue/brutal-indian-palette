@@ -1,108 +1,41 @@
-import { LucideIcon, ChevronRight } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 import { Text } from '../atoms/Text';
-import { Badge } from '../atoms/Badge';
+import { ChevronRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface MenuItemProps {
   icon: LucideIcon;
   label: string;
-  color: string;
-  hasChevron?: boolean;
-  badge?: string;
   value?: string;
-  hasToggle?: boolean;
-  toggleValue?: boolean;
-  onToggle?: (value: boolean) => void;
   onClick?: () => void;
+  className?: string;
 }
 
-export const MenuItem = ({
-  icon: Icon,
-  label,
-  color,
-  hasChevron = false,
-  badge,
-  value,
-  hasToggle = false,
-  toggleValue = false,
-  onToggle,
-  onClick,
-}: MenuItemProps) => {
+export const MenuItem = ({ icon: Icon, label, value, onClick, className }: MenuItemProps) => {
   return (
     <button
       onClick={onClick}
-      style={{
-        width: '100%',
-        background: '#FFFFFF',
-        border: '2px solid #2D3561',
-        borderRadius: '12px',
-        padding: '16px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '12px',
-        cursor: 'pointer',
-        marginBottom: '12px',
-        boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.3)',
-        transition: 'all 0.2s',
-      }}
+      className={cn(
+        'w-full flex items-center justify-between p-4 hover:bg-muted transition-all active:scale-[0.98] rounded-xl',
+        className
+      )}
     >
-      <div
-        style={{
-          width: '40px',
-          height: '40px',
-          background: color,
-          borderRadius: '10px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          border: '2px solid #2D3561',
-        }}
-      >
-        <Icon size={20} color="#FFFFFF" strokeWidth={2.5} />
-      </div>
-
-      <Text variant="body" weight="bold" font="jakarta" style={{ flex: 1, textAlign: 'left' }}>
-        {label}
-      </Text>
-
-      {badge && <Badge variant="default" size="sm">{badge}</Badge>}
-      {value && (
-        <Text variant="body-small" weight="semibold" color="#808080">
-          {value}
-        </Text>
-      )}
-      {hasToggle && (
-        <div
-          onClick={(e) => {
-            e.stopPropagation();
-            onToggle?.(!toggleValue);
-          }}
-          style={{
-            width: '44px',
-            height: '24px',
-            background: toggleValue ? '#00C896' : '#E0E0E0',
-            borderRadius: '12px',
-            position: 'relative',
-            cursor: 'pointer',
-            transition: 'all 0.2s',
-            border: '2px solid #2D3561',
-          }}
-        >
-          <div
-            style={{
-              width: '16px',
-              height: '16px',
-              background: '#FFFFFF',
-              borderRadius: '50%',
-              position: 'absolute',
-              top: '2px',
-              left: toggleValue ? '22px' : '2px',
-              transition: 'all 0.2s',
-              border: '2px solid #2D3561',
-            }}
-          />
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+          <Icon size={20} className="text-foreground" strokeWidth={2} />
         </div>
-      )}
-      {hasChevron && <ChevronRight size={20} color="#808080" strokeWidth={2.5} />}
+        <Text variant="body" weight="medium" className="text-foreground">
+          {label}
+        </Text>
+      </div>
+      <div className="flex items-center gap-2">
+        {value && (
+          <Text variant="body-small" className="text-muted-foreground">
+            {value}
+          </Text>
+        )}
+        <ChevronRight size={18} className="text-muted-foreground" strokeWidth={2} />
+      </div>
     </button>
   );
 };

@@ -1,6 +1,6 @@
 import { Text } from '../atoms/Text';
-import { Badge } from '../atoms/Badge';
 import { StatusIndicator } from '../atoms/StatusIndicator';
+import { cn } from '@/lib/utils';
 
 interface BalanceCardProps {
   balance: number;
@@ -11,6 +11,7 @@ interface BalanceCardProps {
   status: string;
   gradient: string;
   textColor?: string;
+  className?: string;
 }
 
 export const BalanceCard = ({
@@ -22,63 +23,52 @@ export const BalanceCard = ({
   status,
   gradient,
   textColor = '#FFFFFF',
+  className,
 }: BalanceCardProps) => {
   return (
     <div
       style={{
         background: gradient,
-        borderRadius: '24px',
-        padding: '28px',
-        minWidth: '280px',
-        border: '3px solid #2D3561',
-        boxShadow: '8px 8px 0px rgba(45, 53, 97, 0.4)',
       }}
+      className={cn(
+        'rounded-3xl p-7 min-w-[280px] shadow-xl',
+        className
+      )}
     >
-      <div style={{ marginBottom: '32px' }}>
-        <Text variant="caption" weight="bold" color={textColor} style={{ opacity: 0.9, marginBottom: '8px', display: 'block' }}>
+      <div className="mb-8">
+        <Text variant="caption" weight="semibold" className="opacity-90 mb-2 block" style={{ color: textColor }}>
           {label}
         </Text>
-        <Text variant="display" weight="extrabold" color={textColor} font="jakarta">
+        <Text variant="display" weight="bold" style={{ color: textColor }}>
           ₹{balance.toLocaleString()}
         </Text>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+      <div className="flex justify-between items-end">
         <div>
-          <Text variant="tiny" weight="bold" color={textColor} style={{ opacity: 0.8, marginBottom: '4px', display: 'block' }}>
+          <Text variant="micro" weight="semibold" className="opacity-80 mb-1 block" style={{ color: textColor }}>
             ACCOUNT NUMBER
           </Text>
-          <Text variant="body-small" weight="bold" color={textColor} font="mono">
+          <Text variant="body-small" weight="semibold" className="font-mono" style={{ color: textColor }}>
             {accountNumber}
           </Text>
-          <div style={{ marginTop: '12px' }}>
-            <Text variant="tiny" weight="bold" color={textColor} style={{ opacity: 0.8, marginBottom: '4px', display: 'block' }}>
+          <div className="mt-3">
+            <Text variant="micro" weight="semibold" className="opacity-80" style={{ color: textColor }}>
               {type}
             </Text>
           </div>
         </div>
 
-        <div style={{ textAlign: 'right' }}>
-          <Text variant="tiny" weight="bold" color={textColor} style={{ opacity: 0.8, marginBottom: '4px', display: 'block' }}>
+        <div className="text-right">
+          <Text variant="micro" weight="semibold" className="opacity-80 mb-1 block" style={{ color: textColor }}>
             VALID THRU
           </Text>
-          <Text variant="body-small" weight="bold" color={textColor} font="mono">
+          <Text variant="body-small" weight="semibold" className="font-mono" style={{ color: textColor }}>
             {validThru}
           </Text>
-          <div
-            style={{
-              marginTop: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px',
-              background: 'rgba(255,255,255,0.2)',
-              padding: '4px 8px',
-              borderRadius: '6px',
-              justifyContent: 'flex-end',
-            }}
-          >
+          <div className="mt-2 flex items-center gap-1.5 bg-white/20 px-2 py-1 rounded-lg justify-end">
             <StatusIndicator status="active" size="sm" />
-            <Text variant="tiny" weight="bold" color={textColor}>
+            <Text variant="micro" weight="semibold" style={{ color: textColor }}>
               {status}
             </Text>
           </div>
