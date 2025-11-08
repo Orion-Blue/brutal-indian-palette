@@ -62,11 +62,13 @@ export default {
         },
         "brand-yellow": "hsl(var(--brand-yellow))",
         "brand-yellow-light": "hsl(var(--brand-yellow-light))",
+        "brand-yellow-dark": "hsl(var(--brand-yellow-dark))",
         "brand-dark": "hsl(var(--brand-dark))",
         "accent-blue": "hsl(var(--accent-blue))",
         "accent-green": "hsl(var(--accent-green))",
         "accent-red": "hsl(var(--accent-red))",
         "accent-purple": "hsl(var(--accent-purple))",
+        "accent-orange": "hsl(var(--accent-orange))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -79,6 +81,18 @@ export default {
         md: "var(--shadow-md)",
         lg: "var(--shadow-lg)",
         xl: "var(--shadow-xl)",
+        card: "var(--shadow-card)",
+      },
+      fontSize: {
+        xs: ['0.75rem', { lineHeight: '1rem' }],      // 12px
+        sm: ['0.875rem', { lineHeight: '1.25rem' }],  // 14px
+        base: ['1rem', { lineHeight: '1.5rem' }],     // 16px
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],  // 18px
+        xl: ['1.25rem', { lineHeight: '1.75rem' }],   // 20px
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],    // 24px
+        '3xl': ['1.875rem', { lineHeight: '2.25rem' }], // 30px
+        '4xl': ['2.25rem', { lineHeight: '2.5rem' }], // 36px
+        '5xl': ['3rem', { lineHeight: '1' }],         // 48px
       },
       keyframes: {
         "accordion-down": {

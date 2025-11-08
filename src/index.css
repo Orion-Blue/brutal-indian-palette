@@ -5,41 +5,44 @@
 /* V10 Design System - Modern Clean Style
 All colors MUST be HSL.
 Soft shadows, subtle borders, generous spacing
+Improved typography scale (1.25 ratio), better yellow brand color
 */
 
 @layer base {
   :root {
     --background: 0 0% 98%;
-    --foreground: 0 0% 10%;
+    --foreground: 0 0% 8%;
     
-    /* Brand Colors - Yellow Accent */
-    --brand-yellow: 45 100% 51%;
-    --brand-yellow-light: 45 100% 70%;
-    --brand-dark: 0 0% 10%;
+    /* Brand Colors - Vibrant Yellow */
+    --brand-yellow: 48 100% 50%;
+    --brand-yellow-light: 48 100% 65%;
+    --brand-yellow-dark: 48 100% 40%;
+    --brand-dark: 0 0% 8%;
     
     /* Complementary Colors */
     --accent-blue: 217 91% 60%;
     --accent-green: 142 71% 45%;
     --accent-red: 0 84% 60%;
     --accent-purple: 258 90% 66%;
+    --accent-orange: 25 95% 53%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 45 100% 51%;
-    --primary-foreground: 0 0% 10%;
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 8%;
 
     --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary-foreground: 0 0% 8%;
 
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 45 100% 51%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 48 100% 50%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -47,26 +50,27 @@ Soft shadows, subtle borders, generous spacing
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
+    --border: 0 0% 88%;
     --input: 0 0% 96%;
-    --ring: 45 100% 51%;
+    --ring: 48 100% 50%;
 
     --radius: 1rem;
 
-    /* Modern Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* Modern Soft Shadows */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 45 100% 51%;
-    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-primary: 48 100% 50%;
+    --sidebar-primary-foreground: 0 0% 8%;
     --sidebar-accent: 0 0% 96%;
     --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 45 100% 51%;
+    --sidebar-ring: 48 100% 50%;
   }
 
   .dark {
@@ -74,14 +78,16 @@ Soft shadows, subtle borders, generous spacing
     --foreground: 0 0% 98%;
     
     /* Brand Colors - Dark Mode */
-    --brand-yellow: 45 100% 51%;
-    --brand-yellow-light: 45 100% 70%;
+    --brand-yellow: 48 100% 50%;
+    --brand-yellow-light: 48 100% 65%;
+    --brand-yellow-dark: 48 100% 40%;
     
     /* Complementary Colors - Dark Mode */
     --accent-blue: 217 91% 60%;
     --accent-green: 142 71% 45%;
     --accent-red: 0 84% 60%;
     --accent-purple: 258 90% 66%;
+    --accent-orange: 25 95% 53%;
 
     --card: 0 0% 12%;
     --card-foreground: 0 0% 98%;
@@ -89,8 +95,8 @@ Soft shadows, subtle borders, generous spacing
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 45 100% 51%;
-    --primary-foreground: 0 0% 10%;
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 8%;
 
     --secondary: 0 0% 18%;
     --secondary-foreground: 0 0% 98%;
@@ -98,8 +104,8 @@ Soft shadows, subtle borders, generous spacing
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 45 100% 51%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 48 100% 50%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -109,22 +115,30 @@ Soft shadows, subtle borders, generous spacing
 
     --border: 0 0% 20%;
     --input: 0 0% 18%;
-    --ring: 45 100% 51%;
+    --ring: 48 100% 50%;
 
-    /* Modern Shadows - Dark Mode */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    /* Modern Soft Shadows - Dark Mode */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 4px 12px 0 rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 8px 24px 0 rgba(0, 0, 0, 0.6);
+    --shadow-card: 0 2px 12px 0 rgba(0, 0, 0, 0.4);
 
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 45 100% 51%;
-    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-primary: 48 100% 50%;
+    --sidebar-primary-foreground: 0 0% 8%;
     --sidebar-accent: 0 0% 18%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 45 100% 51%;
+    --sidebar-ring: 48 100% 50%;
+  }
+}
+
+@layer utilities {
+  .backdrop-blur-nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 }
 

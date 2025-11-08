@@ -16,8 +16,8 @@ export const BottomNav = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border z-50">
-      <div className="max-w-md mx-auto flex items-center justify-around px-2 py-2">
+    <nav className="fixed bottom-4 left-4 right-4 mx-auto max-w-md bg-card/80 backdrop-blur-nav border border-border/50 rounded-2xl z-50 shadow-xl">
+      <div className="flex items-center justify-around px-2 py-3">
         {navItems.map(({ icon: Icon, label, path }) => {
           const isActive = location.pathname === path;
           return (
@@ -25,8 +25,8 @@ export const BottomNav = () => {
               key={path}
               onClick={() => navigate(path)}
               className={cn(
-                'flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all active:scale-95',
-                isActive ? 'bg-primary/10' : 'hover:bg-muted'
+                'flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all active:scale-95',
+                isActive ? 'bg-primary/10' : 'hover:bg-muted/50'
               )}
             >
               <Icon

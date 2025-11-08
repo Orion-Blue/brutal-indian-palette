@@ -28,9 +28,10 @@ Version 10 represents a complete design overhaul from neo-brutalism to a modern,
 
 ### Brand Colors
 ```css
---primary: 45 100% 51%        /* #FFC700 - Vibrant yellow */
---brand-yellow: 45 100% 51%   /* Primary brand color */
---brand-dark: 0 0% 10%        /* #1A1A1A - Dark text */
+--primary: 48 100% 50%        /* #FFCC00 - Golden yellow */
+--brand-yellow: 48 100% 50%   /* Primary brand color */
+--brand-yellow-dark: 48 100% 40% /* Darker yellow variant */
+--brand-dark: 0 0% 8%         /* #141414 - Dark text */
 ```
 
 ### Accent Colors
@@ -62,13 +63,13 @@ Version 10 represents a complete design overhaul from neo-brutalism to a modern,
 - **Display**: System default (headings)
 - **Mono**: System monospace (numbers, codes)
 
-### Scale
+### Scale (1.25 ratio for mobile)
 ```
 Display: 36px / 2.25rem - font-bold
-H1: 24px / 1.5rem - font-bold
-H2: 20px / 1.25rem - font-bold
-H3: 18px / 1.125rem - font-semibold
-H4: 16px / 1rem - font-medium
+H1: 30px / 1.875rem - font-bold
+H2: 24px / 1.5rem - font-bold
+H3: 20px / 1.25rem - font-bold
+H4: 18px / 1.125rem - font-semibold
 Body Large: 16px / 1rem - font-normal
 Body: 14px / 0.875rem - font-normal
 Body Small: 12px / 0.75rem - font-normal
@@ -153,10 +154,11 @@ full: 9999px (circles)
 ### Molecules
 
 #### BalanceCard
-- **Style**: Rounded-3xl (24px), gradient background, soft shadow-xl
+- **Style**: Rounded-3xl (24px), solid color with transparency overlay, soft shadow-card
 - **Padding**: 28px (1.75rem)
-- **Content**: Balance label, large amount, account details, status indicator
-- **Colors**: Gradient backgrounds with white text
+- **Content**: Balance label, large amount (with toggle visibility), account details, status indicator
+- **Colors**: Single solid colors (yellow) with white text and subtle backdrop blur
+- **Interaction**: Eye icon to toggle balance visibility
 
 #### TransactionItem
 - **Style**: Rounded-xl (16px), transparent background, hover state
@@ -185,7 +187,8 @@ full: 9999px (circles)
 
 #### BottomNav
 - **Height**: Auto (~64px)
-- **Style**: Fixed bottom, card background, top border
+- **Style**: Floating with 16px bottom margin, rounded-2xl, transparent backdrop blur
+- **Background**: card/80 opacity with backdrop-blur-nav
 - **Items**: Icon + label, rounded-xl active state
 - **Active State**: Yellow/primary color, subtle background
 

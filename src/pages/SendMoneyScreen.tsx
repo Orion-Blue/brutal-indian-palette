@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Search, ChevronRight } from 'lucide-react';
 import BottomNav from '@/components/BottomNav';
+import { Text } from '@/components/atoms/Text';
+import { Avatar } from '@/components/atoms/Avatar';
+import { IconButton } from '@/components/atoms/IconButton';
+import { Header } from '@/components/organisms/Header';
+import { SearchBar } from '@/components/molecules/SearchBar';
+import { cn } from '@/lib/utils';
 
-export default function PaytmSendMoney() {
+export default function SendMoneyScreen() {
   const [selectedContact, setSelectedContact] = useState<any>(null);
   const [amount, setAmount] = useState('');
   const [showAmountScreen, setShowAmountScreen] = useState(false);
 
   const frequentContacts = [
-    { id: 1, name: 'Priya', initial: 'P', color: '#B8860B', lastAmount: '₹1,200' },
-    { id: 2, name: 'Amit', initial: 'A', color: '#DAA520', lastAmount: '₹850' },
-    { id: 3, name: 'Neha', initial: 'N', color: '#B8860B', lastAmount: '₹2,500' },
-    { id: 4, name: 'Rahul', initial: 'R', color: '#DAA520', lastAmount: '₹675' }
+    { id: 1, name: 'Priya', initial: 'P', color: 'hsl(340, 82%, 70%)', lastAmount: '₹1,200' },
+    { id: 2, name: 'Amit', initial: 'A', color: 'hsl(217, 91%, 60%)', lastAmount: '₹850' },
+    { id: 3, name: 'Neha', initial: 'N', color: 'hsl(258, 90%, 66%)', lastAmount: '₹2,500' },
+    { id: 4, name: 'Rahul', initial: 'R', color: 'hsl(25, 95%, 53%)', lastAmount: '₹675' }
   ];
 
   const recentRecipients = [
-    { id: 5, name: 'Swiggy', initial: 'S', color: '#B8860B', lastAmount: '₹340', time: 'Yesterday' },
-    { id: 6, name: 'Amazon Pay', initial: 'A', color: '#DAA520', lastAmount: '₹1,245', time: '2 days ago' },
-    { id: 7, name: 'Deepak Kumar', initial: 'D', color: '#B8860B', lastAmount: '₹5,000', time: '3 days ago' },
-    { id: 8, name: 'PhonePe', initial: 'P', color: '#DAA520', lastAmount: '₹599', time: '1 week ago' }
+    { id: 5, name: 'Swiggy', initial: 'S', color: 'hsl(6, 93%, 71%)', lastAmount: '₹340', time: 'Yesterday' },
+    { id: 6, name: 'Amazon Pay', initial: 'A', color: 'hsl(258, 90%, 66%)', lastAmount: '₹1,245', time: '2 days ago' },
+    { id: 7, name: 'Deepak Kumar', initial: 'D', color: 'hsl(142, 71%, 45%)', lastAmount: '₹5,000', time: '3 days ago' },
+    { id: 8, name: 'PhonePe', initial: 'P', color: 'hsl(217, 91%, 60%)', lastAmount: '₹599', time: '1 week ago' }
   ];
 
   const handleContactSelect = (contact: any) => {
@@ -44,67 +50,59 @@ export default function PaytmSendMoney() {
 
   if (showAmountScreen && selectedContact) {
     return (
-      <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] w-full max-w-[428px] mx-auto pb-[100px]">
-        {/* Status Bar */}
-        <div className="px-4 sm:px-5 pt-3.5 pb-2.5 flex justify-between text-[15px] font-semibold h-11 items-center">
-          <span>9:41</span>
-          <div className="flex gap-1.5 items-center">
-            <span>📶</span>
-            <span>📡</span>
-            <span>🔋</span>
-          </div>
-        </div>
-
-        {/* Header */}
-        <div className="px-4 sm:px-5 pt-4 pb-6 flex items-center gap-4 h-[92px]">
-          <button 
+      <div className="min-h-screen bg-background text-foreground w-full max-w-md mx-auto pb-28">
+        {/* Header with Back */}
+        <div className="px-5 py-4 flex items-center gap-4">
+          <IconButton
+            icon={ArrowLeft}
+            variant="ghost"
+            size="md"
             onClick={handleBack}
-            className="bg-white border-[3px] border-[#2D3561] rounded-xl w-12 sm:w-[52px] h-12 sm:h-[52px] flex items-center justify-center cursor-pointer shadow-[4px_4px_0px_#2D3561] transition-transform active:scale-95"
-          >
-            <ArrowLeft size={28} color="#1A1A1A" strokeWidth={2.5} />
-          </button>
-          <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 tracking-tight flex-1">
+          />
+          <Text variant="h2" weight="bold" className="text-foreground">
             Send Money
-          </h1>
+          </Text>
         </div>
 
         {/* Recipient Card */}
-        <div className="px-4 sm:px-5 pb-8">
-          <div className="bg-white border-[3px] border-[#2D3561] rounded-3xl p-6 sm:p-8 flex flex-col items-center gap-4 shadow-[6px_6px_0px_rgba(45,53,97,0.4)]">
-            <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-full flex items-center justify-center text-3xl sm:text-4xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561]"
-              style={{ backgroundColor: selectedContact.color }}
-            >
-              {selectedContact.initial}
-            </div>
+        <div className="px-5 pb-8">
+          <div className="bg-card rounded-3xl p-8 flex flex-col items-center gap-4 shadow-card border border-border">
+            <Avatar
+              initial={selectedContact.initial}
+              color={selectedContact.color}
+              size="xl"
+            />
             <div className="text-center">
-              <h2 className="text-xl sm:text-2xl font-extrabold m-0 mb-1 tracking-tight">
+              <Text variant="h2" weight="bold" className="text-foreground block mb-1">
                 {selectedContact.name}
-              </h2>
-              <p className="text-sm text-[#808080] m-0 font-semibold">
+              </Text>
+              <Text variant="body-small" className="text-muted-foreground">
                 Last sent {selectedContact.lastAmount}
-              </p>
+              </Text>
             </div>
           </div>
         </div>
 
         {/* Amount Input */}
-        <div className="px-4 sm:px-5 pb-6">
+        <div className="px-5 pb-6">
           <div className="text-center mb-6">
-            <div className="text-sm font-bold text-[#808080] mb-3 tracking-wide uppercase">
+            <Text variant="caption" weight="semibold" className="text-muted-foreground block mb-3 uppercase tracking-wide">
               Enter Amount
-            </div>
-            <div className="text-5xl sm:text-6xl font-extrabold tracking-tight text-[#1A1A1A] min-h-[64px] flex items-center justify-center">
-              ₹{amount || '0'}
+            </Text>
+            <div className="min-h-[64px] flex items-center justify-center">
+              <Text variant="display" weight="bold" className="text-foreground">
+                ₹{amount || '0'}
+              </Text>
             </div>
           </div>
 
           {/* Quick Amount Buttons */}
-          <div className="grid grid-cols-4 gap-2 sm:gap-2.5 mb-6">
+          <div className="grid grid-cols-4 gap-2 mb-6">
             {['100', '500', '1000', '2000'].map((quickAmount) => (
               <button
                 key={quickAmount}
                 onClick={() => setAmount(quickAmount)}
-                className="bg-white border-[3px] border-[#2D3561] rounded-2xl py-3 sm:py-4 font-bold text-sm sm:text-base cursor-pointer transition-transform active:scale-95 shadow-[4px_4px_0px_#2D3561]"
+                className="bg-card border border-border rounded-2xl py-4 font-semibold text-sm cursor-pointer transition-all active:scale-95 shadow-sm hover:shadow-md hover:border-primary/20"
               >
                 ₹{quickAmount}
               </button>
@@ -112,12 +110,12 @@ export default function PaytmSendMoney() {
           </div>
 
           {/* Number Pad */}
-          <div className="grid grid-cols-3 gap-2.5 sm:gap-3 mb-6">
+          <div className="grid grid-cols-3 gap-3 mb-6">
             {['1', '2', '3', '4', '5', '6', '7', '8', '9', 'clear', '0', 'backspace'].map((key) => (
               <button
                 key={key}
                 onClick={() => handleNumberPad(key)}
-                className="bg-white border-[3px] border-[#2D3561] rounded-2xl h-14 sm:h-16 flex items-center justify-center text-xl sm:text-2xl font-bold cursor-pointer transition-transform active:scale-95 shadow-[4px_4px_0px_#2D3561]"
+                className="bg-card border border-border rounded-2xl h-16 flex items-center justify-center text-xl font-semibold cursor-pointer transition-all active:scale-95 shadow-sm hover:shadow-md hover:border-primary/20"
               >
                 {key === 'clear' ? 'C' : key === 'backspace' ? '←' : key}
               </button>
@@ -127,7 +125,11 @@ export default function PaytmSendMoney() {
           {/* Send Button */}
           <button
             disabled={!amount || amount === '0'}
-            className="w-full bg-[#B8860B] border-[3px] border-[#2D3561] rounded-[20px] p-5 text-xl font-extrabold text-white tracking-wide cursor-pointer transition-all shadow-[6px_6px_0px_#2D3561] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className={cn(
+              "w-full bg-primary text-primary-foreground rounded-2xl p-5 text-lg font-bold tracking-wide cursor-pointer transition-all shadow-md",
+              "disabled:opacity-50 disabled:cursor-not-allowed active:scale-98",
+              "hover:shadow-lg"
+            )}
           >
             SEND ₹{amount || '0'}
           </button>
@@ -139,94 +141,85 @@ export default function PaytmSendMoney() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] w-full max-w-[428px] mx-auto pb-[100px]">
-      {/* Status Bar */}
-      <div className="px-4 sm:px-5 pt-3.5 pb-2.5 flex justify-between text-[15px] font-semibold h-11 items-center">
-        <span>9:41</span>
-        <div className="flex gap-1.5 items-center">
-          <span>📶</span>
-          <span>📡</span>
-          <span>🔋</span>
-        </div>
-      </div>
-
+    <div className="min-h-screen bg-background text-foreground w-full max-w-md mx-auto pb-28">
       {/* Header */}
-      <div className="px-4 sm:px-5 pt-4 pb-6 flex justify-between items-center h-[92px]">
-        <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 tracking-tight">
+      <div className="px-5 py-4 flex justify-between items-center">
+        <Text variant="h2" weight="bold" className="text-foreground">
           Send Money
-        </h1>
-        <button className="bg-white border-[3px] border-[#2D3561] rounded-xl px-4 sm:px-5 h-12 sm:h-[52px] flex items-center justify-center cursor-pointer shadow-[4px_4px_0px_#2D3561] transition-transform active:scale-95 text-sm sm:text-base font-bold">
+        </Text>
+        <button className="bg-card border border-border rounded-xl px-5 h-12 flex items-center justify-center cursor-pointer shadow-sm transition-all active:scale-95 hover:shadow-md hover:border-primary/20 text-sm font-semibold">
           UPI ID
         </button>
       </div>
 
       {/* Search Bar */}
-      <div className="px-4 sm:px-5 pb-7">
-        <div className="bg-white border-[3px] border-[#2D3561] rounded-2xl px-4 sm:px-5 flex items-center gap-3 shadow-[4px_4px_0px_rgba(45,53,97,0.4)] min-h-[56px] sm:min-h-[60px]">
-          <Search size={24} color="#808080" strokeWidth={2.5} />
+      <div className="px-5 pb-7">
+        <div className="bg-card border border-border rounded-2xl px-5 flex items-center gap-3 shadow-sm min-h-[56px]">
+          <Search size={20} className="text-muted-foreground" strokeWidth={2} />
           <input
             type="text"
             placeholder="Search by name, number or UPI ID"
-            className="flex-1 bg-transparent border-none outline-none text-sm sm:text-base font-semibold placeholder-[#B0B0B0]"
+            className="flex-1 bg-transparent border-none outline-none text-sm font-medium placeholder-muted-foreground text-foreground"
           />
         </div>
       </div>
 
       {/* Frequent Contacts */}
-      <div className="px-4 sm:px-5 pb-8">
-        <h2 className="text-sm font-extrabold mb-5 text-[#808080] tracking-[1.2px]">
-          FREQUENT CONTACTS
-        </h2>
-        <div className="grid grid-cols-4 gap-2.5 sm:gap-3">
+      <div className="px-5 pb-8">
+        <Text variant="caption" weight="bold" className="text-muted-foreground block mb-5 uppercase tracking-wide">
+          Frequent Contacts
+        </Text>
+        <div className="grid grid-cols-4 gap-3">
           {frequentContacts.map((contact) => (
             <button
               key={contact.id}
               onClick={() => handleContactSelect(contact)}
               className="flex flex-col items-center gap-2 cursor-pointer transition-transform active:scale-95"
             >
-              <div className="w-14 sm:w-16 h-14 sm:h-16 rounded-full flex items-center justify-center text-xl sm:text-2xl font-extrabold text-white border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561]"
-                style={{ backgroundColor: contact.color }}
-              >
-                {contact.initial}
-              </div>
-              <span className="text-xs sm:text-sm font-bold truncate w-full text-center">
+              <Avatar
+                initial={contact.initial}
+                color={contact.color}
+                size="md"
+              />
+              <Text variant="body-small" weight="semibold" className="text-foreground truncate w-full text-center">
                 {contact.name}
-              </span>
+              </Text>
             </button>
           ))}
         </div>
       </div>
 
       {/* Recent Recipients */}
-      <div className="px-4 sm:px-5">
-        <h2 className="text-sm font-extrabold mb-5 text-[#808080] tracking-[1.2px]">
-          RECENT RECIPIENTS
-        </h2>
+      <div className="px-5">
+        <Text variant="caption" weight="bold" className="text-muted-foreground block mb-5 uppercase tracking-wide">
+          Recent Recipients
+        </Text>
         <div className="flex flex-col gap-3">
           {recentRecipients.map((recipient) => (
             <button
               key={recipient.id}
               onClick={() => handleContactSelect(recipient)}
-              className="bg-white border-[3px] border-[#2D3561] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 cursor-pointer transition-transform active:scale-95 shadow-[6px_6px_0px_#2D3561] min-h-[76px] sm:min-h-[84px]"
+              className="bg-card border border-border rounded-2xl p-5 flex items-center gap-4 cursor-pointer transition-all active:scale-98 shadow-sm hover:shadow-md hover:border-primary/20"
             >
-              <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full flex items-center justify-center text-xl sm:text-2xl font-extrabold text-white border-[3px] border-[#2D3561] shadow-[3px_3px_0px_rgba(45,53,97,0.4)] flex-shrink-0"
-                style={{ backgroundColor: recipient.color }}
-              >
-                {recipient.initial}
-              </div>
+              <Avatar
+                initial={recipient.initial}
+                color={recipient.color}
+                size="md"
+                className="flex-shrink-0"
+              />
               <div className="flex-1 text-left min-w-0">
-                <h3 className="text-sm sm:text-base font-extrabold m-0 mb-1 tracking-tight truncate">
+                <Text variant="body" weight="bold" className="text-foreground block mb-1 truncate">
                   {recipient.name}
-                </h3>
-                <p className="text-xs sm:text-[13px] text-[#808080] m-0 font-semibold">
+                </Text>
+                <Text variant="body-small" className="text-muted-foreground">
                   {recipient.time}
-                </p>
+                </Text>
               </div>
-              <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                <div className="text-sm sm:text-base font-extrabold text-[#1A1A1A]">
+              <div className="flex items-center gap-3 flex-shrink-0">
+                <Text variant="body" weight="bold" className="text-foreground">
                   {recipient.lastAmount}
-                </div>
-                <ChevronRight size={24} color="#808080" strokeWidth={2.5} />
+                </Text>
+                <ChevronRight size={20} className="text-muted-foreground" strokeWidth={2} />
               </div>
             </button>
           ))}

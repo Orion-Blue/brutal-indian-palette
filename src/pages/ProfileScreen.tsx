@@ -1,108 +1,106 @@
 import React, { useState } from 'react';
 import { Settings, ChevronRight, Shield, CreditCard, Bell, Moon, Globe, HelpCircle, FileText, LogOut, User } from 'lucide-react';
 import BottomNav from '@/components/BottomNav';
+import { Text } from '@/components/atoms/Text';
+import { Avatar } from '@/components/atoms/Avatar';
+import { IconButton } from '@/components/atoms/IconButton';
+import { cn } from '@/lib/utils';
 
-export default function PaytmProfile() {
+export default function ProfileScreen() {
   const [darkMode, setDarkMode] = useState(false);
 
   const statsData = [
-    { label: 'Total Received', value: '₹45,230', color: '#DAA520', icon: '↓' },
-    { label: 'Total Sent', value: '₹32,180', color: '#B8860B', icon: '↑' },
-    { label: 'Transactions', value: '127', color: '#A9A9A9', icon: '#' },
-    { label: 'This Month', value: '₹8,450', color: '#B8860B', icon: '📊' }
+    { label: 'Total Received', value: '₹45,230', color: 'hsl(142, 71%, 45%)', icon: '↓' },
+    { label: 'Total Sent', value: '₹32,180', color: 'hsl(0, 84%, 60%)', icon: '↑' },
+    { label: 'Transactions', value: '127', color: 'hsl(217, 91%, 60%)', icon: '#' },
+    { label: 'This Month', value: '₹8,450', color: 'hsl(48, 100%, 50%)', icon: '📊' }
   ];
 
   const menuItems = [
     {
       section: 'Account',
       items: [
-        { icon: User, label: 'Personal Information', color: '#B8860B', hasChevron: true },
-        { icon: Shield, label: 'Security & Privacy', color: '#A9A9A9', hasChevron: true },
-        { icon: CreditCard, label: 'Payment Methods', color: '#DAA520', badge: '3', hasChevron: true }
+        { icon: User, label: 'Personal Information', color: 'hsl(48, 100%, 50%)', hasChevron: true },
+        { icon: Shield, label: 'Security & Privacy', color: 'hsl(217, 91%, 60%)', hasChevron: true },
+        { icon: CreditCard, label: 'Payment Methods', color: 'hsl(142, 71%, 45%)', badge: '3', hasChevron: true }
       ]
     },
     {
       section: 'Preferences',
       items: [
-        { icon: Bell, label: 'Notifications', color: '#C0C0C0', hasChevron: true },
-        { icon: Moon, label: 'Dark Mode', color: '#B8860B', hasToggle: true, toggleValue: darkMode },
-        { icon: Globe, label: 'Language', color: '#DAA520', value: 'English', hasChevron: true }
+        { icon: Bell, label: 'Notifications', color: 'hsl(258, 90%, 66%)', hasChevron: true },
+        { icon: Moon, label: 'Dark Mode', color: 'hsl(25, 95%, 53%)', hasToggle: true, toggleValue: darkMode },
+        { icon: Globe, label: 'Language', color: 'hsl(340, 82%, 70%)', value: 'English', hasChevron: true }
       ]
     },
     {
       section: 'Support',
       items: [
-        { icon: HelpCircle, label: 'Help & Support', color: '#A9A9A9', hasChevron: true },
-        { icon: FileText, label: 'Terms & Privacy', color: '#808080', hasChevron: true }
+        { icon: HelpCircle, label: 'Help & Support', color: 'hsl(217, 91%, 60%)', hasChevron: true },
+        { icon: FileText, label: 'Terms & Privacy', color: 'hsl(0, 0%, 45%)', hasChevron: true }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] w-full max-w-[428px] mx-auto pb-[100px]">
+    <div className="min-h-screen bg-background text-foreground w-full max-w-md mx-auto pb-28">
       
-      {/* Status Bar */}
-      <div className="px-4 sm:px-5 pt-3.5 pb-2.5 flex justify-between text-[15px] font-semibold h-11 items-center">
-        <span>9:41</span>
-        <div className="flex gap-1.5 items-center">
-          <span>📶</span>
-          <span>📡</span>
-          <span>🔋</span>
-        </div>
-      </div>
-
       {/* Header */}
-      <div className="px-4 sm:px-5 pt-4 pb-6 flex justify-between items-center h-[92px]">
-        <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 tracking-tight">
+      <div className="px-5 py-4 flex justify-between items-center">
+        <Text variant="h2" weight="bold" className="text-foreground">
           Profile
-        </h1>
-        <button className="bg-white border-[3px] border-[#2D3561] rounded-xl w-12 sm:w-[52px] h-12 sm:h-[52px] flex items-center justify-center cursor-pointer shadow-[4px_4px_0px_#2D3561] transition-transform active:scale-95 flex-shrink-0">
-          <Settings size={28} color="#1A1A1A" strokeWidth={2.5} />
-        </button>
+        </Text>
+        <IconButton icon={Settings} variant="default" size="md" />
       </div>
 
       {/* Profile Card */}
-      <div className="px-4 sm:px-5 pb-7">
-        <div className="bg-white border-[3px] border-[#2D3561] rounded-3xl p-8 sm:p-10 flex flex-col items-center gap-4 shadow-[6px_6px_0px_rgba(45,53,97,0.4)]">
+      <div className="px-5 pb-7">
+        <div className="bg-card border border-border rounded-3xl p-10 flex flex-col items-center gap-4 shadow-card">
           {/* Avatar */}
-            <div className="w-24 sm:w-28 h-24 sm:h-28 rounded-full bg-[#B8860B] flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561] mb-2">
-            RK
-          </div>
+          <Avatar
+            initial="RK"
+            color="hsl(48, 100%, 50%)"
+            size="xl"
+            className="mb-2"
+          />
 
           {/* Name & Email */}
           <div className="text-center">
-            <h2 className="text-2xl sm:text-[26px] font-extrabold m-0 mb-2 tracking-tight">
+            <Text variant="h2" weight="bold" className="text-foreground block mb-2">
               Rajesh Kumar
-            </h2>
-            <p className="text-sm sm:text-[15px] text-[#808080] m-0 font-semibold tracking-wide">
+            </Text>
+            <Text variant="body-small" className="text-muted-foreground">
               Rajesh172@gmail.com
-            </p>
+            </Text>
           </div>
         </div>
       </div>
 
       {/* Quick Stats */}
-      <div className="px-4 sm:px-5 pb-8">
-        <h2 className="text-sm font-extrabold m-0 mb-5 text-[#808080] tracking-[1.2px]">
-          QUICK STATS
-        </h2>
+      <div className="px-5 pb-8">
+        <Text variant="caption" weight="bold" className="text-muted-foreground block mb-5 uppercase tracking-wide">
+          Quick Stats
+        </Text>
         
-        <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+        <div className="grid grid-cols-2 gap-3">
           {statsData.map((stat, index) => (
             <div
               key={index}
-              className="bg-white border-[3px] border-[#2D3561] rounded-[20px] p-5 sm:p-6 flex flex-col gap-3 shadow-[6px_6px_0px_#2D3561] transition-transform active:scale-95 cursor-pointer min-h-[130px] sm:min-h-[140px] justify-between"
+              className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-3 shadow-sm hover:shadow-md transition-all active:scale-98 cursor-pointer min-h-[140px] justify-between"
             >
-              <div className="text-2xl sm:text-[32px] leading-none">{stat.icon}</div>
+              <div className="text-3xl leading-none">{stat.icon}</div>
               <div>
-                <div className="text-xl sm:text-2xl font-extrabold tracking-tight mb-2"
+                <Text
+                  variant="h3"
+                  weight="bold"
+                  className="block mb-2"
                   style={{ color: stat.color }}
                 >
                   {stat.value}
-                </div>
-                <div className="text-[11px] sm:text-xs text-[#808080] font-bold tracking-wide uppercase">
+                </Text>
+                <Text variant="micro" weight="semibold" className="text-muted-foreground uppercase tracking-wide">
                   {stat.label}
-                </div>
+                </Text>
               </div>
             </div>
           ))}
@@ -110,14 +108,14 @@ export default function PaytmProfile() {
       </div>
 
       {/* Menu Sections */}
-      <div className="px-4 sm:px-5">
+      <div className="px-5">
         {menuItems.map((section, sectionIndex) => (
           <div key={sectionIndex} className="mb-8">
-            <h2 className="text-sm font-extrabold m-0 mb-5 text-[#808080] tracking-[1.2px]">
-              {section.section.toUpperCase()}
-            </h2>
+            <Text variant="caption" weight="bold" className="text-muted-foreground block mb-5 uppercase tracking-wide">
+              {section.section}
+            </Text>
             
-            <div className="bg-white border-[3px] border-[#2D3561] rounded-[20px] overflow-hidden shadow-[4px_4px_0px_rgba(45,53,97,0.4)]">
+            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm">
               {section.items.map((item, itemIndex) => (
                 <button
                   key={itemIndex}
@@ -126,47 +124,56 @@ export default function PaytmProfile() {
                       setDarkMode(!darkMode);
                     }
                   }}
-                  className="w-full bg-transparent border-none p-4 sm:p-5 flex items-center gap-3 sm:gap-4 cursor-pointer transition-all text-left min-h-[76px] sm:min-h-[84px]"
-                  style={{
-                    borderBottom: itemIndex < section.items.length - 1 ? '3px solid #2D3561' : 'none'
-                  }}
+                  className={cn(
+                    "w-full bg-transparent border-none p-5 flex items-center gap-4 cursor-pointer transition-all text-left hover:bg-muted/30",
+                    itemIndex < section.items.length - 1 && "border-b border-border"
+                  )}
                 >
-                  <div className="w-11 sm:w-[52px] h-11 sm:h-[52px] rounded-full flex items-center justify-center flex-shrink-0 border-[3px] border-[#2D3561] shadow-[3px_3px_0px_rgba(45,53,97,0.4)]"
-                    style={{ background: item.color }}
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: item.color }}
                   >
-                    <item.icon size={24} color="#FFFFFF" strokeWidth={2.5} />
+                    <item.icon size={20} color="#FFFFFF" strokeWidth={2} />
                   </div>
                   
-                  <span className="flex-1 text-sm sm:text-base font-bold truncate">
+                  <Text variant="body" weight="semibold" className="flex-1 text-foreground truncate">
                     {item.label}
-                  </span>
+                  </Text>
                   
                   {item.badge && (
-                    <span className="text-xs sm:text-[13px] font-extrabold px-3 py-2 rounded-[10px] border-2 border-[#2D3561] shadow-[2px_2px_0px_#2D3561] min-w-[36px] text-center text-white"
-                      style={{ background: item.color }}
+                    <span
+                      className="text-xs font-bold px-3 py-1.5 rounded-full min-w-[32px] text-center text-white"
+                      style={{ backgroundColor: item.color }}
                     >
                       {item.badge}
                     </span>
                   )}
                   
                   {item.value && (
-                    <span className="text-sm sm:text-[15px] text-[#808080] font-bold">
+                    <Text variant="body-small" className="text-muted-foreground">
                       {item.value}
-                    </span>
+                    </Text>
                   )}
                   
                   {item.hasToggle && (
-                    <div className="w-[54px] sm:w-[60px] h-8 sm:h-[34px] rounded-[17px] relative transition-all border-[3px] border-[#2D3561] shadow-[2px_2px_0px_#2D3561]"
-                      style={{ background: item.toggleValue ? item.color : '#E0E0E0' }}
+                    <div
+                      className={cn(
+                        "w-14 h-8 rounded-full relative transition-all",
+                        item.toggleValue ? "" : "bg-muted"
+                      )}
+                      style={{ backgroundColor: item.toggleValue ? item.color : undefined }}
                     >
-                      <div className="w-6 h-6 rounded-full bg-white absolute top-0 border-2 border-[#2D3561] transition-all"
-                        style={{ left: item.toggleValue ? '26px' : '2px' }}
-                      ></div>
+                      <div
+                        className={cn(
+                          "w-6 h-6 rounded-full bg-white absolute top-1 transition-all shadow-sm",
+                          item.toggleValue ? "right-1" : "left-1"
+                        )}
+                      />
                     </div>
                   )}
                   
                   {item.hasChevron && (
-                    <ChevronRight size={24} color="#808080" strokeWidth={2.5} />
+                    <ChevronRight size={20} className="text-muted-foreground" strokeWidth={2} />
                   )}
                 </button>
               ))}
@@ -176,20 +183,20 @@ export default function PaytmProfile() {
       </div>
 
       {/* Logout Button */}
-      <div className="px-4 sm:px-5 pb-7">
-        <button className="w-full bg-white border-[3px] border-[#B8860B] rounded-[20px] p-4 sm:p-5 flex items-center justify-center gap-3 cursor-pointer transition-transform active:scale-95 shadow-[6px_6px_0px_#B8860B] min-h-[64px] sm:min-h-[68px]">
-          <LogOut size={28} color="#B8860B" strokeWidth={2.5} />
-          <span className="text-base sm:text-lg font-extrabold text-[#B8860B] tracking-wide">
+      <div className="px-5 pb-7">
+        <button className="w-full bg-card border-2 border-destructive rounded-2xl p-5 flex items-center justify-center gap-3 cursor-pointer transition-all active:scale-98 shadow-sm hover:shadow-md hover:bg-destructive/5">
+          <LogOut size={24} className="text-destructive" strokeWidth={2} />
+          <Text variant="body-large" weight="bold" className="text-destructive tracking-wide">
             LOGOUT
-          </span>
+          </Text>
         </button>
       </div>
 
       {/* Version Info */}
-      <div className="px-4 sm:px-5 pb-7 text-center">
-        <p className="text-xs sm:text-[13px] text-[#808080] m-0 font-semibold">
+      <div className="px-5 pb-7 text-center">
+        <Text variant="body-small" className="text-muted-foreground">
           Version 4.0.1 • Build 2025.01
-        </p>
+        </Text>
       </div>
 
       <BottomNav />
