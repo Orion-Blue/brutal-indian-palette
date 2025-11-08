@@ -8,7 +8,10 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: ['*'], // ✅ Allow all hosts (for sandbox/dev environments)
+    allowedHosts: [
+      "dclq82-8080.csb.app", // ✅ Explicitly allow your sandbox host
+      ".csb.app",            // ✅ Allow all CodeSandbox subdomains (safety net)
+    ],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
@@ -17,3 +20,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
