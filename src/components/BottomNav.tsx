@@ -1,17 +1,13 @@
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
-import AccountBalanceWalletRoundedIcon from '@mui/icons-material/AccountBalanceWalletRounded';
-import ChatBubbleRoundedIcon from '@mui/icons-material/ChatBubbleRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+import { Home, BarChart3, Wallet, MessageCircle, User } from 'lucide-react';
 import { NavLink } from "./NavLink";
 
 const BottomNav = () => {
   const navItems = [
-    { to: "/home", icon: HomeRoundedIcon, label: "Home" },
-    { to: "/analytics", icon: BarChartRoundedIcon, label: "Stats" },
-    { to: "/wallet", icon: AccountBalanceWalletRoundedIcon, label: "Wallet" },
-    { to: "/messages", icon: ChatBubbleRoundedIcon, label: "Chat" },
-    { to: "/profile", icon: PersonRoundedIcon, label: "Profile" },
+    { to: "/home", icon: Home, label: "Home" },
+    { to: "/analytics", icon: BarChart3, label: "Stats" },
+    { to: "/wallet", icon: Wallet, label: "Wallet" },
+    { to: "/messages", icon: MessageCircle, label: "Chat" },
+    { to: "/profile", icon: User, label: "Profile" },
   ];
 
   return (
@@ -37,11 +33,9 @@ const BottomNav = () => {
                   }}
                 >
                   <item.icon
-                    sx={{
-                      fontSize: 24,
-                      color: isActive ? "#FFFFFF" : "#2D3561",
-                      fontWeight: 700
-                    }}
+                    size={24}
+                    color={isActive ? "#FFFFFF" : "#2D3561"}
+                    strokeWidth={2.5}
                   />
                 </div>
                 <span

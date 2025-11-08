@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import QrCodeScannerRoundedIcon from '@mui/icons-material/QrCodeScannerRounded';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
-import CallReceivedRoundedIcon from '@mui/icons-material/CallReceivedRounded';
-import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
-import RestaurantRoundedIcon from '@mui/icons-material/RestaurantRounded';
-import DirectionsCarRoundedIcon from '@mui/icons-material/DirectionsCarRounded';
-import ShoppingBagRoundedIcon from '@mui/icons-material/ShoppingBagRounded';
-import PhoneAndroidRoundedIcon from '@mui/icons-material/PhoneAndroidRounded';
-import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+import { Scan, Send, Download, Bell, Utensils, Car, ShoppingBag, Smartphone, TrendingUp, User } from 'lucide-react';
 import BottomNav from '@/components/BottomNav';
 
 export default function PaytmHomeDark() {
@@ -55,9 +46,9 @@ export default function PaytmHomeDark() {
   ];
 
   const quickActions = [
-    { icon: QrCodeScannerRoundedIcon, label: 'SCAN', color: '#FF6B35' },
-    { icon: SendRoundedIcon, label: 'PAY', color: '#6C63FF' },
-    { icon: CallReceivedRoundedIcon, label: 'RECEIVE', color: '#00D9C0' }
+    { icon: Scan, label: 'SCAN', color: '#FF6B35' },
+    { icon: Send, label: 'PAY', color: '#6C63FF' },
+    { icon: Download, label: 'RECEIVE', color: '#00D9C0' }
   ];
 
 
@@ -65,17 +56,17 @@ export default function PaytmHomeDark() {
     {
       date: '25 JUN',
       transactions: [
-        { id: 1, name: 'SWIGGY', time: '9:32 PM', status: 'PENDING', amount: 340, type: 'debit', icon: RestaurantRoundedIcon, bgColor: '#FC8019' },
-        { id: 2, name: 'PRIYA SHARMA', time: '7:50 PM', status: 'PENDING', amount: 1000, type: 'credit', icon: PersonRoundedIcon, bgColor: '#FF6B9D', isUser: true },
-        { id: 3, name: 'AMAZON INDIA', time: '4:32 PM', status: 'COMPLETED', amount: 1245, type: 'debit', icon: ShoppingBagRoundedIcon, bgColor: '#FF9F40' }
+        { id: 1, name: 'SWIGGY', time: '9:32 PM', status: 'PENDING', amount: 340, type: 'debit', icon: Utensils, bgColor: '#FC8019' },
+        { id: 2, name: 'PRIYA SHARMA', time: '7:50 PM', status: 'PENDING', amount: 1000, type: 'credit', icon: User, bgColor: '#FF6B9D', isUser: true },
+        { id: 3, name: 'AMAZON INDIA', time: '4:32 PM', status: 'COMPLETED', amount: 1245, type: 'debit', icon: ShoppingBag, bgColor: '#FF9F40' }
       ]
     },
     {
       date: '24 JUN',
       transactions: [
-        { id: 4, name: 'SALARY CREDITED', time: '4:56 PM', status: 'COMPLETED', amount: 45000, type: 'credit', icon: TrendingUpRoundedIcon, bgColor: '#00C896' },
-        { id: 5, name: 'UBER', time: '2:15 PM', status: 'COMPLETED', amount: 180, type: 'debit', icon: DirectionsCarRoundedIcon, bgColor: '#2D3561' },
-        { id: 6, name: 'PHONEPE RECHARGE', time: '10:30 AM', status: 'COMPLETED', amount: 599, type: 'debit', icon: PhoneAndroidRoundedIcon, bgColor: '#6C63FF' }
+        { id: 4, name: 'SALARY CREDITED', time: '4:56 PM', status: 'COMPLETED', amount: 45000, type: 'credit', icon: TrendingUp, bgColor: '#00C896' },
+        { id: 5, name: 'UBER', time: '2:15 PM', status: 'COMPLETED', amount: 180, type: 'debit', icon: Car, bgColor: '#2D3561' },
+        { id: 6, name: 'PHONEPE RECHARGE', time: '10:30 AM', status: 'COMPLETED', amount: 599, type: 'debit', icon: Smartphone, bgColor: '#6C63FF' }
       ]
     }
   ];
@@ -168,13 +159,7 @@ export default function PaytmHomeDark() {
         onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
-          <NotificationsRoundedIcon 
-            sx={{ 
-              fontSize: 28, 
-              color: '#1A1A1A',
-              fontWeight: 700
-            }} 
-          />
+          <Bell size={28} color="#1A1A1A" strokeWidth={2.5} />
           <span style={{
             position: 'absolute',
             top: '8px',
@@ -327,13 +312,7 @@ export default function PaytmHomeDark() {
                 border: '3px solid #2D3561',
                 boxShadow: '3px 3px 0px rgba(45, 53, 97, 0.5)'
               }}>
-                <action.icon 
-                  sx={{ 
-                    fontSize: 32, 
-                    color: '#FFFFFF',
-                    fontWeight: 700
-                  }} 
-                />
+                <action.icon size={32} color="#FFFFFF" strokeWidth={2.5} />
               </div>
               <span style={{ 
                 color: '#1A1A1A', 
@@ -402,13 +381,7 @@ export default function PaytmHomeDark() {
                     border: '3px solid #2D3561',
                     boxShadow: '3px 3px 0px rgba(45, 53, 97, 0.4)'
                   }}>
-                    <txn.icon 
-                      sx={{ 
-                        fontSize: 28, 
-                        color: '#FFFFFF',
-                        fontWeight: 700
-                      }} 
-                    />
+                    <txn.icon size={28} color="#FFFFFF" strokeWidth={2.5} />
                   </div>
                   
                   <div style={{ flex: 1, minWidth: 0 }}>

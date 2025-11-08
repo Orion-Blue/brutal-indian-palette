@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
-import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-import SecurityRoundedIcon from '@mui/icons-material/SecurityRounded';
-import CreditCardRoundedIcon from '@mui/icons-material/CreditCardRounded';
-import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
-import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
-import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
-import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
-import DescriptionRoundedIcon from '@mui/icons-material/DescriptionRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+import { Settings, ChevronRight, Shield, CreditCard, Bell, Moon, Globe, HelpCircle, FileText, LogOut, User } from 'lucide-react';
 import BottomNav from '@/components/BottomNav';
 
 export default function PaytmProfile() {
@@ -26,24 +16,24 @@ export default function PaytmProfile() {
     {
       section: 'Account',
       items: [
-        { icon: PersonRoundedIcon, label: 'Personal Information', color: '#FF6B35', hasChevron: true },
-        { icon: SecurityRoundedIcon, label: 'Security & Privacy', color: '#6C63FF', hasChevron: true },
-        { icon: CreditCardRoundedIcon, label: 'Payment Methods', color: '#00D9C0', badge: '3', hasChevron: true }
+        { icon: User, label: 'Personal Information', color: '#FF6B35', hasChevron: true },
+        { icon: Shield, label: 'Security & Privacy', color: '#6C63FF', hasChevron: true },
+        { icon: CreditCard, label: 'Payment Methods', color: '#00D9C0', badge: '3', hasChevron: true }
       ]
     },
     {
       section: 'Preferences',
       items: [
-        { icon: NotificationsRoundedIcon, label: 'Notifications', color: '#FF6B9D', hasChevron: true },
-        { icon: DarkModeRoundedIcon, label: 'Dark Mode', color: '#FFD93D', hasToggle: true, toggleValue: darkMode },
-        { icon: LanguageRoundedIcon, label: 'Language', color: '#00C896', value: 'English', hasChevron: true }
+        { icon: Bell, label: 'Notifications', color: '#FF6B9D', hasChevron: true },
+        { icon: Moon, label: 'Dark Mode', color: '#FFD93D', hasToggle: true, toggleValue: darkMode },
+        { icon: Globe, label: 'Language', color: '#00C896', value: 'English', hasChevron: true }
       ]
     },
     {
       section: 'Support',
       items: [
-        { icon: HelpRoundedIcon, label: 'Help & Support', color: '#FF9F40', hasChevron: true },
-        { icon: DescriptionRoundedIcon, label: 'Terms & Privacy', color: '#808080', hasChevron: true }
+        { icon: HelpCircle, label: 'Help & Support', color: '#FF9F40', hasChevron: true },
+        { icon: FileText, label: 'Terms & Privacy', color: '#808080', hasChevron: true }
       ]
     }
   ];
@@ -106,13 +96,7 @@ export default function PaytmProfile() {
         onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
-          <SettingsRoundedIcon 
-            sx={{ 
-              fontSize: 28, 
-              color: '#1A1A1A',
-              fontWeight: 700
-            }} 
-          />
+          <Settings size={28} color="#1A1A1A" strokeWidth={2.5} />
         </button>
       </div>
 
@@ -289,13 +273,7 @@ export default function PaytmProfile() {
                     border: '3px solid #2D3561',
                     boxShadow: '3px 3px 0px rgba(45, 53, 97, 0.4)'
                   }}>
-                    <item.icon 
-                      sx={{ 
-                        fontSize: 28, 
-                        color: '#FFFFFF',
-                        fontWeight: 700
-                      }} 
-                    />
+                    <item.icon size={28} color="#FFFFFF" strokeWidth={2.5} />
                   </div>
                   
                   <span style={{ 
@@ -357,13 +335,7 @@ export default function PaytmProfile() {
                   )}
                   
                   {item.hasChevron && (
-                    <ChevronRightRoundedIcon 
-                      sx={{ 
-                        fontSize: 28, 
-                        color: '#808080',
-                        fontWeight: 700
-                      }} 
-                    />
+                    <ChevronRight size={28} color="#808080" strokeWidth={2.5} />
                   )}
                 </button>
               ))}
@@ -393,14 +365,8 @@ export default function PaytmProfile() {
         onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
-          <LogoutRoundedIcon 
-            sx={{ 
-              fontSize: 28, 
-              color: '#FF6B35',
-              fontWeight: 700
-            }} 
-          />
-          <span style={{ 
+          <LogOut size={28} color="#FF6B35" strokeWidth={2.5} />
+          <span style={{
             fontSize: '18px', 
             fontWeight: '800',
             color: '#FF6B35',
