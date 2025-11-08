@@ -8,17 +8,17 @@ export default function PaytmSendMoney() {
   const [showAmountScreen, setShowAmountScreen] = useState(false);
 
   const frequentContacts = [
-    { id: 1, name: 'Priya', initial: 'P', color: 'linear-gradient(135deg, #FF6B9D, #6C63FF)', lastAmount: '₹1,200' },
-    { id: 2, name: 'Amit', initial: 'A', color: 'linear-gradient(135deg, #FFD93D, #FF6B35)', lastAmount: '₹850' },
-    { id: 3, name: 'Neha', initial: 'N', color: 'linear-gradient(135deg, #00D9C0, #6C63FF)', lastAmount: '₹2,500' },
-    { id: 4, name: 'Rahul', initial: 'R', color: 'linear-gradient(135deg, #6C63FF, #FF6B35)', lastAmount: '₹675' }
+    { id: 1, name: 'Priya', initial: 'P', color: 'linear-gradient(135deg, #B8860B, #DAA520)', lastAmount: '₹1,200' },
+    { id: 2, name: 'Amit', initial: 'A', color: 'linear-gradient(135deg, #A9A9A9, #C0C0C0)', lastAmount: '₹850' },
+    { id: 3, name: 'Neha', initial: 'N', color: 'linear-gradient(135deg, #DAA520, #B8860B)', lastAmount: '₹2,500' },
+    { id: 4, name: 'Rahul', initial: 'R', color: 'linear-gradient(135deg, #C0C0C0, #A9A9A9)', lastAmount: '₹675' }
   ];
 
   const recentRecipients = [
     { id: 5, name: 'Swiggy', initial: 'S', color: '#FC8019', lastAmount: '₹340', time: 'Yesterday' },
     { id: 6, name: 'Amazon Pay', initial: 'A', color: '#FF9F40', lastAmount: '₹1,245', time: '2 days ago' },
-    { id: 7, name: 'Deepak Kumar', initial: 'D', color: 'linear-gradient(135deg, #FF6B35, #6C63FF)', lastAmount: '₹5,000', time: '3 days ago' },
-    { id: 8, name: 'PhonePe', initial: 'P', color: '#6C63FF', lastAmount: '₹599', time: '1 week ago' }
+    { id: 7, name: 'Deepak Kumar', initial: 'D', color: 'linear-gradient(135deg, #B8860B, #DAA520)', lastAmount: '₹5,000', time: '3 days ago' },
+    { id: 8, name: 'PhonePe', initial: 'P', color: '#A9A9A9', lastAmount: '₹599', time: '1 week ago' }
   ];
 
   const handleContactSelect = (contact: any) => {
@@ -127,7 +127,7 @@ export default function PaytmSendMoney() {
           {/* Send Button */}
           <button
             disabled={!amount || amount === '0'}
-            className="w-full bg-gradient-to-r from-[#6C63FF] to-[#00D9C0] border-[3px] border-[#2D3561] rounded-[20px] p-5 text-xl font-extrabold text-white tracking-wide font-['Plus_Jakarta_Sans'] cursor-pointer transition-all shadow-[6px_6px_0px_#2D3561] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className="w-full bg-gradient-to-r from-[#B8860B] to-[#DAA520] border-[3px] border-[#2D3561] rounded-[20px] p-5 text-xl font-extrabold text-white tracking-wide font-['Plus_Jakarta_Sans'] cursor-pointer transition-all shadow-[6px_6px_0px_#2D3561] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
           >
             SEND ₹{amount || '0'}
           </button>

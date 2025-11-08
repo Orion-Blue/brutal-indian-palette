@@ -6,33 +6,33 @@ export default function PaytmProfile() {
   const [darkMode, setDarkMode] = useState(false);
 
   const statsData = [
-    { label: 'Total Received', value: '₹45,230', color: '#00D9C0', icon: '↓' },
-    { label: 'Total Sent', value: '₹32,180', color: '#FF6B35', icon: '↑' },
-    { label: 'Transactions', value: '127', color: '#FFD93D', icon: '#' },
-    { label: 'This Month', value: '₹8,450', color: '#6C63FF', icon: '📊' }
+    { label: 'Total Received', value: '₹45,230', color: '#DAA520', icon: '↓' },
+    { label: 'Total Sent', value: '₹32,180', color: '#B8860B', icon: '↑' },
+    { label: 'Transactions', value: '127', color: '#A9A9A9', icon: '#' },
+    { label: 'This Month', value: '₹8,450', color: '#B8860B', icon: '📊' }
   ];
 
   const menuItems = [
     {
       section: 'Account',
       items: [
-        { icon: User, label: 'Personal Information', color: '#FF6B35', hasChevron: true },
-        { icon: Shield, label: 'Security & Privacy', color: '#6C63FF', hasChevron: true },
-        { icon: CreditCard, label: 'Payment Methods', color: '#00D9C0', badge: '3', hasChevron: true }
+        { icon: User, label: 'Personal Information', color: '#B8860B', hasChevron: true },
+        { icon: Shield, label: 'Security & Privacy', color: '#A9A9A9', hasChevron: true },
+        { icon: CreditCard, label: 'Payment Methods', color: '#DAA520', badge: '3', hasChevron: true }
       ]
     },
     {
       section: 'Preferences',
       items: [
-        { icon: Bell, label: 'Notifications', color: '#FF6B9D', hasChevron: true },
-        { icon: Moon, label: 'Dark Mode', color: '#FFD93D', hasToggle: true, toggleValue: darkMode },
-        { icon: Globe, label: 'Language', color: '#00C896', value: 'English', hasChevron: true }
+        { icon: Bell, label: 'Notifications', color: '#C0C0C0', hasChevron: true },
+        { icon: Moon, label: 'Dark Mode', color: '#B8860B', hasToggle: true, toggleValue: darkMode },
+        { icon: Globe, label: 'Language', color: '#DAA520', value: 'English', hasChevron: true }
       ]
     },
     {
       section: 'Support',
       items: [
-        { icon: HelpCircle, label: 'Help & Support', color: '#FF9F40', hasChevron: true },
+        { icon: HelpCircle, label: 'Help & Support', color: '#A9A9A9', hasChevron: true },
         { icon: FileText, label: 'Terms & Privacy', color: '#808080', hasChevron: true }
       ]
     }
@@ -65,7 +65,7 @@ export default function PaytmProfile() {
       <div className="px-4 sm:px-5 pb-7">
         <div className="bg-white border-[3px] border-[#2D3561] rounded-3xl p-8 sm:p-10 flex flex-col items-center gap-4 shadow-[6px_6px_0px_rgba(45,53,97,0.4)]">
           {/* Avatar */}
-          <div className="w-24 sm:w-28 h-24 sm:h-28 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#6C63FF] flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561] font-['Plus_Jakarta_Sans'] mb-2">
+            <div className="w-24 sm:w-28 h-24 sm:h-28 rounded-full bg-gradient-to-br from-[#B8860B] to-[#DAA520] flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561] font-['Plus_Jakarta_Sans'] mb-2">
             RK
           </div>
 
@@ -177,9 +177,9 @@ export default function PaytmProfile() {
 
       {/* Logout Button */}
       <div className="px-4 sm:px-5 pb-7">
-        <button className="w-full bg-white border-[3px] border-[#FF6B35] rounded-[20px] p-4 sm:p-5 flex items-center justify-center gap-3 cursor-pointer transition-transform active:scale-95 shadow-[6px_6px_0px_#FF6B35] min-h-[64px] sm:min-h-[68px]">
-          <LogOut size={28} color="#FF6B35" strokeWidth={2.5} />
-          <span className="text-base sm:text-lg font-extrabold text-[#FF6B35] tracking-wide font-['Plus_Jakarta_Sans']">
+        <button className="w-full bg-white border-[3px] border-[#B8860B] rounded-[20px] p-4 sm:p-5 flex items-center justify-center gap-3 cursor-pointer transition-transform active:scale-95 shadow-[6px_6px_0px_#B8860B] min-h-[64px] sm:min-h-[68px]">
+          <LogOut size={28} color="#B8860B" strokeWidth={2.5} />
+          <span className="text-base sm:text-lg font-extrabold text-[#B8860B] tracking-wide font-['Plus_Jakarta_Sans']">
             LOGOUT
           </span>
         </button>

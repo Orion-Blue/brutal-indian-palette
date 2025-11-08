@@ -25,7 +25,7 @@ const BottomNav = () => {
                 <div
                   className={`p-2 rounded-xl border-3 transition-all ${
                     isActive
-                      ? "bg-gradient-to-br from-[#6C63FF] to-[#00D9C0] border-foreground shadow-[3px_3px_0px_rgba(45,53,97,1)]"
+                      ? "bg-gradient-to-br from-[#B8860B] to-[#DAA520] border-foreground shadow-[3px_3px_0px_rgba(45,53,97,1)]"
                       : "bg-white border-foreground"
                   }`}
                   style={{

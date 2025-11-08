@@ -9,48 +9,48 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 228 35% 28%;
+    --foreground: 0 0% 25%;
     
-    /* Brand Colors - Purple to Teal gradient */
-    --brand-purple: 243 100% 69%;
-    --brand-teal: 172 100% 43%;
-    --brand-dark: 228 35% 28%;
+    /* Brand Colors - Gold and Silver */
+    --brand-gold: 43 74% 49%;
+    --brand-silver: 0 0% 65%;
+    --brand-dark: 0 0% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 228 35% 28%;
+    --card-foreground: 0 0% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 228 35% 28%;
+    --popover-foreground: 0 0% 25%;
 
-    --primary: 243 100% 69%;
+    --primary: 43 74% 49%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 172 100% 43%;
+    --secondary: 0 0% 65%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 243 100% 69%;
+    --accent: 43 74% 49%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 228 35% 28%;
+    --border: 0 0% 25%;
     --input: 214 32% 91%;
-    --ring: 243 100% 69%;
+    --ring: 43 74% 49%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 228 35% 28%;
-    --sidebar-primary: 243 100% 69%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 43 74% 49%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 5% 96%;
-    --sidebar-accent-foreground: 228 35% 28%;
+    --sidebar-accent-foreground: 0 0% 25%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 243 100% 69%;
+    --sidebar-ring: 43 74% 49%;
   }
 
   .dark {

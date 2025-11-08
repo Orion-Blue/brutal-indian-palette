@@ -46,9 +46,9 @@ export default function PaytmHomeDark() {
   ];
 
   const quickActions = [
-    { icon: Scan, label: 'SCAN', color: '#FF6B35' },
-    { icon: Send, label: 'PAY', color: '#6C63FF' },
-    { icon: Download, label: 'RECEIVE', color: '#00D9C0' }
+    { icon: Scan, label: 'SCAN', color: '#B8860B' },
+    { icon: Send, label: 'PAY', color: '#A9A9A9' },
+    { icon: Download, label: 'RECEIVE', color: '#DAA520' }
   ];
 
 
@@ -86,7 +86,7 @@ export default function PaytmHomeDark() {
 
       {/* Header */}
       <div className="px-4 sm:px-5 pt-4 pb-6 flex justify-between items-center h-[92px] gap-3">
-        <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#6C63FF] border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561] flex-shrink-0 flex items-center justify-center text-lg sm:text-xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
+        <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-gradient-to-br from-[#B8860B] to-[#DAA520] border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561] flex-shrink-0 flex items-center justify-center text-lg sm:text-xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
           RK
         </div>
         
@@ -100,42 +100,30 @@ export default function PaytmHomeDark() {
         </button>
       </div>
 
-      {/* Balance Cards - Horizontal Scroll */}
-      <div className="px-4 sm:px-5 pb-7 overflow-x-auto flex gap-4 scrollbar-none">
-        {balanceCards.map((card, index) => (
-          <div
-            key={index}
-            className="bg-gradient-to-br rounded-[20px] p-6 sm:p-7 min-w-[280px] sm:min-w-[300px] flex-shrink-0 border-[3px] border-[#2D3561] cursor-pointer min-h-[200px] flex flex-col justify-between transition-all"
-            style={{
-              background: card.gradient,
-              color: card.textColor,
-              boxShadow: index === activeCard ? '8px 8px 0px #2D3561' : '6px 6px 0px rgba(45, 53, 97, 0.5)',
-              transform: index === activeCard ? 'scale(1.02) translateY(-4px)' : 'scale(0.96)',
-            }}
-            onClick={() => setActiveCard(index)}
-          >
-            <div>
-              <p className="text-xs font-extrabold tracking-[1.5px] opacity-90 m-0 mb-4 font-['Plus_Jakarta_Sans']">
-                {card.label}
-              </p>
-              <h2 className="text-[42px] sm:text-5xl font-extrabold m-0 font-['Plus_Jakarta_Sans'] tracking-[-2.5px] leading-none">
-                ₹{index === 0 ? balance.toLocaleString('en-IN') : card.balance.toLocaleString('en-IN')}
-                <span className="text-2xl sm:text-[28px] opacity-85">.00</span>
-              </h2>
-            </div>
-            <div className="flex justify-between text-xs font-['Courier_New'] font-bold opacity-90 mb-3 gap-2">
-              <span>{card.accountNumber}</span>
-              <span>{card.type}</span>
-            </div>
-            <div className="flex justify-between text-[11px] font-['Courier_New'] font-bold opacity-90 items-end">
-              <span>VALID THRU<br/>{card.validThru}</span>
-              <span className="flex items-center gap-1.5 bg-white/25 px-2.5 py-1.5 rounded-lg border-2 border-white/30">
-                <span className="w-2 h-2 bg-[#00FF00] rounded-full shadow-[0_0_8px_#00FF00]"></span>
-                {card.status}
-              </span>
-            </div>
+      {/* Balance Card */}
+      <div className="px-4 sm:px-5 pb-7">
+        <div className="bg-gradient-to-br from-[#B8860B] to-[#DAA520] rounded-[20px] p-6 sm:p-7 border-[3px] border-[#2D3561] min-h-[200px] flex flex-col justify-between shadow-[8px_8px_0px_#2D3561] text-white">
+          <div>
+            <p className="text-xs font-extrabold tracking-[1.5px] opacity-90 m-0 mb-4 font-['Plus_Jakarta_Sans']">
+              BALANCE
+            </p>
+            <h2 className="text-[42px] sm:text-5xl font-extrabold m-0 font-['Plus_Jakarta_Sans'] tracking-[-2.5px] leading-none">
+              ₹{balance.toLocaleString('en-IN')}
+              <span className="text-2xl sm:text-[28px] opacity-85">.00</span>
+            </h2>
           </div>
-        ))}
+          <div className="flex justify-between text-xs font-['Courier_New'] font-bold opacity-90 mb-3 gap-2">
+            <span>XXXX - 5689</span>
+            <span>VIRTUAL</span>
+          </div>
+          <div className="flex justify-between text-[11px] font-['Courier_New'] font-bold opacity-90 items-end">
+            <span>VALID THRU<br/>07/29</span>
+            <span className="flex items-center gap-1.5 bg-white/25 px-2.5 py-1.5 rounded-lg border-2 border-white/30">
+              <span className="w-2 h-2 bg-[#00FF00] rounded-full shadow-[0_0_8px_#00FF00]"></span>
+              ACTIVE
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Quick Actions */}
