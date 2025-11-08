@@ -101,6 +101,110 @@ export default function HomeScreen() {
         />
       </div>
 
+      {/* Spending Insights */}
+      <div className="px-5 pb-7">
+        <Text variant="caption" weight="bold" className="text-muted-foreground block mb-5 uppercase tracking-wide">
+          This Month's Overview
+        </Text>
+        
+        <div className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-3xl p-6 shadow-card">
+          {/* Total Spending */}
+          <div className="mb-6">
+            <Text variant="body-small" className="text-muted-foreground block mb-2">
+              Total Spending
+            </Text>
+            <Text variant="h1" weight="bold" className="text-foreground block mb-1">
+              ₹12,450
+            </Text>
+            <div className="flex items-center gap-2">
+              <div className="bg-accent-green/15 rounded-full px-3 py-1">
+                <Text variant="micro" weight="bold" className="text-accent-green">
+                  ↓ 12% less than last month
+                </Text>
+              </div>
+            </div>
+          </div>
+
+          {/* Category Breakdown */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-accent-blue/15 flex items-center justify-center">
+                  <Text variant="body">🍔</Text>
+                </div>
+                <div>
+                  <Text variant="body" weight="semibold" className="text-foreground block">
+                    Food & Dining
+                  </Text>
+                  <Text variant="body-small" className="text-muted-foreground">
+                    32% of budget
+                  </Text>
+                </div>
+              </div>
+              <Text variant="body" weight="bold" className="text-foreground">
+                ₹3,980
+              </Text>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-accent-purple/15 flex items-center justify-center">
+                  <Text variant="body">🛒</Text>
+                </div>
+                <div>
+                  <Text variant="body" weight="semibold" className="text-foreground block">
+                    Shopping
+                  </Text>
+                  <Text variant="body-small" className="text-muted-foreground">
+                    28% of budget
+                  </Text>
+                </div>
+              </div>
+              <Text variant="body" weight="bold" className="text-foreground">
+                ₹3,486
+              </Text>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center">
+                  <Text variant="body">🚗</Text>
+                </div>
+                <div>
+                  <Text variant="body" weight="semibold" className="text-foreground block">
+                    Transport
+                  </Text>
+                  <Text variant="body-small" className="text-muted-foreground">
+                    18% of budget
+                  </Text>
+                </div>
+              </div>
+              <Text variant="body" weight="bold" className="text-foreground">
+                ₹2,241
+              </Text>
+            </div>
+          </div>
+
+          {/* Budget Progress */}
+          <div className="mt-6 pt-5 border-t border-border/30">
+            <div className="flex justify-between items-center mb-3">
+              <Text variant="body-small" weight="semibold" className="text-muted-foreground">
+                Monthly Budget
+              </Text>
+              <Text variant="body-small" weight="bold" className="text-foreground">
+                ₹12,450 / ₹15,000
+              </Text>
+            </div>
+            <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-primary rounded-full transition-all"
+                style={{ width: '83%' }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <BottomNav />
     </div>
   );

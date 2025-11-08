@@ -53,26 +53,23 @@ export default function ProfileScreen() {
         <IconButton icon={Settings} variant="default" size="md" />
       </div>
 
-      {/* Profile Card */}
-      <div className="px-5 pb-7">
-        <div className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-3xl p-10 flex flex-col items-center gap-4 shadow-card">
-          {/* Avatar */}
-          <Avatar
-            initial="RK"
-            color="hsl(48, 100%, 50%)"
-            size="xl"
-            className="mb-2"
-          />
+      {/* Profile Section - Simple Layout */}
+      <div className="px-5 pb-8 flex flex-col items-center gap-4">
+        {/* Avatar */}
+        <Avatar
+          initial="RK"
+          color="hsl(48, 100%, 50%)"
+          size="xl"
+        />
 
-          {/* Name & Email */}
-          <div className="text-center">
-            <Text variant="h2" weight="bold" className="text-foreground block mb-2">
-              Rajesh Kumar
-            </Text>
-            <Text variant="body-small" className="text-muted-foreground">
-              Rajesh172@gmail.com
-            </Text>
-          </div>
+        {/* Name & Email */}
+        <div className="text-center">
+          <Text variant="h2" weight="bold" className="text-foreground block mb-2">
+            Rajesh Kumar
+          </Text>
+          <Text variant="body-small" className="text-muted-foreground">
+            Rajesh172@gmail.com
+          </Text>
         </div>
       </div>
 

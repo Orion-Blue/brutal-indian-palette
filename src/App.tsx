@@ -24,7 +24,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/home" element={<HomeScreen />} />
-          <Route path="/send" element={<SendMoneyScreen />} />
+          <Route path="/send-money" element={<SendMoneyScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/analytics" element={<AnalyticsScreen />} />
           <Route path="/wallet" element={<WalletScreen />} />

@@ -164,6 +164,12 @@ full: 9999px (circles)
 - **Card Stack**: Multiple cards stacked behind main card with decreasing opacity (40%, 60%, 100%)
 - **Swipe Indicator**: Pagination dots below cards (active: primary color, inactive: muted-foreground/30)
 
+#### ContactChip
+- **Style**: Rounded-2xl, transparent card background with backdrop blur, border-border/30
+- **Padding**: 16px (1rem)
+- **Layout**: Avatar + name label
+- **Interaction**: Scale on press (0.95), hover:bg-muted/70
+
 #### TransactionItem
 - **Style**: Rounded-xl (16px), transparent background, hover state
 - **Padding**: 16px (1rem)
@@ -206,6 +212,38 @@ full: 9999px (circles)
 - **Layout**: Vertical stack, 4px gaps
 - **Header**: Optional title (body semibold)
 - **Items**: Individual transaction cards
+
+#### SpendingInsights (New in V12)
+- **Style**: Rounded-3xl, transparent card (card/80), backdrop blur, border-border/30, shadow-card
+- **Padding**: 24px (1.5rem)
+- **Layout**: Total spending header + category breakdown + budget progress bar
+- **Category Items**: Icon circle (w-10 h-10) + label + percentage + amount
+- **Icon Circles**: Rounded-xl with 15% opacity background matching category color
+- **Progress Bar**: 8px height, rounded-full, primary color fill
+- **Usage**: Displays monthly spending overview with category breakdown and budget tracking
+
+---
+
+## Screen-Specific Guidelines
+
+### ProfileScreen
+- **Layout**: Simple centered layout without card wrapper
+- **Profile Section**: Avatar centered at top, name and email below
+- **Spacing**: 32px (2rem) bottom padding after profile section
+- **Stats Grid**: 2-column grid with transparent cards
+- **Menu Sections**: Grouped by category with section headers
+
+### HomeScreen  
+- **Sections Order**: Header → Balance Cards → Quick Actions → Recent Transactions → Spending Insights
+- **Card Stack**: Main balance card with 2 background cards for swipe effect
+- **Insights Position**: After transactions, before bottom nav
+- **Padding Bottom**: 112px (7rem) to account for floating nav
+
+### SendMoneyScreen
+- **Two States**: Contact selection and amount entry
+- **Contact Selection**: Search bar → Frequent contacts grid → Recent recipients list
+- **Amount Entry**: Recipient card → Amount display → Quick amounts → Number pad → Send button
+- **Transparency**: All cards use card/80 with backdrop-blur-nav
 
 ---
 
