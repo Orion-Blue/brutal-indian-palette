@@ -39,7 +39,7 @@ export default function PaytmProfile() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] font-['Inter'] w-full max-w-[428px] mx-auto pb-[100px]">
+    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] w-full max-w-[428px] mx-auto pb-[100px]">
       
       {/* Status Bar */}
       <div className="px-4 sm:px-5 pt-3.5 pb-2.5 flex justify-between text-[15px] font-semibold h-11 items-center">
@@ -53,7 +53,7 @@ export default function PaytmProfile() {
 
       {/* Header */}
       <div className="px-4 sm:px-5 pt-4 pb-6 flex justify-between items-center h-[92px]">
-        <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 font-['Plus_Jakarta_Sans'] tracking-tight">
+        <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 tracking-tight">
           Profile
         </h1>
         <button className="bg-white border-[3px] border-[#2D3561] rounded-xl w-12 sm:w-[52px] h-12 sm:h-[52px] flex items-center justify-center cursor-pointer shadow-[4px_4px_0px_#2D3561] transition-transform active:scale-95 flex-shrink-0">
@@ -65,13 +65,13 @@ export default function PaytmProfile() {
       <div className="px-4 sm:px-5 pb-7">
         <div className="bg-white border-[3px] border-[#2D3561] rounded-3xl p-8 sm:p-10 flex flex-col items-center gap-4 shadow-[6px_6px_0px_rgba(45,53,97,0.4)]">
           {/* Avatar */}
-            <div className="w-24 sm:w-28 h-24 sm:h-28 rounded-full bg-gradient-to-br from-[#B8860B] to-[#DAA520] flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561] font-['Plus_Jakarta_Sans'] mb-2">
+            <div className="w-24 sm:w-28 h-24 sm:h-28 rounded-full bg-gradient-to-br from-[#B8860B] to-[#DAA520] flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561] mb-2">
             RK
           </div>
 
           {/* Name & Email */}
           <div className="text-center">
-            <h2 className="text-2xl sm:text-[26px] font-extrabold m-0 mb-2 font-['Plus_Jakarta_Sans'] tracking-tight">
+            <h2 className="text-2xl sm:text-[26px] font-extrabold m-0 mb-2 tracking-tight">
               Rajesh Kumar
             </h2>
             <p className="text-sm sm:text-[15px] text-[#808080] m-0 font-semibold tracking-wide">
@@ -83,7 +83,7 @@ export default function PaytmProfile() {
 
       {/* Quick Stats */}
       <div className="px-4 sm:px-5 pb-8">
-        <h2 className="text-sm font-extrabold m-0 mb-5 text-[#808080] tracking-[1.2px] font-['Plus_Jakarta_Sans']">
+        <h2 className="text-sm font-extrabold m-0 mb-5 text-[#808080] tracking-[1.2px]">
           QUICK STATS
         </h2>
         
@@ -95,12 +95,12 @@ export default function PaytmProfile() {
             >
               <div className="text-2xl sm:text-[32px] leading-none">{stat.icon}</div>
               <div>
-                <div className="text-xl sm:text-2xl font-extrabold font-['Plus_Jakarta_Sans'] tracking-tight mb-2"
+                <div className="text-xl sm:text-2xl font-extrabold tracking-tight mb-2"
                   style={{ color: stat.color }}
                 >
                   {stat.value}
                 </div>
-                <div className="text-[11px] sm:text-xs text-[#808080] font-bold tracking-wide font-['Plus_Jakarta_Sans'] uppercase">
+                <div className="text-[11px] sm:text-xs text-[#808080] font-bold tracking-wide uppercase">
                   {stat.label}
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function PaytmProfile() {
       <div className="px-4 sm:px-5">
         {menuItems.map((section, sectionIndex) => (
           <div key={sectionIndex} className="mb-8">
-            <h2 className="text-sm font-extrabold m-0 mb-5 text-[#808080] tracking-[1.2px] font-['Plus_Jakarta_Sans']">
+            <h2 className="text-sm font-extrabold m-0 mb-5 text-[#808080] tracking-[1.2px]">
               {section.section.toUpperCase()}
             </h2>
             
@@ -137,12 +137,12 @@ export default function PaytmProfile() {
                     <item.icon size={24} color="#FFFFFF" strokeWidth={2.5} />
                   </div>
                   
-                  <span className="flex-1 text-sm sm:text-base font-bold font-['Plus_Jakarta_Sans'] truncate">
+                  <span className="flex-1 text-sm sm:text-base font-bold truncate">
                     {item.label}
                   </span>
                   
                   {item.badge && (
-                    <span className="text-xs sm:text-[13px] font-extrabold px-3 py-2 rounded-[10px] border-2 border-[#2D3561] shadow-[2px_2px_0px_#2D3561] font-['Plus_Jakarta_Sans'] min-w-[36px] text-center text-white"
+                    <span className="text-xs sm:text-[13px] font-extrabold px-3 py-2 rounded-[10px] border-2 border-[#2D3561] shadow-[2px_2px_0px_#2D3561] min-w-[36px] text-center text-white"
                       style={{ background: item.color }}
                     >
                       {item.badge}
@@ -150,7 +150,7 @@ export default function PaytmProfile() {
                   )}
                   
                   {item.value && (
-                    <span className="text-sm sm:text-[15px] text-[#808080] font-['Courier_New'] font-bold">
+                    <span className="text-sm sm:text-[15px] text-[#808080] font-bold">
                       {item.value}
                     </span>
                   )}
@@ -179,7 +179,7 @@ export default function PaytmProfile() {
       <div className="px-4 sm:px-5 pb-7">
         <button className="w-full bg-white border-[3px] border-[#B8860B] rounded-[20px] p-4 sm:p-5 flex items-center justify-center gap-3 cursor-pointer transition-transform active:scale-95 shadow-[6px_6px_0px_#B8860B] min-h-[64px] sm:min-h-[68px]">
           <LogOut size={28} color="#B8860B" strokeWidth={2.5} />
-          <span className="text-base sm:text-lg font-extrabold text-[#B8860B] tracking-wide font-['Plus_Jakarta_Sans']">
+          <span className="text-base sm:text-lg font-extrabold text-[#B8860B] tracking-wide">
             LOGOUT
           </span>
         </button>
@@ -187,7 +187,7 @@ export default function PaytmProfile() {
 
       {/* Version Info */}
       <div className="px-4 sm:px-5 pb-7 text-center">
-        <p className="text-xs sm:text-[13px] text-[#808080] m-0 font-['Courier_New'] font-semibold">
+        <p className="text-xs sm:text-[13px] text-[#808080] m-0 font-semibold">
           Version 4.0.1 • Build 2025.01
         </p>
       </div>

@@ -44,7 +44,7 @@ export default function PaytmSendMoney() {
 
   if (showAmountScreen && selectedContact) {
     return (
-      <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] font-['Inter'] w-full max-w-[428px] mx-auto pb-[100px]">
+      <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] w-full max-w-[428px] mx-auto pb-[100px]">
         {/* Status Bar */}
         <div className="px-4 sm:px-5 pt-3.5 pb-2.5 flex justify-between text-[15px] font-semibold h-11 items-center">
           <span>9:41</span>
@@ -63,7 +63,7 @@ export default function PaytmSendMoney() {
           >
             <ArrowLeft size={28} color="#1A1A1A" strokeWidth={2.5} />
           </button>
-          <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 font-['Plus_Jakarta_Sans'] tracking-tight flex-1">
+          <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 tracking-tight flex-1">
             Send Money
           </h1>
         </div>
@@ -71,13 +71,13 @@ export default function PaytmSendMoney() {
         {/* Recipient Card */}
         <div className="px-4 sm:px-5 pb-8">
           <div className="bg-white border-[3px] border-[#2D3561] rounded-3xl p-6 sm:p-8 flex flex-col items-center gap-4 shadow-[6px_6px_0px_rgba(45,53,97,0.4)]">
-            <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-full flex items-center justify-center text-3xl sm:text-4xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561] font-['Plus_Jakarta_Sans']"
+            <div className="w-20 sm:w-24 h-20 sm:h-24 rounded-full flex items-center justify-center text-3xl sm:text-4xl font-extrabold text-white border-4 border-[#2D3561] shadow-[6px_6px_0px_#2D3561]"
               style={{ background: selectedContact.color }}
             >
               {selectedContact.initial}
             </div>
             <div className="text-center">
-              <h2 className="text-xl sm:text-2xl font-extrabold m-0 mb-1 font-['Plus_Jakarta_Sans'] tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-extrabold m-0 mb-1 tracking-tight">
                 {selectedContact.name}
               </h2>
               <p className="text-sm text-[#808080] m-0 font-semibold">
@@ -90,10 +90,10 @@ export default function PaytmSendMoney() {
         {/* Amount Input */}
         <div className="px-4 sm:px-5 pb-6">
           <div className="text-center mb-6">
-            <div className="text-sm font-bold text-[#808080] mb-3 tracking-wide font-['Plus_Jakarta_Sans'] uppercase">
+            <div className="text-sm font-bold text-[#808080] mb-3 tracking-wide uppercase">
               Enter Amount
             </div>
-            <div className="text-5xl sm:text-6xl font-extrabold font-['Plus_Jakarta_Sans'] tracking-tight text-[#1A1A1A] min-h-[64px] flex items-center justify-center">
+            <div className="text-5xl sm:text-6xl font-extrabold tracking-tight text-[#1A1A1A] min-h-[64px] flex items-center justify-center">
               ₹{amount || '0'}
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function PaytmSendMoney() {
               <button
                 key={quickAmount}
                 onClick={() => setAmount(quickAmount)}
-                className="bg-white border-[3px] border-[#2D3561] rounded-2xl py-3 sm:py-4 font-bold text-sm sm:text-base font-['Plus_Jakarta_Sans'] cursor-pointer transition-transform active:scale-95 shadow-[4px_4px_0px_#2D3561]"
+                className="bg-white border-[3px] border-[#2D3561] rounded-2xl py-3 sm:py-4 font-bold text-sm sm:text-base cursor-pointer transition-transform active:scale-95 shadow-[4px_4px_0px_#2D3561]"
               >
                 ₹{quickAmount}
               </button>
@@ -117,7 +117,7 @@ export default function PaytmSendMoney() {
               <button
                 key={key}
                 onClick={() => handleNumberPad(key)}
-                className="bg-white border-[3px] border-[#2D3561] rounded-2xl h-14 sm:h-16 flex items-center justify-center text-xl sm:text-2xl font-bold font-['Plus_Jakarta_Sans'] cursor-pointer transition-transform active:scale-95 shadow-[4px_4px_0px_#2D3561]"
+                className="bg-white border-[3px] border-[#2D3561] rounded-2xl h-14 sm:h-16 flex items-center justify-center text-xl sm:text-2xl font-bold cursor-pointer transition-transform active:scale-95 shadow-[4px_4px_0px_#2D3561]"
               >
                 {key === 'clear' ? 'C' : key === 'backspace' ? '←' : key}
               </button>
@@ -127,7 +127,7 @@ export default function PaytmSendMoney() {
           {/* Send Button */}
           <button
             disabled={!amount || amount === '0'}
-            className="w-full bg-gradient-to-r from-[#B8860B] to-[#DAA520] border-[3px] border-[#2D3561] rounded-[20px] p-5 text-xl font-extrabold text-white tracking-wide font-['Plus_Jakarta_Sans'] cursor-pointer transition-all shadow-[6px_6px_0px_#2D3561] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className="w-full bg-gradient-to-r from-[#B8860B] to-[#DAA520] border-[3px] border-[#2D3561] rounded-[20px] p-5 text-xl font-extrabold text-white tracking-wide cursor-pointer transition-all shadow-[6px_6px_0px_#2D3561] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
           >
             SEND ₹{amount || '0'}
           </button>
@@ -139,7 +139,7 @@ export default function PaytmSendMoney() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] font-['Inter'] w-full max-w-[428px] mx-auto pb-[100px]">
+    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] w-full max-w-[428px] mx-auto pb-[100px]">
       {/* Status Bar */}
       <div className="px-4 sm:px-5 pt-3.5 pb-2.5 flex justify-between text-[15px] font-semibold h-11 items-center">
         <span>9:41</span>
@@ -152,10 +152,10 @@ export default function PaytmSendMoney() {
 
       {/* Header */}
       <div className="px-4 sm:px-5 pt-4 pb-6 flex justify-between items-center h-[92px]">
-        <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 font-['Plus_Jakarta_Sans'] tracking-tight">
+        <h1 className="text-2xl sm:text-[26px] font-extrabold m-0 tracking-tight">
           Send Money
         </h1>
-        <button className="bg-white border-[3px] border-[#2D3561] rounded-xl px-4 sm:px-5 h-12 sm:h-[52px] flex items-center justify-center cursor-pointer shadow-[4px_4px_0px_#2D3561] transition-transform active:scale-95 text-sm sm:text-base font-bold font-['Plus_Jakarta_Sans']">
+        <button className="bg-white border-[3px] border-[#2D3561] rounded-xl px-4 sm:px-5 h-12 sm:h-[52px] flex items-center justify-center cursor-pointer shadow-[4px_4px_0px_#2D3561] transition-transform active:scale-95 text-sm sm:text-base font-bold">
           UPI ID
         </button>
       </div>
@@ -174,7 +174,7 @@ export default function PaytmSendMoney() {
 
       {/* Frequent Contacts */}
       <div className="px-4 sm:px-5 pb-8">
-        <h2 className="text-sm font-extrabold mb-5 text-[#808080] tracking-[1.2px] font-['Plus_Jakarta_Sans']">
+        <h2 className="text-sm font-extrabold mb-5 text-[#808080] tracking-[1.2px]">
           FREQUENT CONTACTS
         </h2>
         <div className="grid grid-cols-4 gap-2.5 sm:gap-3">
@@ -184,12 +184,12 @@ export default function PaytmSendMoney() {
               onClick={() => handleContactSelect(contact)}
               className="flex flex-col items-center gap-2 cursor-pointer transition-transform active:scale-95"
             >
-              <div className="w-14 sm:w-16 h-14 sm:h-16 rounded-full flex items-center justify-center text-xl sm:text-2xl font-extrabold text-white border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561] font-['Plus_Jakarta_Sans']"
+              <div className="w-14 sm:w-16 h-14 sm:h-16 rounded-full flex items-center justify-center text-xl sm:text-2xl font-extrabold text-white border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561]"
                 style={{ background: contact.color }}
               >
                 {contact.initial}
               </div>
-              <span className="text-xs sm:text-sm font-bold font-['Plus_Jakarta_Sans'] truncate w-full text-center">
+              <span className="text-xs sm:text-sm font-bold truncate w-full text-center">
                 {contact.name}
               </span>
             </button>
@@ -199,7 +199,7 @@ export default function PaytmSendMoney() {
 
       {/* Recent Recipients */}
       <div className="px-4 sm:px-5">
-        <h2 className="text-sm font-extrabold mb-5 text-[#808080] tracking-[1.2px] font-['Plus_Jakarta_Sans']">
+        <h2 className="text-sm font-extrabold mb-5 text-[#808080] tracking-[1.2px]">
           RECENT RECIPIENTS
         </h2>
         <div className="flex flex-col gap-3">
@@ -209,13 +209,13 @@ export default function PaytmSendMoney() {
               onClick={() => handleContactSelect(recipient)}
               className="bg-white border-[3px] border-[#2D3561] rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 cursor-pointer transition-transform active:scale-95 shadow-[6px_6px_0px_#2D3561] min-h-[76px] sm:min-h-[84px]"
             >
-              <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full flex items-center justify-center text-xl sm:text-2xl font-extrabold text-white border-[3px] border-[#2D3561] shadow-[3px_3px_0px_rgba(45,53,97,0.4)] font-['Plus_Jakarta_Sans'] flex-shrink-0"
+              <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full flex items-center justify-center text-xl sm:text-2xl font-extrabold text-white border-[3px] border-[#2D3561] shadow-[3px_3px_0px_rgba(45,53,97,0.4)] flex-shrink-0"
                 style={{ background: recipient.color }}
               >
                 {recipient.initial}
               </div>
               <div className="flex-1 text-left min-w-0">
-                <h3 className="text-sm sm:text-base font-extrabold m-0 mb-1 font-['Plus_Jakarta_Sans'] tracking-tight truncate">
+                <h3 className="text-sm sm:text-base font-extrabold m-0 mb-1 tracking-tight truncate">
                   {recipient.name}
                 </h3>
                 <p className="text-xs sm:text-[13px] text-[#808080] m-0 font-semibold">
@@ -223,7 +223,7 @@ export default function PaytmSendMoney() {
                 </p>
               </div>
               <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                <div className="text-sm sm:text-base font-extrabold text-[#1A1A1A] font-['Plus_Jakarta_Sans']">
+                <div className="text-sm sm:text-base font-extrabold text-[#1A1A1A]">
                   {recipient.lastAmount}
                 </div>
                 <ChevronRight size={24} color="#808080" strokeWidth={2.5} />

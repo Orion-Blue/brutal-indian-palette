@@ -72,7 +72,7 @@ export default function PaytmHomeDark() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] font-['Inter'] w-full max-w-[428px] mx-auto pb-[100px]">
+    <div className="min-h-screen bg-[#FFF5E0] text-[#1A1A1A] w-full max-w-[428px] mx-auto pb-[100px]">
       
       {/* Status Bar */}
       <div className="px-4 sm:px-5 pt-3.5 pb-2.5 flex justify-between text-[15px] font-semibold h-11 items-center">
@@ -86,11 +86,11 @@ export default function PaytmHomeDark() {
 
       {/* Header */}
       <div className="px-4 sm:px-5 pt-4 pb-6 flex justify-between items-center h-[92px] gap-3">
-        <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-gradient-to-br from-[#B8860B] to-[#DAA520] border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561] flex-shrink-0 flex items-center justify-center text-lg sm:text-xl font-extrabold text-white font-['Plus_Jakarta_Sans']">
+        <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-gradient-to-br from-[#B8860B] to-[#DAA520] border-[3px] border-[#2D3561] shadow-[4px_4px_0px_#2D3561] flex-shrink-0 flex items-center justify-center text-lg sm:text-xl font-extrabold text-white">
           RK
         </div>
         
-        <h1 className="text-base sm:text-lg font-extrabold m-0 tracking-tight font-['Plus_Jakarta_Sans'] flex-1 text-center">
+        <h1 className="text-base sm:text-lg font-extrabold m-0 tracking-tight flex-1 text-center">
           Rajesh Kumar
         </h1>
         
@@ -104,19 +104,19 @@ export default function PaytmHomeDark() {
       <div className="px-4 sm:px-5 pb-7">
         <div className="bg-gradient-to-br from-[#B8860B] to-[#DAA520] rounded-[20px] p-6 sm:p-7 border-[3px] border-[#2D3561] min-h-[200px] flex flex-col justify-between shadow-[8px_8px_0px_#2D3561] text-white">
           <div>
-            <p className="text-xs font-extrabold tracking-[1.5px] opacity-90 m-0 mb-4 font-['Plus_Jakarta_Sans']">
+            <p className="text-xs font-extrabold tracking-[1.5px] opacity-90 m-0 mb-4">
               BALANCE
             </p>
-            <h2 className="text-[42px] sm:text-5xl font-extrabold m-0 font-['Plus_Jakarta_Sans'] tracking-[-2.5px] leading-none">
+            <h2 className="text-[42px] sm:text-5xl font-extrabold m-0 tracking-[-2.5px] leading-none">
               ₹{balance.toLocaleString('en-IN')}
               <span className="text-2xl sm:text-[28px] opacity-85">.00</span>
             </h2>
           </div>
-          <div className="flex justify-between text-xs font-['Courier_New'] font-bold opacity-90 mb-3 gap-2">
+          <div className="flex justify-between text-xs font-bold opacity-90 mb-3 gap-2">
             <span>XXXX - 5689</span>
             <span>VIRTUAL</span>
           </div>
-          <div className="flex justify-between text-[11px] font-['Courier_New'] font-bold opacity-90 items-end">
+          <div className="flex justify-between text-[11px] font-bold opacity-90 items-end">
             <span>VALID THRU<br/>07/29</span>
             <span className="flex items-center gap-1.5 bg-white/25 px-2.5 py-1.5 rounded-lg border-2 border-white/30">
               <span className="w-2 h-2 bg-[#00FF00] rounded-full shadow-[0_0_8px_#00FF00]"></span>
@@ -139,7 +139,7 @@ export default function PaytmHomeDark() {
               >
                 <action.icon size={28} color="#FFFFFF" strokeWidth={2.5} />
               </div>
-              <span className="text-[11px] sm:text-xs font-extrabold tracking-wide font-['Plus_Jakarta_Sans']">
+              <span className="text-[11px] sm:text-xs font-extrabold tracking-wide">
                 {action.label}
               </span>
             </button>
@@ -149,13 +149,13 @@ export default function PaytmHomeDark() {
 
       {/* Recent Payments */}
       <div className="px-4 sm:px-5">
-        <h2 className="text-xl sm:text-[22px] font-extrabold m-0 mb-5 sm:mb-6 font-['Plus_Jakarta_Sans'] tracking-tight">
+        <h2 className="text-xl sm:text-[22px] font-extrabold m-0 mb-5 sm:mb-6 tracking-tight">
           Recent Payments
         </h2>
 
         {transactionsByDate.map((dateGroup, groupIndex) => (
           <div key={groupIndex} className="mb-7">
-            <div className="text-xs sm:text-[13px] text-[#808080] font-extrabold mb-4 tracking-[1.2px] font-['Plus_Jakarta_Sans']">
+            <div className="text-xs sm:text-[13px] text-[#808080] font-extrabold mb-4 tracking-[1.2px]">
               {dateGroup.date}
             </div>
             
@@ -175,17 +175,17 @@ export default function PaytmHomeDark() {
                   </div>
                   
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm sm:text-base font-extrabold m-0 mb-1.5 font-['Plus_Jakarta_Sans'] tracking-tight truncate">
+                    <h3 className="text-sm sm:text-base font-extrabold m-0 mb-1.5 tracking-tight truncate">
                       {txn.name}
                     </h3>
-                    <p className="text-xs sm:text-[13px] text-[#808080] m-0 font-['Courier_New'] font-semibold">
+                    <p className="text-xs sm:text-[13px] text-[#808080] m-0 font-semibold">
                       {txn.time} • <span className="font-bold" style={{
                         color: txn.status === 'PENDING' ? '#FFD93D' : '#00C896'
                       }}>{txn.status}</span>
                     </p>
                   </div>
                   
-                  <div className="text-base sm:text-lg font-extrabold font-['Plus_Jakarta_Sans'] tracking-tight whitespace-nowrap"
+                  <div className="text-base sm:text-lg font-extrabold tracking-tight whitespace-nowrap"
                     style={{ color: txn.type === 'credit' ? '#00D9C0' : '#FF6B35' }}
                   >
                     {txn.type === 'credit' ? '+' : '-'}₹{txn.amount.toLocaleString('en-IN')}
