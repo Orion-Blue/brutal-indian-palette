@@ -17,7 +17,7 @@ export const SearchBar = ({ onSearchChange, className, ...props }: SearchBarProp
       <input
         type="text"
         placeholder="Search..."
-        className="w-full pl-12 pr-4 py-3 rounded-xl border border-border bg-card text-sm font-medium text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
+        className="w-full pl-12 pr-4 py-3 rounded-2xl border border-border/30 bg-card/80 backdrop-blur-nav text-sm font-medium text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all shadow-sm"
         onChange={(e) => onSearchChange?.(e.target.value)}
         {...props}
       />

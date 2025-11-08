@@ -17,16 +17,16 @@ export const Text = ({
   style,
 }: TextProps) => {
   const variants = {
-    display: 'text-4xl',      // 36px
-    h1: 'text-3xl',           // 30px
-    h2: 'text-2xl',           // 24px
-    h3: 'text-xl',            // 20px
-    h4: 'text-lg',            // 18px
-    'body-large': 'text-base',// 16px
-    body: 'text-sm',          // 14px
-    'body-small': 'text-xs',  // 12px
-    caption: 'text-xs',       // 12px
-    micro: 'text-[10px]',     // 10px
+    display: 'text-[40px] leading-tight',     // 40px (1.333^4)
+    h1: 'text-[32px] leading-tight',          // 32px (1.333^3)
+    h2: 'text-2xl leading-snug',              // 24px (1.333^2)
+    h3: 'text-lg leading-normal',             // 18px (1.333^1)
+    h4: 'text-base leading-normal',           // 16px (base)
+    'body-large': 'text-[15px] leading-relaxed', // 15px
+    body: 'text-sm leading-relaxed',          // 14px
+    'body-small': 'text-xs leading-relaxed',  // 12px
+    caption: 'text-[11px] leading-tight',     // 11px
+    micro: 'text-[10px] leading-tight',       // 10px
   };
 
   const weights = {

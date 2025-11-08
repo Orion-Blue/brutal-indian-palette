@@ -29,7 +29,7 @@ export const TransactionItem = ({
     <button
       onClick={onClick}
       className={cn(
-        'w-full flex items-center justify-between p-4 hover:bg-muted/50 transition-all active:scale-[0.98] rounded-xl',
+        'w-full flex items-center justify-between p-4 hover:bg-muted/70 transition-all active:scale-[0.98] rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
         className
       )}
     >

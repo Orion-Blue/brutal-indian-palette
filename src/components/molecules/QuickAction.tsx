@@ -13,7 +13,7 @@ export const QuickAction = ({ icon: Icon, label, color, className, ...props }: Q
   return (
     <button
       className={cn(
-        'flex flex-col items-center gap-3 p-4 rounded-2xl bg-card hover:bg-muted transition-all active:scale-95',
+        'flex flex-col items-center gap-3 p-5 rounded-2xl bg-card/80 backdrop-blur-nav border border-border/30 hover:bg-muted/70 transition-all active:scale-[0.98] shadow-sm hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
         className
       )}
       {...props}

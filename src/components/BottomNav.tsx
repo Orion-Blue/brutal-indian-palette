@@ -25,25 +25,21 @@ export const BottomNav = () => {
               key={path}
               onClick={() => navigate(path)}
               className={cn(
-                'flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all active:scale-95',
-                isActive ? 'bg-primary/15' : 'hover:bg-muted/70'
+                'flex flex-col items-center justify-center gap-1 px-3 py-2 rounded-xl transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary active:scale-[0.98]',
+                isActive
+                  ? 'text-foreground bg-primary/15'
+                  : 'text-muted-foreground hover:bg-muted/70'
               )}
             >
               <Icon
                 size={22}
-                strokeWidth={2.5}
-                className={cn(
-                  'transition-colors',
-                  isActive ? 'text-foreground' : 'text-muted-foreground'
-                )}
+                strokeWidth={isActive ? 2.5 : 2}
+                className="transition-colors"
               />
               <Text
                 variant="micro"
                 weight="medium"
-                className={cn(
-                  'transition-colors',
-                  isActive ? 'text-foreground' : 'text-muted-foreground'
-                )}
+                className="transition-colors"
               >
                 {label}
               </Text>

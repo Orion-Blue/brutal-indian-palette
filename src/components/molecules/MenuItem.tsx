@@ -16,7 +16,7 @@ export const MenuItem = ({ icon: Icon, label, value, onClick, className }: MenuI
     <button
       onClick={onClick}
       className={cn(
-        'w-full flex items-center justify-between p-4 hover:bg-muted transition-all active:scale-[0.98] rounded-xl',
+        'w-full flex items-center justify-between p-4 bg-card/80 backdrop-blur-nav border border-border/30 hover:bg-muted/70 transition-all active:scale-[0.98] rounded-xl shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
         className
       )}
     >

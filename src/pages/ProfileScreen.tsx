@@ -83,7 +83,7 @@ export default function ProfileScreen() {
           {statsData.map((stat, index) => (
             <div
               key={index}
-              className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl p-6 flex flex-col gap-3 shadow-sm hover:shadow-md hover:bg-muted/70 transition-all active:scale-98 cursor-pointer min-h-[140px] justify-between"
+              className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl p-6 flex flex-col gap-3 shadow-sm hover:shadow-md hover:bg-muted/70 transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer min-h-[140px] justify-between"
             >
               <div className="text-3xl leading-none">{stat.icon}</div>
               <div>
@@ -122,7 +122,7 @@ export default function ProfileScreen() {
                     }
                   }}
                   className={cn(
-                    "w-full bg-transparent border-none p-5 flex items-center gap-4 cursor-pointer transition-all text-left hover:bg-muted/70",
+                    "w-full bg-transparent border-none p-5 flex items-center gap-4 cursor-pointer transition-all text-left hover:bg-muted/70 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
                     itemIndex < section.items.length - 1 && "border-b border-border/30"
                   )}
                 >
@@ -181,7 +181,7 @@ export default function ProfileScreen() {
 
       {/* Logout Button */}
       <div className="px-5 pb-7">
-        <button className="w-full bg-card/80 backdrop-blur-nav border-2 border-destructive rounded-2xl p-5 flex items-center justify-center gap-3 cursor-pointer transition-all active:scale-98 shadow-sm hover:shadow-md hover:bg-destructive/10">
+        <button className="w-full bg-card/80 backdrop-blur-nav border-2 border-destructive rounded-2xl p-5 flex items-center justify-center gap-3 cursor-pointer transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive shadow-sm hover:shadow-md hover:bg-destructive/10">
           <LogOut size={24} className="text-destructive" strokeWidth={2} />
           <Text variant="body-large" weight="bold" className="text-destructive tracking-wide">
             LOGOUT

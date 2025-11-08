@@ -13,7 +13,7 @@ export const StatCard = ({ label, value, color, icon, className }: StatCardProps
   return (
     <div
       className={cn(
-        'bg-card rounded-2xl p-5 text-center shadow-md transition-all hover:shadow-lg',
+        'bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl p-6 text-center shadow-sm transition-all hover:shadow-md hover:bg-muted/70 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer',
         className
       )}
     >

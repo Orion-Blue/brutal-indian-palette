@@ -36,7 +36,7 @@ export const IconButton = ({
   return (
     <button
       className={cn(
-        'rounded-full flex items-center justify-center transition-all active:scale-95',
+        'rounded-full flex items-center justify-center transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
         sizes[size],
         variants[variant],
         className

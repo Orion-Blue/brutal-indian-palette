@@ -17,14 +17,22 @@ export default function SendMoneyScreen() {
     { id: 1, name: 'Priya', initial: 'P', color: 'hsl(340, 82%, 70%)', lastAmount: '₹1,200' },
     { id: 2, name: 'Amit', initial: 'A', color: 'hsl(217, 91%, 60%)', lastAmount: '₹850' },
     { id: 3, name: 'Neha', initial: 'N', color: 'hsl(258, 90%, 66%)', lastAmount: '₹2,500' },
-    { id: 4, name: 'Rahul', initial: 'R', color: 'hsl(25, 95%, 53%)', lastAmount: '₹675' }
+    { id: 4, name: 'Rahul', initial: 'R', color: 'hsl(25, 95%, 53%)', lastAmount: '₹675' },
+    { id: 9, name: 'Kavya', initial: 'K', color: 'hsl(142, 71%, 45%)', lastAmount: '₹3,200' },
+    { id: 10, name: 'Vijay', initial: 'V', color: 'hsl(45, 93%, 58%)', lastAmount: '₹1,800' },
+    { id: 11, name: 'Sana', initial: 'S', color: 'hsl(280, 85%, 65%)', lastAmount: '₹950' },
+    { id: 12, name: 'Rohan', initial: 'R', color: 'hsl(200, 95%, 55%)', lastAmount: '₹2,100' }
   ];
 
   const recentRecipients = [
     { id: 5, name: 'Swiggy', initial: 'S', color: 'hsl(6, 93%, 71%)', lastAmount: '₹340', time: 'Yesterday' },
     { id: 6, name: 'Amazon Pay', initial: 'A', color: 'hsl(258, 90%, 66%)', lastAmount: '₹1,245', time: '2 days ago' },
     { id: 7, name: 'Deepak Kumar', initial: 'D', color: 'hsl(142, 71%, 45%)', lastAmount: '₹5,000', time: '3 days ago' },
-    { id: 8, name: 'PhonePe', initial: 'P', color: 'hsl(217, 91%, 60%)', lastAmount: '₹599', time: '1 week ago' }
+    { id: 8, name: 'PhonePe', initial: 'P', color: 'hsl(217, 91%, 60%)', lastAmount: '₹599', time: '1 week ago' },
+    { id: 13, name: 'Zomato', initial: 'Z', color: 'hsl(0, 100%, 65%)', lastAmount: '₹750', time: '1 week ago' },
+    { id: 14, name: 'Google Pay', initial: 'G', color: 'hsl(142, 71%, 45%)', lastAmount: '₹2,300', time: '2 weeks ago' },
+    { id: 15, name: 'Meera Singh', initial: 'M', color: 'hsl(340, 82%, 70%)', lastAmount: '₹1,500', time: '2 weeks ago' },
+    { id: 16, name: 'Uber', initial: 'U', color: 'hsl(0, 0%, 10%)', lastAmount: '₹425', time: '3 weeks ago' }
   ];
 
   const handleContactSelect = (contact: any) => {
@@ -102,7 +110,7 @@ export default function SendMoneyScreen() {
               <button
                 key={quickAmount}
                 onClick={() => setAmount(quickAmount)}
-                className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl py-4 font-semibold text-sm cursor-pointer transition-all active:scale-95 shadow-sm hover:shadow-md hover:bg-muted/70"
+                className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl py-4 font-semibold text-sm cursor-pointer transition-all active:scale-[0.98] shadow-sm hover:shadow-md hover:bg-muted/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 ₹{quickAmount}
               </button>
@@ -115,7 +123,7 @@ export default function SendMoneyScreen() {
               <button
                 key={key}
                 onClick={() => handleNumberPad(key)}
-                className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl h-16 flex items-center justify-center text-xl font-semibold cursor-pointer transition-all active:scale-95 shadow-sm hover:shadow-md hover:bg-muted/70"
+                className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl h-16 flex items-center justify-center text-xl font-semibold cursor-pointer transition-all active:scale-[0.98] shadow-sm hover:shadow-md hover:bg-muted/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 {key === 'clear' ? 'C' : key === 'backspace' ? '←' : key}
               </button>
@@ -127,8 +135,8 @@ export default function SendMoneyScreen() {
             disabled={!amount || amount === '0'}
             className={cn(
               "w-full bg-primary text-primary-foreground rounded-2xl p-5 text-lg font-bold tracking-wide cursor-pointer transition-all shadow-md",
-              "disabled:opacity-50 disabled:cursor-not-allowed active:scale-98",
-              "hover:shadow-lg"
+              "disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]",
+              "hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             )}
           >
             SEND ₹{amount || '0'}
@@ -147,7 +155,7 @@ export default function SendMoneyScreen() {
         <Text variant="h2" weight="bold" className="text-foreground">
           Send Money
         </Text>
-        <button className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-xl px-5 h-12 flex items-center justify-center cursor-pointer shadow-sm transition-all active:scale-95 hover:shadow-md hover:bg-muted/70 text-sm font-semibold">
+        <button className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-xl px-5 h-12 flex items-center justify-center cursor-pointer shadow-sm transition-all active:scale-[0.98] hover:shadow-md hover:bg-muted/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary text-sm font-semibold">
           UPI ID
         </button>
       </div>
@@ -174,7 +182,7 @@ export default function SendMoneyScreen() {
             <button
               key={contact.id}
               onClick={() => handleContactSelect(contact)}
-              className="flex flex-col items-center gap-2 cursor-pointer transition-transform active:scale-95"
+              className="flex flex-col items-center gap-2 cursor-pointer transition-transform active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-xl"
             >
               <Avatar
                 initial={contact.initial}
@@ -199,7 +207,7 @@ export default function SendMoneyScreen() {
             <button
               key={recipient.id}
               onClick={() => handleContactSelect(recipient)}
-              className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl p-5 flex items-center gap-4 cursor-pointer transition-all active:scale-98 shadow-sm hover:shadow-md hover:bg-muted/70"
+              className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-2xl p-5 flex items-center gap-4 cursor-pointer transition-all active:scale-[0.98] shadow-sm hover:shadow-md hover:bg-muted/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <Avatar
                 initial={recipient.initial}

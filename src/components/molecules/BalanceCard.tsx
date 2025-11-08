@@ -54,13 +54,13 @@ export const BalanceCard = ({
           </div>
           <button
             onClick={() => setIsVisible(!isVisible)}
-            className="p-2 rounded-full hover:bg-black/10 transition-colors active:scale-95"
+            className="text-brand-dark hover:bg-black/10 rounded-full p-1.5 transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark"
             aria-label={isVisible ? "Hide balance" : "Show balance"}
           >
             {isVisible ? (
-              <EyeOff size={20} color={textColor} strokeWidth={2.5} />
+              <EyeOff size={20} color={textColor} strokeWidth={2} />
             ) : (
-              <Eye size={20} color={textColor} strokeWidth={2.5} />
+              <Eye size={20} color={textColor} strokeWidth={2} />
             )}
           </button>
         </div>

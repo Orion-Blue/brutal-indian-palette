@@ -15,7 +15,7 @@ export const ContactChip = ({ name, initial, color, onClick, className }: Contac
     <button
       onClick={onClick}
       className={cn(
-        'flex flex-col items-center gap-2 p-3 rounded-2xl hover:bg-muted transition-all active:scale-95',
+        'flex flex-col items-center gap-2 p-4 rounded-2xl bg-card/80 backdrop-blur-nav border border-border/30 hover:bg-muted/70 transition-all active:scale-[0.98] shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary',
         className
       )}
     >
