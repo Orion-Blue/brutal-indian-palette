@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Search, ChevronRight, User, Building2, CreditCard, Smartphone } from 'lucide-react';
+import { ArrowLeft, Search, ChevronRight } from 'lucide-react';
 import BottomNav from '@/components/BottomNav';
 
 export default function PaytmSendMoney() {
@@ -57,15 +57,17 @@ export default function PaytmSendMoney() {
         
         {/* Status Bar */}
         <div style={{ 
-          padding: '12px 20px 8px', 
+          padding: '14px 20px 10px', 
           display: 'flex', 
           justifyContent: 'space-between',
-          fontSize: '14px',
+          fontSize: '15px',
           fontWeight: '600',
-          color: '#1A1A1A'
+          color: '#1A1A1A',
+          height: '44px',
+          alignItems: 'center'
         }}>
           <span>9:41</span>
-          <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
             <span>📶</span>
             <span>📡</span>
             <span>🔋</span>
@@ -73,51 +75,56 @@ export default function PaytmSendMoney() {
         </div>
 
         {/* Header */}
-        <div style={{ padding: '16px 20px', display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <div style={{ padding: '16px 20px 24px', display: 'flex', alignItems: 'center', gap: '16px', height: '92px' }}>
           <button 
             onClick={handleBack}
             style={{
               background: '#FFFFFF',
               border: '3px solid #2D3561',
               borderRadius: '12px',
-              width: '48px',
-              height: '48px',
+              width: '52px',
+              height: '52px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: '3px 3px 0px #2D3561',
-              transition: 'all 0.2s'
+              boxShadow: '4px 4px 0px #2D3561',
+              transition: 'transform 0.2s',
+              flexShrink: 0
             }}
+            onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+            onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
-            <ArrowLeft size={22} color="#1A1A1A" strokeWidth={2.5} />
+            <ArrowLeft size={24} color="#1A1A1A" strokeWidth={2.5} />
           </button>
           <h1 style={{ 
-            fontSize: '22px', 
+            fontSize: '26px', 
             fontWeight: '800',
             margin: 0,
             fontFamily: "'Plus Jakarta Sans', sans-serif",
-            color: '#1A1A1A'
+            color: '#1A1A1A',
+            letterSpacing: '-0.5px'
           }}>Enter Amount</h1>
         </div>
 
         {/* Recipient Info */}
         <div style={{
-          padding: '0 20px 32px',
+          padding: '0 20px 40px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '16px'
+          gap: '20px'
         }}>
           <div style={{
-            width: '88px',
-            height: '88px',
+            width: '96px',
+            height: '96px',
             borderRadius: '50%',
             background: selectedContact.color,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '36px',
+            fontSize: '40px',
             fontWeight: '800',
             color: '#FFFFFF',
             border: '4px solid #2D3561',
@@ -128,14 +135,15 @@ export default function PaytmSendMoney() {
           </div>
           <div style={{ textAlign: 'center' }}>
             <h2 style={{ 
-              fontSize: '20px', 
+              fontSize: '22px', 
               fontWeight: '800',
-              margin: '0 0 6px 0',
+              margin: '0 0 8px 0',
               fontFamily: "'Plus Jakarta Sans', sans-serif",
-              color: '#1A1A1A'
+              color: '#1A1A1A',
+              letterSpacing: '-0.5px'
             }}>{selectedContact.name}</h2>
             <p style={{ 
-              fontSize: '14px', 
+              fontSize: '15px', 
               color: '#808080',
               margin: 0,
               fontFamily: "'Courier New', monospace",
@@ -146,29 +154,30 @@ export default function PaytmSendMoney() {
 
         {/* Amount Input */}
         <div style={{
-          padding: '0 20px 32px',
+          padding: '0 20px 40px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center'
         }}>
           <div style={{
-            fontSize: '12px',
+            fontSize: '13px',
             color: '#808080',
-            marginBottom: '16px',
+            marginBottom: '20px',
             letterSpacing: '1.5px',
             fontWeight: '800',
             fontFamily: "'Plus Jakarta Sans', sans-serif"
           }}>ENTER AMOUNT</div>
           <div style={{
-            fontSize: '64px',
+            fontSize: '72px',
             fontWeight: '800',
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             color: '#00D9C0',
             letterSpacing: '-3px',
-            minHeight: '80px',
+            minHeight: '90px',
             display: 'flex',
             alignItems: 'center',
-            textShadow: '0 0 30px rgba(0, 217, 192, 0.3)'
+            textShadow: '0 0 40px rgba(0, 217, 192, 0.3)',
+            lineHeight: '1'
           }}>
             ₹{amount || '0'}
           </div>
@@ -189,15 +198,22 @@ export default function PaytmSendMoney() {
                   background: '#FFFFFF',
                   border: '3px solid #2D3561',
                   borderRadius: '12px',
-                  padding: '16px',
+                  padding: '18px 12px',
                   color: '#1A1A1A',
-                  fontSize: '16px',
+                  fontSize: '18px',
                   fontWeight: '800',
                   cursor: 'pointer',
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  transition: 'all 0.2s',
-                  boxShadow: '5px 5px 0px #2D3561'
+                  transition: 'transform 0.2s',
+                  boxShadow: '5px 5px 0px #2D3561',
+                  minHeight: '60px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}
+                onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+                onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               >
                 ₹{amt}
               </button>
@@ -206,7 +222,7 @@ export default function PaytmSendMoney() {
         </div>
 
         {/* Number Pad */}
-        <div style={{ padding: '0 20px 24px' }}>
+        <div style={{ padding: '0 20px 28px' }}>
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(3, 1fr)', 
@@ -226,15 +242,22 @@ export default function PaytmSendMoney() {
                   background: '#FFFFFF',
                   border: '3px solid #2D3561',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '20px',
                   color: '#1A1A1A',
-                  fontSize: '26px',
+                  fontSize: '28px',
                   fontWeight: '800',
                   cursor: 'pointer',
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  transition: 'all 0.2s',
-                  boxShadow: '4px 4px 0px #2D3561'
+                  transition: 'transform 0.2s',
+                  boxShadow: '4px 4px 0px #2D3561',
+                  minHeight: '64px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}
+                onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+                onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               >
                 {num}
               </button>
@@ -252,16 +275,27 @@ export default function PaytmSendMoney() {
               border: '3px solid #2D3561',
               borderRadius: '16px',
               padding: '20px',
-              color: amount && amount !== '0' ? '#FFFFFF' : '#808080',
-              fontSize: '18px',
+              color: amount && amount !== '0' ? '#FFFFFF' : '#B3B3B3',
+              fontSize: '20px',
               fontWeight: '800',
               cursor: amount && amount !== '0' ? 'pointer' : 'not-allowed',
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               letterSpacing: '1px',
-              opacity: amount && amount !== '0' ? 1 : 0.6,
+              opacity: amount && amount !== '0' ? 1 : 0.5,
               transition: 'all 0.2s',
-              boxShadow: amount && amount !== '0' ? '6px 6px 0px #2D3561' : '3px 3px 0px rgba(45, 53, 97, 0.5)'
+              boxShadow: amount && amount !== '0' ? '6px 6px 0px #2D3561' : '3px 3px 0px rgba(45, 53, 97, 0.3)',
+              minHeight: '68px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
+            onMouseDown={(e) => {
+              if (amount && amount !== '0') {
+                e.currentTarget.style.transform = 'scale(0.98)';
+              }
+            }}
+            onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
             SEND ₹{amount || '0'}
           </button>
@@ -283,15 +317,17 @@ export default function PaytmSendMoney() {
       
       {/* Status Bar */}
       <div style={{ 
-        padding: '12px 20px 8px', 
+        padding: '14px 20px 10px', 
         display: 'flex', 
         justifyContent: 'space-between',
-        fontSize: '14px',
+        fontSize: '15px',
         fontWeight: '600',
-        color: '#1A1A1A'
+        color: '#1A1A1A',
+        height: '44px',
+        alignItems: 'center'
       }}>
         <span>9:41</span>
-        <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
           <span>📶</span>
           <span>📡</span>
           <span>🔋</span>
@@ -299,45 +335,54 @@ export default function PaytmSendMoney() {
       </div>
 
       {/* Header */}
-      <div style={{ padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ padding: '16px 20px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '92px' }}>
         <h1 style={{ 
           fontSize: '26px', 
           fontWeight: '800',
           margin: 0,
           fontFamily: "'Plus Jakarta Sans', sans-serif",
-          color: '#1A1A1A'
+          color: '#1A1A1A',
+          letterSpacing: '-0.5px'
         }}>Send Money</h1>
         <button style={{
           background: '#6C63FF',
           border: '3px solid #2D3561',
           borderRadius: '12px',
-          padding: '10px 18px',
+          padding: '12px 20px',
           color: '#FFFFFF',
-          fontSize: '13px',
+          fontSize: '14px',
           fontWeight: '800',
           cursor: 'pointer',
           fontFamily: "'Plus Jakarta Sans', sans-serif",
           letterSpacing: '0.5px',
-          boxShadow: '3px 3px 0px #2D3561',
-          transition: 'all 0.2s'
-        }}>
+          boxShadow: '4px 4px 0px #2D3561',
+          transition: 'transform 0.2s',
+          minHeight: '48px',
+          display: 'flex',
+          alignItems: 'center'
+        }}
+        onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+        onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        >
           UPI ID
         </button>
       </div>
 
       {/* Search Bar */}
-      <div style={{ padding: '0 20px 24px' }}>
+      <div style={{ padding: '0 20px 28px' }}>
         <div style={{
           background: '#FFFFFF',
           border: '3px solid #2D3561',
           borderRadius: '16px',
-          padding: '16px 18px',
+          padding: '18px 20px',
           display: 'flex',
           alignItems: 'center',
           gap: '12px',
-          boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.3)'
+          boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.4)',
+          minHeight: '60px'
         }}>
-          <Search size={22} color="#808080" strokeWidth={2.5} />
+          <Search size={24} color="#808080" strokeWidth={2.5} />
           <input
             type="text"
             placeholder="Search by name, number or UPI ID"
@@ -362,9 +407,9 @@ export default function PaytmSendMoney() {
         <h2 style={{ 
           fontSize: '14px', 
           fontWeight: '800',
-          margin: '0 0 16px 0',
+          margin: '0 0 20px 0',
           color: '#808080',
-          letterSpacing: '1px',
+          letterSpacing: '1.2px',
           fontFamily: "'Plus Jakarta Sans', sans-serif"
         }}>FREQUENT CONTACTS</h2>
         <div style={{ 
@@ -385,31 +430,34 @@ export default function PaytmSendMoney() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '10px',
-                minWidth: '76px'
+                gap: '12px',
+                minWidth: '80px',
+                transition: 'transform 0.2s'
               }}
+              onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+              onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
             >
               <div style={{
-                width: '68px',
-                height: '68px',
+                width: '72px',
+                height: '72px',
                 borderRadius: '50%',
                 background: contact.color,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '26px',
+                fontSize: '28px',
                 fontWeight: '800',
                 color: '#FFFFFF',
                 border: '3px solid #2D3561',
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
-                transition: 'all 0.2s',
                 boxShadow: '6px 6px 0px #2D3561'
               }}
             >
                 {contact.initial}
               </div>
               <span style={{ 
-                fontSize: '13px', 
+                fontSize: '14px', 
                 fontWeight: '700',
                 color: '#1A1A1A',
                 fontFamily: "'Plus Jakarta Sans', sans-serif"
@@ -424,9 +472,9 @@ export default function PaytmSendMoney() {
         <h2 style={{ 
           fontSize: '14px', 
           fontWeight: '800',
-          margin: '0 0 16px 0',
+          margin: '0 0 20px 0',
           color: '#808080',
-          letterSpacing: '1px',
+          letterSpacing: '1.2px',
           fontFamily: "'Plus Jakarta Sans', sans-serif"
         }}>RECENT RECIPIENTS</h2>
         
@@ -439,29 +487,33 @@ export default function PaytmSendMoney() {
                 background: '#FFFFFF',
                 border: '3px solid #2D3561',
                 borderRadius: '16px',
-                padding: '16px',
+                padding: '20px',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '14px',
+                gap: '16px',
                 cursor: 'pointer',
-                transition: 'all 0.2s',
+                transition: 'transform 0.2s',
                 textAlign: 'left',
-                boxShadow: '6px 6px 0px #2D3561'
+                boxShadow: '6px 6px 0px #2D3561',
+                minHeight: '92px'
               }}
+              onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+              onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
             >
               <div style={{
-                width: '52px',
-                height: '52px',
+                width: '56px',
+                height: '56px',
                 borderRadius: '50%',
                 background: recipient.color,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '22px',
+                fontSize: '24px',
                 fontWeight: '800',
                 color: '#FFFFFF',
                 flexShrink: 0,
-                border: '2px solid #2D3561',
+                border: '3px solid #2D3561',
                 boxShadow: '3px 3px 0px rgba(45, 53, 97, 0.4)',
                 fontFamily: "'Plus Jakarta Sans', sans-serif"
               }}>
@@ -470,15 +522,15 @@ export default function PaytmSendMoney() {
               
               <div style={{ flex: 1, minWidth: 0 }}>
                 <h3 style={{ 
-                  fontSize: '15px', 
+                  fontSize: '16px', 
                   fontWeight: '800',
-                  margin: '0 0 4px 0',
+                  margin: '0 0 6px 0',
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   letterSpacing: '0.3px',
                   color: '#1A1A1A'
                 }}>{recipient.name}</h3>
                 <p style={{ 
-                  fontSize: '12px', 
+                  fontSize: '13px', 
                   color: '#808080',
                   margin: 0,
                   fontFamily: "'Courier New', monospace",
@@ -486,14 +538,14 @@ export default function PaytmSendMoney() {
                 }}>{recipient.upi}</p>
               </div>
               
-              <div style={{ textAlign: 'right' }}>
+              <div style={{ textAlign: 'right', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <div style={{ 
-                  fontSize: '14px', 
+                  fontSize: '15px', 
                   fontWeight: '800',
                   color: '#1A1A1A',
                   fontFamily: "'Plus Jakarta Sans', sans-serif"
                 }}>{recipient.lastAmount}</div>
-                <ChevronRight size={18} color="#808080" strokeWidth={2.5} />
+                <ChevronRight size={20} color="#808080" strokeWidth={2.5} />
               </div>
             </button>
           ))}

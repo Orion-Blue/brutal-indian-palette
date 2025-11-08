@@ -3,7 +3,7 @@ import { Settings, ChevronRight, Shield, CreditCard, Bell, Moon, Globe, HelpCirc
 import BottomNav from '@/components/BottomNav';
 
 export default function PaytmProfile() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   const statsData = [
     { label: 'Total Received', value: '₹45,230', color: '#00D9C0', icon: '↓' },
@@ -51,15 +51,17 @@ export default function PaytmProfile() {
       
       {/* Status Bar */}
       <div style={{ 
-        padding: '12px 20px 8px', 
+        padding: '14px 20px 10px', 
         display: 'flex', 
         justifyContent: 'space-between',
-        fontSize: '14px',
+        fontSize: '15px',
         fontWeight: '600',
-        color: '#1A1A1A'
+        color: '#1A1A1A',
+        height: '44px',
+        alignItems: 'center'
       }}>
         <span>9:41</span>
-        <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
           <span>📶</span>
           <span>📡</span>
           <span>🔋</span>
@@ -67,55 +69,61 @@ export default function PaytmProfile() {
       </div>
 
       {/* Header */}
-      <div style={{ padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ padding: '16px 20px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '92px' }}>
         <h1 style={{ 
           fontSize: '26px', 
           fontWeight: '800',
           margin: 0,
           fontFamily: "'Plus Jakarta Sans', sans-serif",
-          color: '#1A1A1A'
+          color: '#1A1A1A',
+          letterSpacing: '-0.5px'
         }}>Profile</h1>
         <button style={{
           background: '#FFFFFF',
           border: '3px solid #2D3561',
           borderRadius: '12px',
-          width: '48px',
-          height: '48px',
+          width: '52px',
+          height: '52px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
-          boxShadow: '3px 3px 0px #2D3561',
-          transition: 'all 0.2s'
-        }}>
-          <Settings size={22} color="#1A1A1A" strokeWidth={2.5} />
+          boxShadow: '4px 4px 0px #2D3561',
+          transition: 'transform 0.2s',
+          flexShrink: 0
+        }}
+        onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+        onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        >
+          <Settings size={24} color="#1A1A1A" strokeWidth={2.5} />
         </button>
       </div>
 
       {/* Profile Card */}
-      <div style={{ padding: '0 20px 24px' }}>
+      <div style={{ padding: '0 20px 28px' }}>
         <div style={{
           background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF5E0 100%)',
           border: '3px solid #2D3561',
           borderRadius: '24px',
-          padding: '36px 24px',
+          padding: '40px 24px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '20px',
+          gap: '24px',
           boxShadow: '6px 6px 0px rgba(45, 53, 97, 0.4)'
         }}>
           {/* Avatar */}
           <div style={{ position: 'relative' }}>
             <div style={{
-              width: '104px',
-              height: '104px',
+              width: '112px',
+              height: '112px',
               borderRadius: '50%',
               background: 'linear-gradient(135deg, #FF6B35, #6C63FF)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '44px',
+              fontSize: '48px',
               fontWeight: '800',
               color: '#FFFFFF',
               border: '4px solid #2D3561',
@@ -126,10 +134,10 @@ export default function PaytmProfile() {
             </div>
             <div style={{
               position: 'absolute',
-              bottom: '2px',
-              right: '2px',
-              width: '36px',
-              height: '36px',
+              bottom: '0',
+              right: '0',
+              width: '40px',
+              height: '40px',
               borderRadius: '50%',
               background: '#00D9C0',
               border: '3px solid #FFF5E0',
@@ -138,42 +146,43 @@ export default function PaytmProfile() {
               justifyContent: 'center',
               boxShadow: '3px 3px 0px #2D3561'
             }}>
-              <CheckCircle size={18} color="#FFFFFF" strokeWidth={3} />
+              <CheckCircle size={20} color="#FFFFFF" strokeWidth={3} />
             </div>
           </div>
 
           {/* Name & Details */}
           <div style={{ textAlign: 'center' }}>
             <h2 style={{ 
-              fontSize: '26px', 
+              fontSize: '28px', 
               fontWeight: '800',
-              margin: '0 0 6px 0',
+              margin: '0 0 8px 0',
               fontFamily: "'Plus Jakarta Sans', sans-serif",
-              color: '#1A1A1A'
+              color: '#1A1A1A',
+              letterSpacing: '-0.5px'
             }}>Rajesh Kumar</h2>
             <p style={{ 
-              fontSize: '15px', 
+              fontSize: '16px', 
               color: '#808080',
-              margin: '0 0 12px 0',
+              margin: '0 0 16px 0',
               fontFamily: "'Courier New', monospace",
               fontWeight: '700'
             }}>+91 98765 43210</p>
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
+              gap: '10px',
               background: '#00D9C0',
-              border: '2px solid #2D3561',
+              border: '3px solid #2D3561',
               borderRadius: '12px',
-              padding: '8px 16px',
+              padding: '10px 20px',
               boxShadow: '3px 3px 0px #2D3561'
             }}>
-              <CheckCircle size={16} color="#FFFFFF" strokeWidth={3} />
+              <CheckCircle size={18} color="#FFFFFF" strokeWidth={3} />
               <span style={{ 
-                fontSize: '13px', 
+                fontSize: '14px', 
                 fontWeight: '800',
                 color: '#FFFFFF',
-                letterSpacing: '0.8px',
+                letterSpacing: '1px',
                 fontFamily: "'Plus Jakarta Sans', sans-serif"
               }}>KYC VERIFIED</span>
             </div>
@@ -186,9 +195,9 @@ export default function PaytmProfile() {
         <h2 style={{ 
           fontSize: '14px', 
           fontWeight: '800',
-          margin: '0 0 16px 0',
+          margin: '0 0 20px 0',
           color: '#808080',
-          letterSpacing: '1px',
+          letterSpacing: '1.2px',
           fontFamily: "'Plus Jakarta Sans', sans-serif"
         }}>QUICK STATS</h2>
         
@@ -204,32 +213,42 @@ export default function PaytmProfile() {
                 background: '#FFFFFF',
                 border: '3px solid #2D3561',
                 borderRadius: '20px',
-                padding: '20px',
+                padding: '24px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '10px',
+                gap: '12px',
                 boxShadow: '6px 6px 0px #2D3561',
-                transition: 'all 0.2s'
+                transition: 'transform 0.2s',
+                cursor: 'pointer',
+                minHeight: '140px',
+                justifyContent: 'space-between'
               }}
+              onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+              onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
             >
               <div style={{
-                fontSize: '28px',
-                marginBottom: '4px'
+                fontSize: '32px',
+                lineHeight: '1'
               }}>{stat.icon}</div>
-              <div style={{ 
-                fontSize: '22px', 
-                fontWeight: '800',
-                color: stat.color,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                letterSpacing: '-0.5px'
-              }}>{stat.value}</div>
-              <div style={{ 
-                fontSize: '11px', 
-                color: '#808080',
-                fontWeight: '700',
-                letterSpacing: '0.5px',
-                fontFamily: "'Plus Jakarta Sans', sans-serif"
-              }}>{stat.label}</div>
+              <div>
+                <div style={{ 
+                  fontSize: '24px', 
+                  fontWeight: '800',
+                  color: stat.color,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  letterSpacing: '-0.5px',
+                  marginBottom: '8px'
+                }}>{stat.value}</div>
+                <div style={{ 
+                  fontSize: '12px', 
+                  color: '#808080',
+                  fontWeight: '700',
+                  letterSpacing: '0.5px',
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  textTransform: 'uppercase'
+                }}>{stat.label}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -242,9 +261,9 @@ export default function PaytmProfile() {
             <h2 style={{ 
               fontSize: '14px', 
               fontWeight: '800',
-              margin: '0 0 16px 0',
+              margin: '0 0 20px 0',
               color: '#808080',
-              letterSpacing: '1px',
+              letterSpacing: '1.2px',
               fontFamily: "'Plus Jakarta Sans', sans-serif"
             }}>{section.section.toUpperCase()}</h2>
             
@@ -253,7 +272,7 @@ export default function PaytmProfile() {
               border: '3px solid #2D3561',
               borderRadius: '20px',
               overflow: 'hidden',
-              boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.3)'
+              boxShadow: '4px 4px 0px rgba(45, 53, 97, 0.4)'
             }}>
               {section.items.map((item, itemIndex) => (
                 <button
@@ -267,34 +286,35 @@ export default function PaytmProfile() {
                     width: '100%',
                     background: 'transparent',
                     border: 'none',
-                    borderBottom: itemIndex < section.items.length - 1 ? '2px solid #2D3561' : 'none',
-                    padding: '18px',
+                    borderBottom: itemIndex < section.items.length - 1 ? '3px solid #2D3561' : 'none',
+                    padding: '20px',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '14px',
+                    gap: '16px',
                     cursor: 'pointer',
-                    transition: 'all 0.2s',
-                    textAlign: 'left'
+                    transition: 'background 0.2s',
+                    textAlign: 'left',
+                    minHeight: '84px'
                   }}
                 >
                   <div style={{
-                    width: '48px',
-                    height: '48px',
+                    width: '52px',
+                    height: '52px',
                     borderRadius: '50%',
                     background: item.color,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
-                    border: '2px solid #2D3561',
+                    border: '3px solid #2D3561',
                     boxShadow: '3px 3px 0px rgba(45, 53, 97, 0.4)'
                   }}>
-                    <item.icon size={22} color="#FFFFFF" strokeWidth={2.5} />
+                    <item.icon size={24} color="#FFFFFF" strokeWidth={2.5} />
                   </div>
                   
                   <span style={{ 
                     flex: 1,
-                    fontSize: '15px', 
+                    fontSize: '16px', 
                     fontWeight: '700',
                     color: '#1A1A1A',
                     fontFamily: "'Plus Jakarta Sans', sans-serif"
@@ -304,19 +324,21 @@ export default function PaytmProfile() {
                     <span style={{
                       background: item.color,
                       color: '#FFFFFF',
-                      fontSize: '12px',
+                      fontSize: '13px',
                       fontWeight: '800',
-                      padding: '6px 12px',
+                      padding: '8px 14px',
                       borderRadius: '10px',
                       border: '2px solid #2D3561',
                       boxShadow: '2px 2px 0px #2D3561',
-                      fontFamily: "'Plus Jakarta Sans', sans-serif"
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      minWidth: '40px',
+                      textAlign: 'center'
                     }}>{item.badge}</span>
                   )}
                   
                   {item.value && (
                     <span style={{ 
-                      fontSize: '14px', 
+                      fontSize: '15px', 
                       color: '#808080',
                       fontFamily: "'Courier New', monospace",
                       fontWeight: '700'
@@ -325,23 +347,23 @@ export default function PaytmProfile() {
                   
                   {item.hasToggle && (
                     <div style={{
-                      width: '54px',
-                      height: '30px',
-                      borderRadius: '15px',
-                      background: item.toggleValue ? item.color : '#2D3561',
+                      width: '60px',
+                      height: '34px',
+                      borderRadius: '17px',
+                      background: item.toggleValue ? item.color : '#E0E0E0',
                       position: 'relative',
                       transition: 'all 0.3s',
-                      border: '2px solid #2D3561',
+                      border: '3px solid #2D3561',
                       boxShadow: '2px 2px 0px #2D3561'
                     }}>
                       <div style={{
-                        width: '24px',
-                        height: '24px',
+                        width: '26px',
+                        height: '26px',
                         borderRadius: '50%',
                         background: '#FFFFFF',
                         position: 'absolute',
                         top: '1px',
-                        left: item.toggleValue ? '26px' : '2px',
+                        left: item.toggleValue ? '30px' : '2px',
                         transition: 'all 0.3s',
                         border: '2px solid #2D3561'
                       }}></div>
@@ -349,7 +371,7 @@ export default function PaytmProfile() {
                   )}
                   
                   {item.hasChevron && (
-                    <ChevronRight size={22} color="#808080" strokeWidth={2.5} />
+                    <ChevronRight size={24} color="#808080" strokeWidth={2.5} />
                   )}
                 </button>
               ))}
@@ -359,25 +381,29 @@ export default function PaytmProfile() {
       </div>
 
       {/* Logout Button */}
-      <div style={{ padding: '0 20px 24px' }}>
+      <div style={{ padding: '0 20px 28px' }}>
         <button style={{
           width: '100%',
           background: '#FFFFFF',
           border: '3px solid #FF6B35',
           borderRadius: '20px',
-          padding: '18px',
+          padding: '20px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           gap: '12px',
           cursor: 'pointer',
-          transition: 'all 0.2s',
-          boxShadow: '6px 6px 0px #FF6B35'
+          transition: 'transform 0.2s',
+          boxShadow: '6px 6px 0px #FF6B35',
+          minHeight: '68px'
         }}
-      >
-          <LogOut size={22} color="#FF6B35" strokeWidth={2.5} />
+        onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+        onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        >
+          <LogOut size={24} color="#FF6B35" strokeWidth={2.5} />
           <span style={{ 
-            fontSize: '16px', 
+            fontSize: '18px', 
             fontWeight: '800',
             color: '#FF6B35',
             letterSpacing: '1px',
@@ -388,11 +414,11 @@ export default function PaytmProfile() {
 
       {/* Version Info */}
       <div style={{ 
-        padding: '0 20px 24px',
+        padding: '0 20px 28px',
         textAlign: 'center'
       }}>
         <p style={{ 
-          fontSize: '12px', 
+          fontSize: '13px', 
           color: '#808080',
           margin: 0,
           fontFamily: "'Courier New', monospace",
