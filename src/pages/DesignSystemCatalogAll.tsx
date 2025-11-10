@@ -107,7 +107,7 @@ export default function DesignSystemCatalogAll(){
 
         <div className="space-y-16">
           {(['Atom','Molecule','Organism'] as const).map((section, idx) => (
-            <section key={section} id={section} aria-label={section} className={cn(idx>0 && 'pt-16 mt-16 border-t border-border/40') }>
+            <section key={section} id={section} aria-label={section} className={cn(idx>0 && 'pt-16 mt-16 border-t border-border/40', section==='Organism' && 'bg-muted/20 rounded-xl p-4') }>
               <div className="mb-6 mt-12"><h2 className="text-[32px] font-semibold">{section}</h2></div>
               <div className="grid grid-cols-12 gap-6 items-stretch content-start">
                 {groups[section].map(meta => (
