@@ -5,14 +5,14 @@ import { cn } from '@/lib/utils';
 
 function Card({ title, subtitle, children, id }: { title: string; subtitle: string; children: React.ReactNode; id: string; }){
   return (
-    <section id={id} aria-labelledby={`${id}-label`} className="bg-card/80 border border-border/30 rounded-2xl shadow-card p-5 pad-md">
-      <div className="flex items-baseline justify-between mb-3 gap-sm">
+    <section id={id} aria-labelledby={`${id}-label`} className="bg-card/80 border border-border/30 rounded-2xl shadow-card p-6">
+      <div className="flex items-baseline justify-between mb-4 gap-4">
         <Text id={`${id}-label`} variant="body" weight="bold" className="text-foreground">
           {title}
         </Text>
         <Text variant="caption" className="text-muted-foreground">{subtitle}</Text>
       </div>
-      <div>{children}</div>
+      <div className="w-full h-full flex items-center justify-center">{children}</div>
     </section>
   );
 }
@@ -24,7 +24,7 @@ function ComponentCard({ category, name, variants, sizes, states, meta, jsxExamp
   const frameBase = `Atomic/${category}/${name}`;
 
   return (
-    <div className="bg-secondary/50 border border-border/30 rounded-xl shadow-sm hover:shadow-md transition-all p-4 space-y-3" role="group" aria-label={`${name} component card`}>
+    <div className="h-full flex flex-col bg-secondary/50 border border-border/30 rounded-xl shadow-sm hover:shadow-md transition-all p-6 space-y-4 overflow-visible" role="group" aria-label={`${name} component card`} data-frame-name={`${frameBase}/Card`}>
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <Text variant="body" weight="bold">{category} / {name}</Text>
@@ -37,17 +37,19 @@ function ComponentCard({ category, name, variants, sizes, states, meta, jsxExamp
         </Text>
       </div>
 
-      <div className="grid grid-cols-3 gap-6" aria-label="Variant previews">
+      <div className="flex flex-wrap items-start gap-4" aria-label="Variant previews">
         {(variants||[]).map(v => (
-          <div key={v.name} className="bg-card border border-border/30 rounded-xl p-4 shadow-sm" data-frame-name={`${frameBase}/${v.name}/Default`} aria-label={`${name} ${v.name} preview`}>
-            <div className="mb-2"><Text variant="caption" weight="semibold" className="text-muted-foreground">{v.name}</Text></div>
-            <div className="flex items-center justify-center min-h-[96px]">{v.render()}</div>
+          <div key={v.name} className="bg-card border border-border/30 rounded-xl p-4 shadow-sm flex-1 min-w-[220px] overflow-hidden" data-frame-name={`${frameBase}/${v.name}/Default`} aria-label={`${name} ${v.name} preview`}>
+            <div className="mb-2 flex items-baseline justify-between"><Text variant="caption" weight="semibold" className="text-muted-foreground">{v.name}</Text></div>
+            <div className="flex items-center justify-center min-h-[120px] w-full overflow-hidden">
+              <div className="max-w-full w-full flex items-center justify-center">{v.render()}</div>
+            </div>
           </div>
         ))}
       </div>
 
       {open && (
-        <div className="bg-card border border-border/30 rounded-xl p-4 space-y-3">
+        <div className="bg-card border border-border/30 rounded-xl p-4 space-y-3 overflow-hidden">
           <Text variant="caption" weight="bold" className="text-muted-foreground">Code snippet</Text>
           <pre className="text-xs bg-muted p-3 rounded-md overflow-x-auto"><code>{jsxExample || '<!-- No example -->'}</code></pre>
           <Text variant="caption" weight="bold" className="text-muted-foreground">Props</Text>
@@ -104,12 +106,12 @@ export default function DesignSystemCatalogAll(){
         </nav>
 
         <div className="space-y-16">
-          {(['Atom','Molecule','Organism'] as const).map(section => (
-            <section key={section} id={section} aria-label={section}>
-              <div className="mb-6"><h2 className="type-h2">{section}</h2></div>
-              <div className="grid grid-cols-12 gap-6">
+          {(['Atom','Molecule','Organism'] as const).map((section, idx) => (
+            <section key={section} id={section} aria-label={section} className={cn(idx>0 && 'pt-16 mt-16 border-t border-border/40') }>
+              <div className="mb-6 mt-12"><h2 className="text-[32px] font-semibold">{section}</h2></div>
+              <div className="grid grid-cols-12 gap-6 items-stretch content-start">
                 {groups[section].map(meta => (
-                  <div key={`${section}-${meta.name}`} id={`${section}-${meta.name}`} className="col-span-12 md:col-span-6 xl:col-span-4">
+                  <div key={`${section}-${meta.name}`} id={`${section}-${meta.name}`} className="col-span-12 md:col-span-6 xl:col-span-4 h-full">
                     <ComponentCard
                       category={meta.category}
                       name={meta.name}
