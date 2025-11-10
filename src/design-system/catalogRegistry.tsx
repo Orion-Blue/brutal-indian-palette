@@ -254,6 +254,46 @@ export const registry: ComponentMeta[] = [
     usageNotes: ['Use with stable keys; keep rows tappable.'],
     jsxExample: '<TransactionList title="Recent Transactions" transactions={[...]} />',
   },
+  {
+    category: 'Organism',
+    name: 'Header',
+    component: Header as any,
+    variants: [
+      { name: 'Title', render: () => <Header title="Page Title" /> },
+      { name: 'Title+Subtitle', render: () => <Header title="Send Money" subtitle="Find a contact" /> },
+      { name: 'WithBack', render: () => <Header title="Send Money" showBack /> },
+      { name: 'WithAction', render: () => <Header title="Profile" rightAction={<button className="rounded-xl px-4 h-10 bg-card border border-border/30 text-sm font-semibold">UPI ID</button>} /> },
+    ],
+    sizes: ['responsive'],
+    states: ['default','focus'],
+    props: [
+      { name: 'title', type: 'string' },
+      { name: 'subtitle', type: 'string' },
+      { name: 'rightAction', type: 'ReactNode' },
+      { name: 'showBack', type: 'boolean', default: 'false' },
+    ],
+    tokens: { spacing: ['space-md'], typography: ['type-h2','type-caption'] },
+    accessibility: ['Back button is focusable; semantic header element'],
+    usageNotes: ['Use as page-level header for screens.'],
+    jsxExample: '<Header title="Profile" rightAction={<IconButton icon={Settings}/>} />',
+  },
+  {
+    category: 'Organism',
+    name: 'Footer',
+    component: BottomNav as any,
+    variants: [
+      { name: 'Default', render: () => <div className="relative h-[120px] w-full"><div className="absolute inset-x-0 bottom-0"><BottomNav /></div></div> },
+    ],
+    sizes: ['responsive'],
+    states: ['default'],
+    props: [
+      { name: 'n/a', type: '—' },
+    ],
+    tokens: { colors: ['card','border','primary'], spacing: ['space-sm'] },
+    accessibility: ['Nav with 5 buttons; active state visible'],
+    usageNotes: ['Treat as app footer for Figma export; framed to fit card without cropping'],
+    jsxExample: '<BottomNav />',
+  },
 ];
 
 export function getGroupedRegistry(){
