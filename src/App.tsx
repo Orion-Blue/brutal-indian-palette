@@ -12,6 +12,10 @@ import WalletScreen from "./pages/WalletScreen";
 import MessagesScreen from "./pages/MessagesScreen";
 import NotFound from "./pages/NotFound";
 import DesignSystemDocs from "./pages/DesignSystemDocs";
+import DesignSystemCatalogOverview from "./pages/DesignSystemCatalogOverview";
+import DesignSystemCatalogAll from "./pages/DesignSystemCatalogAll";
+import DesignTokens from "./pages/DesignTokens";
+import CatalogIndex from "./pages/CatalogIndex";
 
 const queryClient = new QueryClient();
 
