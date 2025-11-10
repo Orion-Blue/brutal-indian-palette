@@ -8,8 +8,10 @@ import { QuickAction } from '@/components/molecules/QuickAction';
 import { TransactionItem } from '@/components/molecules/TransactionItem';
 import { QuickActionsGrid } from '@/components/organisms/QuickActionsGrid';
 import { TransactionList } from '@/components/organisms/TransactionList';
+import BottomNav from '@/components/BottomNav';
+import { Header } from '@/components/organisms/Header';
 import { spacing, typography, colors, TokenUsage } from './tokens';
-import { Bell, Scan, Send, ArrowDownToLine } from 'lucide-react';
+import { Bell, Scan, Send, ArrowDownToLine, Settings } from 'lucide-react';
 
 export type Category = 'Atom' | 'Molecule' | 'Organism';
 
