@@ -34,6 +34,10 @@ const App = () => (
           <Route path="/wallet" element={<WalletScreen />} />
           <Route path="/messages" element={<MessagesScreen />} />
           <Route path="/design-system" element={<DesignSystemDocs />} />
+          <Route path="/design-system/catalog" element={<DesignSystemCatalogOverview />} />
+          <Route path="/design-system/catalog-all" element={<DesignSystemCatalogAll />} />
+          <Route path="/design-system/tokens" element={<DesignTokens />} />
+          <Route path="/design-system/catalog-index" element={<CatalogIndex />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
