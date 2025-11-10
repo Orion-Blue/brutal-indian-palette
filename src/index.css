@@ -140,6 +140,20 @@ Improved typography scale (1.25 ratio), better yellow brand color
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
+  /* Token helpers for spacing and typography (for Catalog pages) */
+  .gap-xxs{ gap: 4px; }
+  .gap-xs{ gap: 8px; }
+  .gap-sm{ gap: 12px; }
+  .gap-md{ gap: 16px; }
+  .gap-lg{ gap: 24px; }
+  .pad-xs{ padding: 8px; }
+  .pad-sm{ padding: 12px; }
+  .pad-md{ padding: 16px; }
+  .pad-lg{ padding: 24px; }
+  .type-h1{ font-size:32px; line-height:1.2; font-weight:700; }
+  .type-h2{ font-size:24px; line-height:1.25; font-weight:700; }
+  .type-body{ font-size:14px; line-height:1.6; }
+  .type-caption{ font-size:12px; line-height:1.4; font-weight:600; }
 }
 
 @layer base {
