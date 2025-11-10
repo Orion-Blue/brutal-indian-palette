@@ -294,6 +294,84 @@ export const registry: ComponentMeta[] = [
     usageNotes: ['Treat as app footer for Figma export; framed to fit card without cropping'],
     jsxExample: '<BottomNav />',
   },
+  {
+    category: 'Organism',
+    name: 'HomeHero',
+    component: null,
+    variants: [
+      { name: 'Default', render: () => (
+        <div className="w-full">
+          <div className="relative">
+            <div className="absolute top-2 left-2 right-2 h-36 bg-[hsl(var(--accent-purple))]/90 rounded-3xl shadow-md opacity-40 -z-10" />
+            <div className="absolute top-4 left-4 right-4 h-36 bg-[hsl(var(--accent-blue))]/90 rounded-3xl shadow-md opacity-60 -z-10" />
+            <BalanceCard
+              balance={12450}
+              label="Total Balance"
+              accountNumber="XXXX - 5689"
+              type="VIRTUAL"
+              validThru="07/29"
+              status="ACTIVE"
+              backgroundColor="hsl(48, 100%, 50%)"
+              textColor="#141414"
+            />
+            <div className="flex justify-center gap-1.5 mt-4">
+              <div className="w-2 h-2 rounded-full bg-[hsl(var(--primary))]" />
+              <div className="w-2 h-2 rounded-full bg-[hsl(var(--muted-foreground))]/30" />
+              <div className="w-2 h-2 rounded-full bg-[hsl(var(--muted-foreground))]/30" />
+            </div>
+          </div>
+        </div>
+      )}
+    ],
+    sizes: ['responsive'],
+    states: ['default'],
+    props: [],
+    tokens: { colors: ['primary','accent-blue','accent-purple'], spacing: ['space-md'] },
+    accessibility: ['Dots are decorative in preview'],
+    usageNotes: ['Represents the stacked card hero area of Home'],
+    jsxExample: '<HomeHero />',
+  },
+  {
+    category: 'Organism',
+    name: 'StatsSection',
+    component: null,
+    variants: [
+      { name: 'Default', render: () => (
+        <div className="bg-card/80 backdrop-blur-nav border border-border/30 rounded-3xl p-6 shadow-card">
+          <div className="mb-6">
+            <Text variant="body-small" className="text-muted-foreground block mb-2">Total Spending</Text>
+            <Text variant="h1" weight="bold" className="text-foreground block mb-1">₹12,450</Text>
+            <div className="flex items-center gap-2">
+              <div className="bg-[hsl(var(--accent-green))]/15 rounded-full px-3 py-1">
+                <Text variant="micro" weight="bold" className="text-[hsl(var(--accent-green))]">↓ 12% less than last month</Text>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-4">
+            {['Food & Dining','Shopping','Transport'].map((label,i)=> (
+              <div key={label} className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center"><Text variant="body">{['🍔','🛒','🚗'][i]}</Text></div>
+                  <div>
+                    <Text variant="body" weight="semibold" className="text-foreground block">{label}</Text>
+                    <Text variant="body-small" className="text-muted-foreground">{[32,28,18][i]}% of budget</Text>
+                  </div>
+                </div>
+                <Text variant="body" weight="bold" className="text-foreground">{['₹3,980','₹3,486','₹2,241'][i]}</Text>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    ],
+    sizes: ['responsive'],
+    states: ['default'],
+    props: [],
+    tokens: { spacing: ['space-sm','space-md'], typography: ['type-body','type-caption'] },
+    accessibility: ['Static preview of a data section'],
+    usageNotes: ['Use for spending overview'],
+    jsxExample: '<StatsSection />',
+  },
 ];
 
 export function getGroupedRegistry(){
