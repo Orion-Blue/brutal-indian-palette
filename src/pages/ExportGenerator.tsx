@@ -128,10 +128,13 @@ export default function ExportGenerator(){
           const tokens = mapTokens(styles, designTokens);
           bpData.push({ breakpoint: bp.id, bounds, styles: important, tokensUsed: tokens });
 
-          // HTML snapshot (self-contained)
-          const html = serializeHtmlWithInlineStyles(inner as HTMLElement);
+          // HTML snapshot (self-contained) with ExportFrame wrapper and exact bounds
+          const clone = (inner as HTMLElement).cloneNode(true) as HTMLElement;
+          const { inlineComputedRecursive } = await import('@/utils/cssUtils');
+          inlineComputedRecursive(clone);
+          const doc = `<!doctype html>\n<html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>${name} — ${bp.id}</title></head><body style=\"margin:0;\"><div id=\"${name}\" style=\"width:${bounds.width}px;height:${bounds.height}px;display:inline-block;\">${clone.outerHTML}</div></body></html>`;
           const htmlPath = `${slug(meta.category, meta.name)}/${slug(variant.name)}/${bp.id}.html`;
-          htmlDir?.file(htmlPath, html);
+          htmlDir?.file(htmlPath, doc);
 
           // cleanup this breakpoint DOM
           r.unmount();
