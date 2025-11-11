@@ -37,6 +37,12 @@ export default function DesignSystemDocs() {
               {section.label}
             </button>
           ))}
+          <a href="/previews" className="px-4 py-2 text-sm font-semibold border-2 border-border rounded-lg bg-secondary hover:bg-secondary/80">Preview Index</a>
+          <a href="/previews/atoms" className="px-3 py-2 text-xs font-semibold border-2 border-border rounded-lg">Preview — Atoms</a>
+          <a href="/previews/molecules" className="px-3 py-2 text-xs font-semibold border-2 border-border rounded-lg">Preview — Molecules</a>
+          <a href="/previews/organisms" className="px-3 py-2 text-xs font-semibold border-2 border-border rounded-lg">Preview — Organisms</a>
+          <a href="/previews/screens" className="px-3 py-2 text-xs font-semibold border-2 border-border rounded-lg">Preview — Screens</a>
+          <a href="/previews/tokens" className="px-3 py-2 text-xs font-semibold border-2 border-border rounded-lg">Preview — Tokens</a>
         </div>
       </nav>
 
