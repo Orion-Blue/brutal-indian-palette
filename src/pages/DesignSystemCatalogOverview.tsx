@@ -8,6 +8,8 @@ export default function DesignSystemCatalogOverview(){
     atoms: groups.Atom.length,
     molecules: groups.Molecule.length,
     organisms: groups.Organism.length,
+    templates: groups.Template.length,
+    pages: groups.Page.length,
   };
 
   return (
