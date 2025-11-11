@@ -3,9 +3,14 @@ import { Text } from '@/components/atoms/Text';
 import { Avatar } from '@/components/atoms/Avatar';
 import { IconButton } from '@/components/atoms/IconButton';
 import { StatusIndicator } from '@/components/atoms/StatusIndicator';
+import { Badge } from '@/components/atoms/Badge';
 import { BalanceCard } from '@/components/molecules/BalanceCard';
 import { QuickAction } from '@/components/molecules/QuickAction';
 import { TransactionItem } from '@/components/molecules/TransactionItem';
+import { SearchBar } from '@/components/molecules/SearchBar';
+import { StatCard } from '@/components/molecules/StatCard';
+import { MenuItem } from '@/components/molecules/MenuItem';
+import { ContactChip } from '@/components/molecules/ContactChip';
 import { QuickActionsGrid } from '@/components/organisms/QuickActionsGrid';
 import { TransactionList } from '@/components/organisms/TransactionList';
 import BottomNav from '@/components/BottomNav';
@@ -13,7 +18,7 @@ import { Header } from '@/components/organisms/Header';
 import { spacing, typography, colors, TokenUsage } from './tokens';
 import { Bell, Scan, Send, ArrowDownToLine, Settings } from 'lucide-react';
 
-export type Category = 'Atom' | 'Molecule' | 'Organism';
+export type Category = 'Atom' | 'Molecule' | 'Organism' | 'Template' | 'Page';
 
 export type Variant = {
   name: string;
@@ -56,6 +61,27 @@ export const registry: ComponentMeta[] = [
     accessibility: ['Semantic role is text; inherits from parent'],
     usageNotes: ['Use for all typography; avoid hardcoded font sizes.'],
     jsxExample: '<Text variant="h2" weight="bold">Heading</Text>',
+  },
+  {
+    category: 'Atom',
+    name: 'Badge',
+    component: Badge as any,
+    variants: [
+      { name: 'Default', render: () => <Badge>Badge</Badge> },
+      { name: 'Success', render: () => <Badge variant="success">Success</Badge> },
+      { name: 'Warning', render: () => <Badge variant="warning">Warning</Badge> },
+      { name: 'Error', render: () => <Badge variant="error">Error</Badge> },
+    ],
+    sizes: ['n/a'],
+    states: ['default'],
+    props: [
+      { name: 'variant', type: 'default|success|warning|error', default: 'default' },
+      { name: 'className', type: 'string' },
+    ],
+    tokens: { colors: ['muted','success','brand-yellow','destructive'] },
+    accessibility: ['Text content is announced; use meaningful labels'],
+    usageNotes: ['Use for small status or counts'],
+    jsxExample: '<Badge variant="success">Paid</Badge>',
   },
   {
     category: 'Atom',
@@ -123,6 +149,19 @@ export const registry: ComponentMeta[] = [
   },
   {
     category: 'Molecule',
+    name: 'SearchBar',
+    component: SearchBar as any,
+    variants: [{ name: 'Default', render: () => <SearchBar placeholder="Search" /> }],
+    sizes: ['responsive'],
+    states: ['default','focus'],
+    props: [{ name: 'onSearchChange', type: '(value: string) => void' }],
+    tokens: { colors: ['card','border','ring'], spacing: ['space-sm','space-md'] },
+    accessibility: ['Input has placeholder; supply label when used'],
+    usageNotes: ['Embed in headers or sections; do not nest forms'],
+    jsxExample: '<SearchBar placeholder="Search" />',
+  },
+  {
+    category: 'Molecule',
     name: 'BalanceCard',
     component: BalanceCard as any,
     variants: [
@@ -182,6 +221,19 @@ export const registry: ComponentMeta[] = [
   },
   {
     category: 'Molecule',
+    name: 'StatCard',
+    component: StatCard as any,
+    variants: [{ name: 'Default', render: () => <StatCard label="Total Sent" value="₹32,180" color="hsl(0, 84%, 60%)" icon="↑" /> }],
+    sizes: ['responsive'],
+    states: ['default','hover','active','focus'],
+    props: [ { name: 'label', type: 'string' }, { name: 'value', type: 'string' }, { name: 'color', type: 'string' }, { name: 'icon', type: 'string' } ],
+    tokens: { colors: ['card','muted','foreground'], spacing: ['space-md'] },
+    accessibility: ['Card is button-like; ensure label describes metric'],
+    usageNotes: ['Use in 2-up or 4-up grids'],
+    jsxExample: '<StatCard label="Transactions" value="127" color="hsl(217, 91%, 60%)" icon="#" />',
+  },
+  {
+    category: 'Molecule',
     name: 'TransactionItem',
     component: TransactionItem as any,
     variants: [
@@ -203,6 +255,32 @@ export const registry: ComponentMeta[] = [
     accessibility: ['Whole row is a button; ensure descriptive name (merchant + amount) when needed'],
     usageNotes: ['Amounts include sign; long names truncate.'],
     jsxExample: '<TransactionItem name="Swiggy" type="Payment" amount="₹340" date="Today" initial="S" color="hsl(6, 93%, 71%)" />',
+  },
+  {
+    category: 'Molecule',
+    name: 'MenuItem',
+    component: MenuItem as any,
+    variants: [{ name: 'Default', render: () => <MenuItem icon={Send} label="Menu Item" value="Value" /> }],
+    sizes: ['responsive'],
+    states: ['default','hover','active','focus'],
+    props: [ { name: 'icon', type: 'LucideIcon' }, { name: 'label', type: 'string' }, { name: 'value', type: 'string' } ],
+    tokens: { colors: ['card','border','muted'], spacing: ['space-md'] },
+    accessibility: ['Button row; ensure focus ring'],
+    usageNotes: ['Use in settings or menus'],
+    jsxExample: '<MenuItem icon={Send} label="Payments" value="UPI" />',
+  },
+  {
+    category: 'Molecule',
+    name: 'ContactChip',
+    component: ContactChip as any,
+    variants: [{ name: 'Default', render: () => <ContactChip name="Priya" initial="P" color="hsl(340, 82%, 70%)" /> }],
+    sizes: ['responsive'],
+    states: ['default','hover','active','focus'],
+    props: [ { name: 'name', type: 'string' }, { name: 'initial', type: 'string' }, { name: 'color', type: 'string' } ],
+    tokens: { colors: ['card','muted','border'], spacing: ['space-sm'] },
+    accessibility: ['Button with visible name'],
+    usageNotes: ['Use in grids of contacts'],
+    jsxExample: '<ContactChip name="Amit" initial="A" color="hsl(217, 91%, 60%)" />',
   },
   {
     category: 'Organism',
@@ -375,8 +453,8 @@ export const registry: ComponentMeta[] = [
 ];
 
 export function getGroupedRegistry(){
-  const groups: Record<'Atom'|'Molecule'|'Organism', ComponentMeta[]> = { Atom: [], Molecule: [], Organism: [] };
-  for(const item of registry){ groups[item.category].push(item); }
+  const groups: Record<Category, ComponentMeta[]> = { Atom: [], Molecule: [], Organism: [], Template: [], Page: [] } as any;
+  for(const item of registry){ (groups as any)[item.category].push(item); }
   return groups;
 }
 
@@ -391,3 +469,14 @@ export function manifest(basePreviewUrl: string){
   }));
   return { project: 'App', count: items.length, items };
 }
+
+// Placeholder entries for discovered but unregistered components
+export const placeholders: ComponentMeta[] = [
+  {
+    category: 'Atom',
+    name: 'NavLink',
+    component: null,
+    variants: [ { name: 'Default', render: () => <div className="text-xs text-muted-foreground">⚠ Placeholder — render failed: src/components/NavLink.tsx</div> } ],
+    sizes: ['n/a'], states: ['n/a'], props: [], tokens: {}, accessibility: ['n/a'], usageNotes: ['Wrapper over react-router NavLink']
+  },
+];
