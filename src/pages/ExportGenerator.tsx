@@ -145,6 +145,7 @@ export default function ExportGenerator(){
           component: meta.name,
           variant: variant.name,
           frames: bpData,
+          responsive,
         };
         const jsonPath = `${slug(meta.category, meta.name)}/${slug(variant.name)}/computed.json`;
         jsonDir?.file(jsonPath, JSON.stringify(computedJson, null, 2));
