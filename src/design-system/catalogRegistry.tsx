@@ -455,6 +455,7 @@ export const registry: ComponentMeta[] = [
 export function getGroupedRegistry(){
   const groups: Record<Category, ComponentMeta[]> = { Atom: [], Molecule: [], Organism: [], Template: [], Page: [] } as any;
   for(const item of registry){ (groups as any)[item.category].push(item); }
+  for(const item of placeholders){ (groups as any)[item.category].push(item); }
   return groups;
 }
 
