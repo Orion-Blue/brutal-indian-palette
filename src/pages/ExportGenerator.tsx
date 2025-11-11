@@ -3,7 +3,7 @@ import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import * as htmlToImage from 'html-to-image';
 import { registry, ComponentMeta } from '@/design-system/catalogRegistry';
-import { collectComputed, elementBounds, mapTokens, serializeHtmlWithInlineStyles, TokenManifest, diffStyles } from '@/utils/cssUtils';
+import { collectComputed, elementBounds, mapTokens, serializeHtmlWithInlineStyles, TokenManifest, diffStyles, inlineComputedRecursive } from '@/utils/cssUtils';
 import { Text } from '@/components/atoms/Text';
 
 const BREAKPOINTS = [
