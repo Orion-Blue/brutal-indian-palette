@@ -99,18 +99,20 @@ export default function DesignSystemCatalogAll(){
         <nav className="h-full sticky top-20 self-start bg-card border border-border/30 rounded-xl p-4 shadow-sm">
           <Text variant="caption" weight="bold" className="block mb-3 text-muted-foreground">Sections</Text>
           <ul className="space-y-2">
-            <li><a href="#Atoms" className="text-sm font-semibold hover:underline">Atoms</a></li>
-            <li><a href="#Molecules" className="text-sm font-semibold hover:underline">Molecules</a></li>
-            <li><a href="#Organisms" className="text-sm font-semibold hover:underline">Organisms</a></li>
+            <li><a href="#Atom" className="text-sm font-semibold hover:underline">Atoms</a></li>
+            <li><a href="#Molecule" className="text-sm font-semibold hover:underline">Molecules</a></li>
+            <li><a href="#Organism" className="text-sm font-semibold hover:underline">Organisms</a></li>
+            <li><a href="#Template" className="text-sm font-semibold hover:underline">Templates</a></li>
+            <li><a href="#Page" className="text-sm font-semibold hover:underline">Pages</a></li>
           </ul>
         </nav>
 
         <div className="space-y-16">
-          {(['Atom','Molecule','Organism'] as const).map((section, idx) => (
+          {(['Atom','Molecule','Organism','Template','Page'] as const).map((section, idx) => (
             <section key={section} id={section} aria-label={section} className={cn(idx>0 && 'pt-16 mt-16 border-t border-border/40', section==='Organism' && 'bg-muted/20 rounded-xl p-4') }>
               <div className="mb-6 mt-12"><h2 className="text-[32px] font-semibold">{section}</h2></div>
               <div className="grid grid-cols-12 gap-6 items-stretch content-start">
-                {groups[section].map(meta => (
+                {groups[section]?.map(meta => (
                   <div key={`${section}-${meta.name}`} id={`${section}-${meta.name}`} className="col-span-12 md:col-span-6 xl:col-span-4 h-full">
                     <ComponentCard
                       category={meta.category}
