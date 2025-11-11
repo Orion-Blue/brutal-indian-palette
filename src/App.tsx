@@ -39,6 +39,7 @@ const App = () => (
           <Route path="/design-system/catalog-all" element={<DesignSystemCatalogAll />} />
           <Route path="/design-system/tokens" element={<DesignTokens />} />
           <Route path="/design-system/catalog-index" element={<CatalogIndex />} />
+          <Route path="/design-system/export" element={<ExportGenerator />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
