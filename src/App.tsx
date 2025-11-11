@@ -16,6 +16,7 @@ import DesignSystemCatalogOverview from "./pages/DesignSystemCatalogOverview";
 import DesignSystemCatalogAll from "./pages/DesignSystemCatalogAll";
 import DesignTokens from "./pages/DesignTokens";
 import CatalogIndex from "./pages/CatalogIndex";
+import ExportGenerator from "./pages/ExportGenerator";
 
 const queryClient = new QueryClient();
 
