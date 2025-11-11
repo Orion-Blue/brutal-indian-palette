@@ -17,6 +17,8 @@ import DesignSystemCatalogAll from "./pages/DesignSystemCatalogAll";
 import DesignTokens from "./pages/DesignTokens";
 import CatalogIndex from "./pages/CatalogIndex";
 import ExportGenerator from "./pages/ExportGenerator";
+import { PreviewIndex, PreviewAtoms, PreviewMolecules, PreviewOrganisms, PreviewScreens, PreviewTokens } from "./pages/preview/PreviewPages";
+import PreviewBundle from "./pages/preview/PreviewBundle";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,13 @@ const App = () => (
           <Route path="/design-system/tokens" element={<DesignTokens />} />
           <Route path="/design-system/catalog-index" element={<CatalogIndex />} />
           <Route path="/design-system/export" element={<ExportGenerator />} />
+          <Route path="/previews" element={<PreviewIndex />} />
+          <Route path="/previews/atoms" element={<PreviewAtoms />} />
+          <Route path="/previews/molecules" element={<PreviewMolecules />} />
+          <Route path="/previews/organisms" element={<PreviewOrganisms />} />
+          <Route path="/previews/screens" element={<PreviewScreens />} />
+          <Route path="/previews/tokens" element={<PreviewTokens />} />
+          <Route path="/previews/bundle" element={<PreviewBundle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
