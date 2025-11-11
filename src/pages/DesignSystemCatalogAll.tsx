@@ -37,7 +37,7 @@ function ComponentCard({ category, name, variants, sizes, states, meta, jsxExamp
         </Text>
       </div>
 
-      <div className="flex flex-wrap items-start gap-4" aria-label="Variant previews">
+      <div className="flex flex-wrap items-baseline gap-4" aria-label="Variant previews">
         {(variants||[]).map(v => (
           <div key={v.name} className="bg-card border border-border/30 rounded-xl p-4 shadow-sm flex-1 min-w-[220px] overflow-hidden" data-frame-name={`${frameBase}/${v.name}/Default`} aria-label={`${name} ${v.name} preview`}>
             <div className="mb-2 flex items-baseline justify-between"><Text variant="caption" weight="semibold" className="text-muted-foreground">{v.name}</Text></div>
