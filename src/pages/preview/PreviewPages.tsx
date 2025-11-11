@@ -80,12 +80,30 @@ export function PreviewTokens(){
       <h1 className="text-2xl font-bold">Preview — Tokens</h1>
       <p className="text-sm text-muted-foreground">See /design-system/tokens for comprehensive tokens. This page shows live swatches used in previews.</p>
       <div className="grid grid-cols-6 gap-4">
-        {['primary','success','muted','border','card','foreground'].map(c=> (
-          <div key={c} className="p-4 rounded-lg border border-border/40">
-            <div className={`h-16 rounded-md bg-${c}`} />
-            <div className="mt-2 text-xs">color-{c}</div>
-          </div>
-        ))}
+        <div className="p-4 rounded-lg border border-border/40">
+          <div className="h-16 rounded-md bg-primary" />
+          <div className="mt-2 text-xs">color-primary</div>
+        </div>
+        <div className="p-4 rounded-lg border border-border/40">
+          <div className="h-16 rounded-md bg-success" />
+          <div className="mt-2 text-xs">color-success</div>
+        </div>
+        <div className="p-4 rounded-lg border border-border/40">
+          <div className="h-16 rounded-md bg-muted" />
+          <div className="mt-2 text-xs">color-muted</div>
+        </div>
+        <div className="p-4 rounded-lg border border-border/40">
+          <div className="h-16 rounded-md bg-border" />
+          <div className="mt-2 text-xs">color-border</div>
+        </div>
+        <div className="p-4 rounded-lg border border-border/40">
+          <div className="h-16 rounded-md bg-card" />
+          <div className="mt-2 text-xs">color-card</div>
+        </div>
+        <div className="p-4 rounded-lg border border-border/40">
+          <div className="h-16 rounded-md bg-foreground" />
+          <div className="mt-2 text-xs">color-foreground</div>
+        </div>
       </div>
     </div>
   );
