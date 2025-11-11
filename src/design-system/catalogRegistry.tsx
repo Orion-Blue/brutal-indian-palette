@@ -17,6 +17,13 @@ import BottomNav from '@/components/BottomNav';
 import { Header } from '@/components/organisms/Header';
 import { spacing, typography, colors, TokenUsage } from './tokens';
 import { Bell, Scan, Send, ArrowDownToLine, Settings } from 'lucide-react';
+import HomeScreen from '@/pages/HomeScreen';
+import SendMoneyScreen from '@/pages/SendMoneyScreen';
+import ProfileScreen from '@/pages/ProfileScreen';
+import AnalyticsScreen from '@/pages/AnalyticsScreen';
+import WalletScreen from '@/pages/WalletScreen';
+import MessagesScreen from '@/pages/MessagesScreen';
+import NotFound from '@/pages/NotFound';
 
 export type Category = 'Atom' | 'Molecule' | 'Organism' | 'Template' | 'Page';
 
