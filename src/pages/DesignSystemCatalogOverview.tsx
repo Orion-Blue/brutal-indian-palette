@@ -20,20 +20,30 @@ export default function DesignSystemCatalogOverview(){
       </header>
 
       <div className="grid grid-cols-12 gap-6 mb-10">
-        <div className="col-span-12 md:col-span-4 bg-card border border-border/30 rounded-xl p-6 shadow-sm">
+        <div className="col-span-12 md:col-span-3 bg-card border border-border/30 rounded-xl p-6 shadow-sm">
           <Text variant="h3" weight="bold">Atoms</Text>
           <Text variant="body" className="text-muted-foreground">{counts.atoms} components</Text>
-          <a href="/design-system/catalog-all#Atoms" className="text-sm font-semibold underline">Open section</a>
+          <a href="/design-system/catalog-all#Atom" className="text-sm font-semibold underline">Open section</a>
         </div>
-        <div className="col-span-12 md:col-span-4 bg-card border border-border/30 rounded-xl p-6 shadow-sm">
+        <div className="col-span-12 md:col-span-3 bg-card border border-border/30 rounded-xl p-6 shadow-sm">
           <Text variant="h3" weight="bold">Molecules</Text>
           <Text variant="body" className="text-muted-foreground">{counts.molecules} components</Text>
-          <a href="/design-system/catalog-all#Molecules" className="text-sm font-semibold underline">Open section</a>
+          <a href="/design-system/catalog-all#Molecule" className="text-sm font-semibold underline">Open section</a>
         </div>
-        <div className="col-span-12 md:col-span-4 bg-card border border-border/30 rounded-xl p-6 shadow-sm">
+        <div className="col-span-12 md:col-span-2 bg-card border border-border/30 rounded-xl p-6 shadow-sm">
           <Text variant="h3" weight="bold">Organisms</Text>
           <Text variant="body" className="text-muted-foreground">{counts.organisms} components</Text>
-          <a href="/design-system/catalog-all#Organisms" className="text-sm font-semibold underline">Open section</a>
+          <a href="/design-system/catalog-all#Organism" className="text-sm font-semibold underline">Open section</a>
+        </div>
+        <div className="col-span-12 md:col-span-2 bg-card border border-border/30 rounded-xl p-6 shadow-sm">
+          <Text variant="h3" weight="bold">Templates</Text>
+          <Text variant="body" className="text-muted-foreground">{counts.templates} components</Text>
+          <a href="/design-system/catalog-all#Template" className="text-sm font-semibold underline">Open section</a>
+        </div>
+        <div className="col-span-12 md:col-span-2 bg-card border border-border/30 rounded-xl p-6 shadow-sm">
+          <Text variant="h3" weight="bold">Pages</Text>
+          <Text variant="body" className="text-muted-foreground">{counts.pages} components</Text>
+          <a href="/design-system/catalog-all#Page" className="text-sm font-semibold underline">Open section</a>
         </div>
       </div>
 
