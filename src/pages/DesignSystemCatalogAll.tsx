@@ -24,7 +24,7 @@ function ComponentCard({ category, name, variants, sizes, states, meta, jsxExamp
   const frameBase = `Atomic/${category}/${name}`;
 
   return (
-    <div className="h-full flex flex-col bg-secondary/50 border border-border/30 rounded-xl shadow-sm hover:shadow-md transition-all p-6 space-y-4 overflow-visible" role="group" aria-label={`${name} component card`} data-frame-name={`${frameBase}/Card`}>
+    <div className="h-full min-h-[320px] flex flex-col bg-secondary/50 border border-border/30 rounded-xl shadow-sm hover:shadow-md transition-all p-6 space-y-4 overflow-visible" role="group" aria-label={`${name} component card`} data-frame-name={`${frameBase}/Card`}>
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <Text variant="body" weight="bold">{category} / {name}</Text>
