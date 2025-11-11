@@ -450,6 +450,84 @@ export const registry: ComponentMeta[] = [
     usageNotes: ['Use for spending overview'],
     jsxExample: '<StatsSection />',
   },
+  {
+    category: 'Template',
+    name: 'AmountEntry',
+    component: null,
+    variants: [
+      { name: 'Default', render: () => (
+        <div className="w-[360px]">
+          <div className="bg-card/80 border border-border/30 rounded-3xl p-6 shadow-card text-center">
+            <div className="mb-2"><Text variant="caption" weight="semibold" className="text-muted-foreground">Enter Amount</Text></div>
+            <Text variant="h1" weight="bold">₹1,000</Text>
+            <div className="grid grid-cols-4 gap-2 mt-4">
+              {['100','500','1000','2000'].map(a => (<button key={a} className="bg-card border border-border/30 rounded-2xl py-3 text-sm font-semibold">₹{a}</button>))}
+            </div>
+            <div className="grid grid-cols-3 gap-2 mt-4">
+              {['1','2','3','4','5','6','7','8','9','C','0','←'].map(k => (<button key={k} className="bg-card border border-border/30 rounded-2xl h-12 text-lg font-semibold">{k}</button>))}
+            </div>
+            <button className="w-full bg-primary text-primary-foreground rounded-2xl p-4 font-bold tracking-wide mt-4">SEND ₹1000</button>
+          </div>
+        </div>
+      )}
+    ],
+    sizes: ['narrow'],
+    states: ['default','disabled'],
+    props: [],
+    tokens: { spacing: ['space-sm','space-md'], colors: ['primary','border','card'] },
+    accessibility: ['Buttons have focus outlines; numeric keypad accessible'],
+    usageNotes: ['Template extracted from Send Money amount screen'],
+    jsxExample: '<AmountEntry />',
+  },
+  {
+    category: 'Page',
+    name: 'HomeScreen',
+    component: HomeScreen as any,
+    variants: [ { name: 'Default', render: () => <div className="max-w-md mx-auto"><HomeScreen /></div> } ],
+    sizes: ['mobile'], states: ['default'], props: [], tokens: {}, accessibility: ['Composite screen'], usageNotes: ['Mobile preview inside frame'], jsxExample: '<HomeScreen />'
+  },
+  {
+    category: 'Page',
+    name: 'SendMoneyScreen',
+    component: SendMoneyScreen as any,
+    variants: [ { name: 'Default', render: () => <div className="max-w-md mx-auto"><SendMoneyScreen /></div> } ],
+    sizes: ['mobile'], states: ['default'], props: [], tokens: {}, accessibility: ['Composite screen'], usageNotes: ['Mobile preview inside frame'], jsxExample: '<SendMoneyScreen />'
+  },
+  {
+    category: 'Page',
+    name: 'ProfileScreen',
+    component: ProfileScreen as any,
+    variants: [ { name: 'Default', render: () => <div className="max-w-md mx-auto"><ProfileScreen /></div> } ],
+    sizes: ['mobile'], states: ['default'], props: [], tokens: {}, accessibility: ['Composite screen'], usageNotes: ['Mobile preview inside frame'], jsxExample: '<ProfileScreen />'
+  },
+  {
+    category: 'Page',
+    name: 'AnalyticsScreen',
+    component: AnalyticsScreen as any,
+    variants: [ { name: 'Default', render: () => <div className="max-w-md mx-auto"><AnalyticsScreen /></div> } ],
+    sizes: ['mobile'], states: ['default'], props: [], tokens: {}, accessibility: ['Composite screen'], usageNotes: ['Mobile preview inside frame'], jsxExample: '<AnalyticsScreen />'
+  },
+  {
+    category: 'Page',
+    name: 'WalletScreen',
+    component: WalletScreen as any,
+    variants: [ { name: 'Default', render: () => <div className="max-w-md mx-auto"><WalletScreen /></div> } ],
+    sizes: ['mobile'], states: ['default'], props: [], tokens: {}, accessibility: ['Composite screen'], usageNotes: ['Mobile preview inside frame'], jsxExample: '<WalletScreen />'
+  },
+  {
+    category: 'Page',
+    name: 'MessagesScreen',
+    component: MessagesScreen as any,
+    variants: [ { name: 'Default', render: () => <div className="max-w-md mx-auto"><MessagesScreen /></div> } ],
+    sizes: ['mobile'], states: ['default'], props: [], tokens: {}, accessibility: ['Composite screen'], usageNotes: ['Mobile preview inside frame'], jsxExample: '<MessagesScreen />'
+  },
+  {
+    category: 'Page',
+    name: 'NotFound',
+    component: NotFound as any,
+    variants: [ { name: 'Default', render: () => <div className="max-w-md mx-auto"><NotFound /></div> } ],
+    sizes: ['mobile'], states: ['default'], props: [], tokens: {}, accessibility: ['Composite screen'], usageNotes: ['Mobile preview inside frame'], jsxExample: '<NotFound />'
+  },
 ];
 
 export function getGroupedRegistry(){
