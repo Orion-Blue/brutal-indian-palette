@@ -355,23 +355,23 @@ export const registry: ComponentMeta[] = [
     name: 'QuickActionsGrid',
     component: QuickActionsGrid as any,
     variants: [
-      { name: 'Default', render: () => (
+      { name: '3 Actions', render: () => (
         <QuickActionsGrid actions={[
           { icon: Scan, label: 'Scan', color: 'hsl(48, 100%, 50%)' },
-          { icon: Send, label: 'Pay', color: 'hsl(217, 91%, 60%)' },
+          { icon: Send, label: 'Send', color: 'hsl(217, 91%, 60%)' },
           { icon: ArrowDownToLine, label: 'Receive', color: 'hsl(142, 71%, 45%)' },
         ]} />
       ) },
     ],
-    sizes: ['responsive'],
+    sizes: ['full-width mobile, 3-column grid'],
     states: ['default'],
     props: [
-      { name: 'actions', type: 'Array<{ icon: LucideIcon; label: string; color: string; onClick?: () => void }>' },
+      { name: 'actions', type: 'Array<QuickAction>' },
     ],
-    tokens: { spacing: ['space-md'] },
-    accessibility: ['Grid of buttons; each child has accessible name'],
-    usageNotes: ['Keep actions to three for balance.'],
-    jsxExample: '<QuickActionsGrid actions={[{ icon: Scan, label: "Scan", color: "hsl(48, 100%, 50%)" }]} />',
+    tokens: { spacing: ['space-md', 'space-lg'], borderRadius: ['radius-lg'] },
+    accessibility: ['Grid of button items. Each QuickAction has aria-label and visible label.'],
+    usageNotes: ['Typically 3 actions in a row for balance. Used below Balance Card on home screen. Even distribution.'],
+    jsxExample: '<QuickActionsGrid actions={[{ icon: Scan, label: "Scan", color: "hsl(48, 100%, 50%)" }, ...]} />',
   },
   {
     category: 'Organism',
