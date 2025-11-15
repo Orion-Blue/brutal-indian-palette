@@ -383,21 +383,22 @@ export const registry: ComponentMeta[] = [
           title="Recent Transactions"
           transactions={[
             { id: '1', name: 'Swiggy', type: 'Payment', amount: '₹340', date: 'Today', initial: 'S', color: 'hsl(6, 93%, 71%)' },
-            { id: '2', name: 'Salary', type: 'Received', amount: '₹45,000', date: 'Yesterday', initial: 'S', color: 'hsl(142, 71%, 45%)', isPositive: true },
+            { id: '2', name: 'Priya Sharma', type: 'Received', amount: '₹1,000', date: 'Today', initial: 'P', color: 'hsl(340, 82%, 70%)', isPositive: true },
+            { id: '3', name: 'Amazon', type: 'Payment', amount: '₹1,245', date: 'Yesterday', initial: 'A', color: 'hsl(258, 90%, 66%)' },
           ]}
         />
       ) },
     ],
-    sizes: ['responsive'],
+    sizes: ['full-width mobile'],
     states: ['default'],
     props: [
       { name: 'title', type: 'string' },
       { name: 'transactions', type: 'Array<Transaction>' },
       { name: 'onTransactionClick', type: '(id: string) => void' },
     ],
-    tokens: { spacing: ['space-sm'], typography: ['type-body'] },
-    accessibility: ['List of interactive rows with names and amounts'],
-    usageNotes: ['Use with stable keys; keep rows tappable.'],
+    tokens: { spacing: ['space-sm', 'space-md', 'space-lg'], typography: ['type-h3', 'type-body', 'type-body-sm'], colors: ['card', 'muted-foreground', 'foreground'], borderRadius: ['radius-lg'], shadows: ['shadow-sm', 'shadow-card'] },
+    accessibility: ['Section with heading. Each transaction item is a button with screen reader text: "[Name] - [Type] - [Amount] - [Date]".'],
+    usageNotes: ['List section on home screen. Title at top, rows scrollable if needed. Each row is 56px+ height. Dividers between items optional.'],
     jsxExample: '<TransactionList title="Recent Transactions" transactions={[...]} />',
   },
   {
