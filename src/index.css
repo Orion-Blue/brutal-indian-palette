@@ -2,67 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* V10 Design System - Modern Clean Style
-All colors MUST be HSL.
-Soft shadows, subtle borders, generous spacing
-Improved typography scale (1.25 ratio), better yellow brand color
+/* 📱 MOBILE-FIRST DESIGN SYSTEM
+Strict 412px mobile viewport. No tablet/desktop view.
+All colors in HSL. Optimized for touch interaction.
 */
 
 @layer base {
   :root {
+    /* Backgrounds & Text */
     --background: 0 0% 98%;
     --foreground: 0 0% 8%;
-    
-    /* Brand Colors - Vibrant Yellow */
+
+    /* Brand Colors - Vibrant Yellow (HSL) */
     --brand-yellow: 48 100% 50%;
     --brand-yellow-light: 48 100% 65%;
     --brand-yellow-dark: 48 100% 40%;
     --brand-dark: 0 0% 8%;
-    
-    /* Complementary Colors */
+
+    /* Complementary Accent Colors (vibrant for mobile prominence) */
     --accent-blue: 217 91% 60%;
     --accent-green: 142 71% 45%;
     --accent-red: 0 84% 60%;
     --accent-purple: 258 90% 66%;
     --accent-orange: 25 95% 53%;
+    --accent-pink: 340 82% 70%;
 
+    /* Card & Surface */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 8%;
 
+    /* Primary Action */
     --primary: 48 100% 50%;
     --primary-foreground: 0 0% 8%;
 
+    /* Secondary & Muted */
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 8%;
 
     --muted: 0 0% 93%;
     --muted-foreground: 0 0% 45%;
 
+    /* Accent & States */
     --accent: 48 100% 50%;
     --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
+    /* Borders & Input */
     --border: 0 0% 88%;
     --input: 0 0% 96%;
     --ring: 48 100% 50%;
 
+    /* Mobile-optimized radius scale */
     --radius: 1rem;
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.25rem;
+    --radius-2xl: 1.5rem;
 
-    /* Modern Soft Shadows */
+    /* Modern Soft Shadows (optimized for mobile depth) */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
     --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
     --shadow-md: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
     --shadow-xl: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
     --shadow-card: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+    --shadow-elevated: 0 12px 32px 0 rgba(0, 0, 0, 0.12);
 
+    /* Sidebar (not used in mobile-only, but kept for consistency) */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 10%;
     --sidebar-primary: 48 100% 50%;
@@ -71,6 +86,15 @@ Improved typography scale (1.25 ratio), better yellow brand color
     --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 0 0% 90%;
     --sidebar-ring: 48 100% 50%;
+
+    /* Touch Target Sizes (WCAG AA: min 44x44px) */
+    --touch-target-min: 44px;
+    --touch-target-sm: 44px;
+    --touch-target-md: 48px;
+    --touch-target-lg: 56px;
+
+    /* Mobile Viewport Constraint */
+    --mobile-max-width: 412px;
   }
 
   .dark {
