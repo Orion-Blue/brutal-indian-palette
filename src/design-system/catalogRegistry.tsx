@@ -201,9 +201,25 @@ export const registry: ComponentMeta[] = [
           />
         ),
       },
+      {
+        name: 'Hidden Balance',
+        render: () => (
+          <BalanceCard
+            balance={12450}
+            label="Total Balance"
+            accountNumber="XXXX - 5689"
+            type="VIRTUAL"
+            validThru="07/29"
+            status="ACTIVE"
+            backgroundColor="hsl(217, 91%, 60%)"
+            textColor="#ffffff"
+            showBalance={false}
+          />
+        ),
+      },
     ],
-    sizes: ['responsive'],
-    states: ['default','toggle-visible'],
+    sizes: ['full-width mobile (360-412px)'],
+    states: ['default','toggle-visible','hover'],
     props: [
       { name: 'balance', type: 'number' },
       { name: 'label', type: 'string' },
@@ -211,13 +227,14 @@ export const registry: ComponentMeta[] = [
       { name: 'type', type: 'string' },
       { name: 'validThru', type: 'string' },
       { name: 'status', type: 'string' },
-      { name: 'backgroundColor', type: 'string' },
-      { name: 'textColor', type: 'string' },
+      { name: 'backgroundColor', type: 'string (HSL/hex)' },
+      { name: 'textColor', type: 'string (hex)' },
+      { name: 'showBalance', type: 'boolean', default: 'true' },
     ],
-    tokens: { colors: ['primary','foreground','border'], spacing: ['space-md','space-lg'] },
-    accessibility: ['Eye button toggles content visibility; button has aria-label'],
-    usageNotes: ['Avoid placing sensitive info without toggle; prefer masked by default.'],
-    jsxExample: '<BalanceCard balance={12450} label="Total Balance" accountNumber="XXXX - 5689" type="VIRTUAL" validThru="07/29" status="ACTIVE" backgroundColor="hsl(48, 100%, 50%)" />',
+    tokens: { colors: ['primary','brand-yellow','accent-blue','accent-green','foreground','border'], spacing: ['space-md','space-lg'], borderRadius: ['radius-xl', 'radius-2xl'], shadows: ['shadow-card', 'shadow-elevated'] },
+    accessibility: ['Eye/toggle button for visibility has aria-label="Show/Hide Balance". Swipe gesture discoverable with visual indicator (dots).'],
+    usageNotes: ['Primary card component for balance display. Supports background color customization. Sensitive data hidden by default. Mobile-optimized with 16px padding and large touch targets.'],
+    jsxExample: '<BalanceCard balance={12450} label="Total Balance" accountNumber="XXXX - 5689" backgroundColor="hsl(48, 100%, 50%)" />',
   },
   {
     category: 'Molecule',
