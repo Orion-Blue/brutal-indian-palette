@@ -100,18 +100,19 @@ All colors in HSL. Optimized for touch interaction.
   .dark {
     --background: 0 0% 10%;
     --foreground: 0 0% 98%;
-    
+
     /* Brand Colors - Dark Mode */
     --brand-yellow: 48 100% 50%;
     --brand-yellow-light: 48 100% 65%;
     --brand-yellow-dark: 48 100% 40%;
-    
+
     /* Complementary Colors - Dark Mode */
     --accent-blue: 217 91% 60%;
     --accent-green: 142 71% 45%;
     --accent-red: 0 84% 60%;
     --accent-purple: 258 90% 66%;
     --accent-orange: 25 95% 53%;
+    --accent-pink: 340 82% 70%;
 
     --card: 0 0% 12%;
     --card-foreground: 0 0% 98%;
@@ -133,7 +134,7 @@ All colors in HSL. Optimized for touch interaction.
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
@@ -141,12 +142,14 @@ All colors in HSL. Optimized for touch interaction.
     --input: 0 0% 18%;
     --ring: 48 100% 50%;
 
-    /* Modern Soft Shadows - Dark Mode */
+    /* Modern Soft Shadows - Dark Mode (adjusted for depth) */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
     --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
     --shadow-md: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 4px 12px 0 rgba(0, 0, 0, 0.5);
     --shadow-xl: 0 8px 24px 0 rgba(0, 0, 0, 0.6);
     --shadow-card: 0 2px 12px 0 rgba(0, 0, 0, 0.4);
+    --shadow-elevated: 0 12px 32px 0 rgba(0, 0, 0, 0.7);
 
     --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 98%;
