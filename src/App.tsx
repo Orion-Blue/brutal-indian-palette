@@ -12,6 +12,13 @@ import WalletScreen from "./pages/WalletScreen";
 import MessagesScreen from "./pages/MessagesScreen";
 import NotFound from "./pages/NotFound";
 import DesignSystemDocs from "./pages/DesignSystemDocs";
+import DesignSystemCatalogOverview from "./pages/DesignSystemCatalogOverview";
+import DesignSystemCatalogAll from "./pages/DesignSystemCatalogAll";
+import DesignTokens from "./pages/DesignTokens";
+import CatalogIndex from "./pages/CatalogIndex";
+import ExportGenerator from "./pages/ExportGenerator";
+import { PreviewIndex, PreviewAtoms, PreviewMolecules, PreviewOrganisms, PreviewScreens, PreviewTokens } from "./pages/preview/PreviewPages";
+import PreviewBundle from "./pages/preview/PreviewBundle";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +37,18 @@ const App = () => (
           <Route path="/wallet" element={<WalletScreen />} />
           <Route path="/messages" element={<MessagesScreen />} />
           <Route path="/design-system" element={<DesignSystemDocs />} />
+          <Route path="/design-system/catalog" element={<DesignSystemCatalogOverview />} />
+          <Route path="/design-system/catalog-all" element={<DesignSystemCatalogAll />} />
+          <Route path="/design-system/tokens" element={<DesignTokens />} />
+          <Route path="/design-system/catalog-index" element={<CatalogIndex />} />
+          <Route path="/design-system/export" element={<ExportGenerator />} />
+          <Route path="/previews" element={<PreviewIndex />} />
+          <Route path="/previews/atoms" element={<PreviewAtoms />} />
+          <Route path="/previews/molecules" element={<PreviewMolecules />} />
+          <Route path="/previews/organisms" element={<PreviewOrganisms />} />
+          <Route path="/previews/screens" element={<PreviewScreens />} />
+          <Route path="/previews/tokens" element={<PreviewTokens />} />
+          <Route path="/previews/bundle" element={<PreviewBundle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
